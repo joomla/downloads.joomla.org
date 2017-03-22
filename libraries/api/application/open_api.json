@@ -1,0 +1,383 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Joomla! Downloads API",
+        "contact": {
+            "name": "Joomla! Project",
+            "url": "https://downloads.joomla.org/api-changelog"
+        },
+        "version": "0.2.0"
+    },
+    "host": "downloads.joomla.org",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "counts",
+            "description": "API endpoints for retrieving download counts"
+        },
+        {
+            "name": "latest",
+            "description": "API endpoints for retrieving the latest version numbers"
+        },
+        {
+            "name": "signatures",
+            "description": "API endpoints for retrieving the MD5 and SHA1 signatures of a release's files"
+        },
+        {
+            "name": "releases",
+            "description": "API endpoints for retrieving the list of releases"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/downloads/cms": {
+            "get": {
+                "summary": "Get the download counts for each major version of the CMS",
+                "tags": [
+                    "counts"
+                ],
+                "description": "Get the total number of downloads of Joomla! and a breakdown for each major version",
+                "operationId": "breakdownMajor",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DownloadBreakdownResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/downloads/cms/{version}": {
+            "get": {
+                "summary": "Gets the download counts for each minor version of the CMS",
+                "tags": [
+                    "counts"
+                ],
+                "description": "Gets a total number of download counts of a major version of Joomla! CMS and then a breakdown for each minor version",
+                "operationId": "breakdownMinor",
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The version branch to fetch the download counts for",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DownloadBranchResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/latest/cms": {
+            "get": {
+                "summary": "Get the latest version numbers for each major version of the CMS",
+                "tags": [
+                    "latest"
+                ],
+                "operationId": "latestCms",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/LatestCmsResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/signatures/cms/{version}": {
+            "get": {
+                "summary": "Gets the hash signatures for a release of the CMS",
+                "tags": [
+                    "signatures"
+                ],
+                "description": "Gets the MD5 and SHA1 signatures for all files included in a release of the CMS",
+                "operationId": "signaturesCms",
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The version number to fetch the signatures for",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FileSignatureResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/releases/cms/": {
+            "get": {
+                "summary": "Gets the list of CMS releases",
+                "tags": [
+                    "releases"
+                ],
+                "description": "Get the complete list of releases for the Joomla! CMS",
+                "operationId": "releasesCms",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/releaseListResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "DownloadBranchResponse": {
+            "description": "The Response contains the total number of downloads of all releases in this branch and then a breakdown for each version.",
+            "required": [
+                "total",
+                "versions"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VersionCount"
+                    }
+                }
+            }
+        },
+        "DownloadBreakdownResponse": {
+            "description": "The Response contains the total number of downloads of all versions and then a breakdown for each version branch.",
+            "required": [
+                "total",
+                "branches"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "branches": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VersionCount"
+                    }
+                }
+            }
+        },
+        "FileSignatureResponse": {
+            "description": "The Response contains the file signatures for all files in a release.",
+            "required": [
+                "files"
+            ],
+            "properties": {
+                "files": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FilesSignature"
+                    }
+                }
+            }
+        },
+        "releaseListResponse": {
+            "description": "The Response contains the total number of releases and a list of release version numbers and release dates.",
+            "required": [
+                "total",
+                "releases"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "releases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Release"
+                    }
+                }
+            }
+        },
+        "FilesSignature": {
+            "description": "The file signature object represents a release file and its file signatures.",
+            "required": [
+                "filename",
+                "md5",
+                "sha1"
+            ],
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "description": "The filename being described"
+                },
+                "md5": {
+                    "type": "string",
+                    "description": "The MD5 signature for this file"
+                },
+                "sha1": {
+                    "type": "string",
+                    "description": "The SHA1 signature for this file"
+                }
+            }
+        },
+        "LatestCmsResponse": {
+            "description": "The Response contains the newest version number for each major CMS version.",
+            "required": [
+                "branches"
+            ],
+            "properties": {
+                "branches": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LatestVersion"
+                    }
+                }
+            }
+        },
+        "LatestVersion": {
+            "description": "The latest version object represents a release branch and its latest version.",
+            "required": [
+                "branch",
+                "version"
+            ],
+            "properties": {
+                "branch": {
+                    "type": "string",
+                    "description": "The version branch"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The latest version number for the branch"
+                }
+            }
+        },
+        "VersionCount": {
+            "description": "The version count object represents a release version and its count of downloads.",
+            "required": [
+                "version",
+                "count"
+            ],
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "description": "The version number for the item being counted"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "The download count for the item"
+                }
+            }
+        },
+        "Release": {
+            "description": "The release object represents a release and includes version number and release branch and date.",
+            "required": [
+                "branch",
+                "version"
+            ],
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "description": "The version number for the release"
+                },
+                "branch": {
+                    "type": "string",
+                    "description": "The version branch"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "dateTime",
+                    "description": "The date of the release"
+                },
+                "relationships": {
+                    "$ref": "#/definitions/ReleaseRelationships"
+                }
+            }
+        },
+        "ReleaseRelationships": {
+            "description": "Links to the relationships that a release has",
+            "required": [
+                "signatures"
+            ],
+            "properties": {
+                "signatures": {
+                    "type": "string",
+                    "description": "URL of the files signatures for this release, see #/definitions/FilesSignature"
+                }
+            }
+        },
+        "ErrorResponse": {
+            "description": "The Error response contains an ErrorObject describing the error condition which has been reached.",
+            "required": [
+                "error"
+            ],
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/ErrorObject"
+                }
+            }
+        },
+        "ErrorObject": {
+            "description": "The error object contains details about an error condition.",
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "A message describing the error condition"
+                }
+            }
+        }
+    }
+}

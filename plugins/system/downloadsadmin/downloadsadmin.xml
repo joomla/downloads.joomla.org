@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.6" type="plugin" group="system" method="upgrade">
+	<name>plg_system_downloadsadmin</name>
+	<creationDate>2016-10-02</creationDate>
+	<author>Joomla! Project</author>
+	<copyright>(C) 2016 Open Source Matters. All rights reserved.</copyright>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>https://www.joomla.org</authorUrl>
+	<version>1.0.0</version>
+	<license>GNU/GPL Version 2 or later</license>
+	<description>PLG_SYSTEM_DOWNLOADSADMIN_XML_DESCRIPTION</description>
+	<files>
+		<folder>language</folder>
+		<filename plugin="downloadsadmin">downloadsadmin.php</filename>
+	</files>
+</extension>

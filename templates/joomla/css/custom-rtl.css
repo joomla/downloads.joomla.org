@@ -1,0 +1,70 @@
+body {
+  font-size: 14px;
+}
+
+p {
+  text-align: right;
+}
+
+.center p{
+  text-align:center;
+}
+
+.page-header h3{
+  text-align:right;
+}
+
+.mod-languages .caret {
+  margin-left: 10px;
+}
+
+div.mod-languages ul {
+  left: 0;
+  right: auto;
+}
+
+/*ToTop*/
+.site #scrollToTop {
+  right: auto;
+  left: 10px;
+}
+
+/*ARS*/
+.ars-categories-normal div.well[class^="ars-category"],
+.ars-releases div.well[class^="ars-release"], .ars-items div.well[class^="ars-release"],
+.ars-releases div.well[class^="ars-item"], .ars-items div.well[class^="ars-item"]{
+	border: 1px solid #ccc;
+	border-right: 15px solid #2d8bdc;
+}
+
+.ars-categories-normal div.well.unsupported[class^="ars-category"],
+.ars-releases.unsupported div.well[class^="ars-release"],
+.ars-items.unsupported div.well[class^="ars-item"]{
+    border: 1px solid #ccc;
+	border-right: 15px solid #faa732;
+}
+
+
+/*correction of bad RTL display*/
+@media only screen and (min-width: 768px) and (max-width: 979px){
+.try .btn.btn-blue{
+  min-height: 60px;
+}
+}
+
+@media (max-width: 767px){
+.row-fluid [class*="span"]:first-child,.row-fluid [class*="span"] {
+  margin-right: inherit;
+}
+.navbar ul#nav-joomla,.navbar .nav > li {
+  float: none;
+}
+.dl-horizontal dt {
+  clear: none;
+  float: none;
+  text-align: right;
+}
+.dl-horizontal dd {
+  margin-right: inherit;
+}
+}
