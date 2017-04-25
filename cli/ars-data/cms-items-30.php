@@ -4082,4 +4082,62 @@ $items = [
 		'release_id'   => '129',
 		'created'      => $this->platform->getDate('2016-12-13 23:00:00', new DateTimeZone('GMT'))->toSql()
 	],
+
+	/*
+	 * 3.7.0 - Release ID 130
+	 */
+	[
+		'title'        => 'Joomla! 3.7.0 Full Package (.zip)',
+		'description'  => '<p>This is the full download package for Joomla! 3.7.0</p>',
+		'type'         => 'file',
+		'filename'     => 'Joomla_3.7.0-Stable-Full_Package.zip',
+		'environments' => ['9'],
+		'release_id'   => '130',
+		'created'      => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql()
+	],
+	[
+		'title'        => 'Joomla! 3.7.0 Full Package (.tar.gz)',
+		'description'  => '<p>This is the full download package for Joomla! 3.7.0</p>',
+		'type'         => 'file',
+		'filename'     => 'Joomla_3.7.0-Stable-Full_Package.tar.gz',
+		'environments' => ['9'],
+		'release_id'   => '130',
+		'created'      => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql()
+	],
+	[
+		'title'        => 'Joomla! 3.7.0 Full Package (.tar.bz2)',
+		'description'  => '<p>This is the full download package for Joomla! 3.7.0</p>',
+		'type'         => 'file',
+		'filename'     => 'Joomla_3.7.0-Stable-Full_Package.tar.bz2',
+		'environments' => ['9'],
+		'release_id'   => '130',
+		'created'      => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql()
+	],
+	[
+		'title'        => 'Joomla! 3.7.0 Upgrade Package (.zip)',
+		'description'  => '<p>This package is for performing updates from Joomla! 2.5 and previous 3.x releases to 3.7.0</p>',
+		'type'         => 'file',
+		'filename'     => 'Joomla_3.7.0-Stable-Update_Package.zip',
+		'environments' => ['9'],
+		'release_id'   => '130',
+		'created'      => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql()
+	],
+	[
+		'title'        => 'Joomla! 3.7.0 Upgrade Package (.tar.gz)',
+		'description'  => '<p>This package is for performing updates from Joomla! 2.5 and previous 3.x releases to 3.7.0</p>',
+		'type'         => 'file',
+		'filename'     => 'Joomla_3.7.0-Stable-Update_Package.tar.gz',
+		'environments' => ['9'],
+		'release_id'   => '130',
+		'created'      => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql()
+	],
+	[
+		'title'        => 'Joomla! 3.7.0 Upgrade Package (.tar.bz2)',
+		'description'  => '<p>This package is for performing updates from Joomla! 2.5 and previous 3.x releases to 3.7.0</p>',
+		'type'         => 'file',
+		'filename'     => 'Joomla_3.7.0-Stable-Update_Package.tar.bz2',
+		'environments' => ['9'],
+		'release_id'   => '130',
+		'created'      => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql()
+	],
 ];
