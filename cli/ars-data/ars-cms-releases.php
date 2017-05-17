@@ -1333,14 +1333,24 @@ $releases = [
 		'created'          => $this->platform->getDate('2016-12-13 23:00:00', new DateTimeZone('GMT'))->toSql(),
 		'announcement_url' => 'https://www.joomla.org/announcements/release-news/5693-joomla-3-6-5-released.html',
 	],
-	// ID: 129
+	// ID: 130
 	[
 		'category_id'      => '4',
 		'version'          => '3.7.0',
 		'alias'            => '3-7-0',
 		'maturity'         => 'stable',
-		'description'      => '<p>Joomla! 3.6.5 release</p>',
+		'description'      => '<p>Joomla! 3.7.0 release</p>',
 		'created'          => $this->platform->getDate('2017-04-25 17:00:00', new DateTimeZone('GMT'))->toSql(),
 		'announcement_url' => 'https://www.joomla.org/announcements/release-news/5703-joomla-3-7-is-here.html',
+	],
+	// ID: 131
+	[
+		'category_id'      => '4',
+		'version'          => '3.7.1',
+		'alias'            => '3-7-1',
+		'maturity'         => 'stable',
+		'description'      => '<p>Joomla! 3.7.1 release</p>',
+		'created'          => $this->platform->getDate('2017-05-17 14:00:00', new DateTimeZone('GMT'))->toSql(),
+		'announcement_url' => 'https://www.joomla.org/announcements/release-news/5705-joomla-3-7-1-release.html',
 	],
 ];
