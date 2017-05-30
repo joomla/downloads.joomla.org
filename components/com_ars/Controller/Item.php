@@ -154,7 +154,7 @@ class Item extends DataController
 
 			if (!empty($noAccessURL))
 			{
-				\JFactory::getApplication()->redirect($noAccessURL);
+				$this->container->platform->redirect($noAccessURL);
 
 				return;
 			}
@@ -183,7 +183,7 @@ class Item extends DataController
 
 			if (!empty($noAccessURL))
 			{
-				\JFactory::getApplication()->redirect($noAccessURL);
+				$this->container->platform->redirect($noAccessURL);
 
 				return;
 			}
@@ -317,7 +317,7 @@ class Item extends DataController
 
 			if (!empty($noAccessURL))
 			{
-				\JFactory::getApplication()->redirect($noAccessURL);
+				$this->container->platform->redirect($noAccessURL);
 
 				return;
 			}
@@ -352,7 +352,7 @@ class Item extends DataController
 
 			if (!empty($noAccessURL))
 			{
-				\JFactory::getApplication()->redirect($noAccessURL);
+				$this->container->platform->redirect($noAccessURL);
 
 				return;
 			}
@@ -386,7 +386,7 @@ class Item extends DataController
 
 			if (!empty($noAccessURL))
 			{
-				\JFactory::getApplication()->redirect($noAccessURL);
+				$this->container->platform->redirect($noAccessURL);
 
 				return;
 			}
@@ -409,7 +409,7 @@ class Item extends DataController
 		// Download the item
 		$model->doDownload($item);
 
-		$app->close();
+		$this->container->platform->closeApplication();
 	}
 
 	private function logFailedDownloadAttempt($id)

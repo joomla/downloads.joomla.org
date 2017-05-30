@@ -14,7 +14,7 @@
 /administrator/language/*
 !/administrator/language/en-GB
 /administrator/language/en-GB/*
-!/administrator/language/en-GB/en-GB.com_ars.ini
+!/administrator/language/en-GB/en-GB.com_ars.*
 !/api
 !/api-docs
 /bin

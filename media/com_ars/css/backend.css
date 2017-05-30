@@ -1,6 +1,6 @@
 /*
 	Akeeba Release System User Interface CSS
-	Copyright (c)2010-2016 Nicholas K. Dionysopoulos <nicholas@dionysopoulos.me>
+	Copyright (c)2010-2017 Nicholas K. Dionysopoulos <nicholas@dionysopoulos.me>
 	Released under the GNU General Public License, version 3 or later
 	$Id$
 */
@@ -595,3 +595,8 @@ li.plupload_droptext {
 div#toolbar div#toolbar-back button.btn span.icon-back::before {
     content: "";
 }
+
+/**
+ * Joomla! 3.7 made success buttons fixed width.
+ */
+#toolbar .btn-success { width: auto !important; }

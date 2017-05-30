@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010-2016 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2017 Nicholas K. Dionysopoulos
  * @license   GNU General Public License version 3, or later
  */
 
@@ -43,7 +43,7 @@ echo $this->getRenderedForm();
 					'view':       'Ajax',
 					'format':     'raw',
 					'task':       'getFiles',
-					'<?php echo \JFactory::getSession()->getFormToken() ?>':   1,
+					'<?php echo $this->container->platform->getToken(true) ?>':   1,
 					'item_id':    itemID,
 					'release_id': releaseID,
 					'selected':   selected

@@ -9,7 +9,7 @@ defined('_JEXEC') or die;
 
 /** @var  \Akeeba\ReleaseSystem\Site\View\Items\Html  $this */
 
-$released   = \JFactory::getDate($this->release->created);
+$released   = $this->container->platform->getDate($this->release->created);
 
 // We only show the page heading for the menu item, not its children
 $isMenuItemView = isset($this->menu->query) && isset($this->menu->query['view']) && $this->menu->query['view'] == 'Categories' && $this->input->getString('view') == $this->menu->query['view'];
