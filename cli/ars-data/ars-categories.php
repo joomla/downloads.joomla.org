@@ -2061,4 +2061,24 @@ $categories = [
 		'vgroup_id'    => '4',
 		'is_supported' => '1',
 	],
+	// ID: 207
+	[
+		'title'        => 'Weblinks',
+		'alias'        => 'weblinks',
+		'description'  => '<p>Category containing all releases of the standalone Weblinks package.</p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/extensions/weblinks',
+		'vgroup_id'    => '5',
+		'is_supported' => '1',
+	],
+	// ID: 208
+	[
+		'title'        => 'Install from Web',
+		'alias'        => 'install-from-web',
+		'description'  => '<p>Category containing all releases of the Install from Web plugin.</p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/extensions/ifw',
+		'vgroup_id'    => '5',
+		'is_supported' => '1',
+	],
 ];

@@ -121,7 +121,12 @@ class ImportDownloads extends JApplicationCli
 			[
 				'title'       => 'Joomla! 3 Translations',
 				'description' => '<p>This group contains all Joomla! 3 Translation Categories</p>'
-			]
+			],
+			// ID: 5
+			[
+				'title'       => 'Joomla! Extensions',
+				'description' => '<p>This group contains all Joomla! Official Extensions</p>'
+			],
 		];
 
 		// Save our groups
@@ -132,6 +137,12 @@ class ImportDownloads extends JApplicationCli
 
 			/** @var \Akeeba\ReleaseSystem\Site\Model\VisualGroups $vgroupsModel */
 			$vgroupsModel = $this->container->factory->model('VisualGroups');
+
+			// Skip loading if it exists
+			if ($vgroupsModel->load(['title' => $vgroup['title']]))
+			{
+				continue;
+			}
 
 			try
 			{

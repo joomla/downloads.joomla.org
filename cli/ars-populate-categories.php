@@ -112,6 +112,12 @@ class ImportDownloads extends JApplicationCli
 			/** @var \Akeeba\ReleaseSystem\Site\Model\Categories $categoriesModel */
 			$categoriesModel = $this->container->factory->model('Categories');
 
+			// Skip loading if it exists
+			if ($categoriesModel->load(['title' => $category['title']]))
+			{
+				continue;
+			}
+
 			try
 			{
 				$categoriesModel->save($category);
