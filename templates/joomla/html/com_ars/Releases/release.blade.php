@@ -48,6 +48,7 @@ switch ($item->maturity)
 		break;
 }
 
+$extLangKey = 'ARS_EXTENSION_CATEGORY_' . strtoupper(str_replace([' ', '!'], '', $item->category->title)) . '_TITLE_VERSION';
 ?>
 
 <div class="ars-release-{{{ $item->id }}} well">
@@ -67,12 +68,12 @@ switch ($item->maturity)
 		@if(!$isMenuItemView)
 		<div class="page-header">
 			<h2>
-				{{ $item->category->title }} {{{ $item->version }}}
+				@sprintf($extLangKey, $item->version)
 			</h2>
 		</div>
 		@else
 			<h4>
-				{{ $item->category->title }} {{{ $item->version }}}
+				@sprintf($extLangKey, $item->version)
 			</h4>
 		@endif
 	@else
