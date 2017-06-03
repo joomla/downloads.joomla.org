@@ -39,7 +39,7 @@ require_once JPATH_CONFIGURATION . '/configuration.php';
 /**
  * ARS Data Importer
  *
- * This CLI script serves to batch import the weblinks release data into Akeeba Release System
+ * This CLI script serves to batch import Joomla's release data into Akeeba Release System
  *
  * @since  1.0
  */
@@ -100,33 +100,33 @@ class ImportDownloads extends JApplicationCli
 		// Get a user object for my account
 		$user = $this->platform->getUser('michael.babker');
 
-		/** @var array $releases */
-		require_once __DIR__ . '/ars-data/ars-weblinks-releases.php';
+		/** @var array $items */
+		require_once __DIR__ . '/ars-data/weblinks-items.php';
 
 		// Save our releases
-		foreach ($releases as $release)
+		foreach ($items as $item)
 		{
 			// Add additional data for the record
-			$release = array_merge($release, ['created_by' => $user->id]);
+			$item = array_merge($item, ['created_by' => $user->id]);
 
-			/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
-			$releasesModel = $this->container->factory->model('Releases');
+			/** @var \Akeeba\ReleaseSystem\Site\Model\Items $itemsModel */
+			$itemsModel = $this->container->factory->model('Items');
 
 			// Skip loading if it exists
-			if ($releasesModel->load(['category_id' => $release['category_id'], 'version' => $release['version']]))
+			if ($itemsModel->load(['title' => $item['title']]))
 			{
 				continue;
 			}
 
 			try
 			{
-				$releasesModel->save($release);
+				$itemsModel->save($item);
 
-				$this->out(sprintf('<info>Saved %s release</info>', $release['version']));
+				$this->out(sprintf('<info>Saved item "%s"</info>', $item['title']));
 			}
 			catch (Exception $e)
 			{
-				$this->out(sprintf('<error>Error saving %1$s release: %2$s</error>', $release['version'], $e->getMessage()));
+				$this->out(sprintf('<error>Error saving the "%1$s" item: %2$s</error>', $item['title'], $e->getMessage()));
 			}
 		}
 	}

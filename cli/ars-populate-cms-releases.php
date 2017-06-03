@@ -113,7 +113,7 @@ class ImportDownloads extends JApplicationCli
 			$releasesModel = $this->container->factory->model('Releases');
 
 			// Skip loading if it exists
-			if ($releasesModel->load(['version' => $release['version']]))
+			if ($releasesModel->load(['category_id' => $release['category_id'], 'version' => $release['version']]))
 			{
 				continue;
 			}
