@@ -57,7 +57,7 @@ $formattedDownloadCount = number_format($item->hits, 0, \JText::_('DECIMALS_SEPA
 ?>
 
 <div class="ars-item-{{{ $item->id }}} well">
-	@if($item->release->category->visualGroup->id == 1)
+	@if(in_array($item->release->category->visualGroup->id, [1, 5]))
 		@if(!$isMenuItemView)
 		<div class="page-header">
 			<h3 dir="ltr">

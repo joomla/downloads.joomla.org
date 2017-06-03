@@ -75,7 +75,7 @@ $released = $this->container->platform->getDate($item->created);
 		@endunless
 
 		@unless(!empty($item->announcement_url))
-			@if($item->category->visualGroup->id != 1)
+			@if($item->category->visualGroup->id != 1 && !empty($item->notes))
 			<dt>
 				@lang('COM_ARS_RELEASE_NOTES_LABEL')
 			</dt>
