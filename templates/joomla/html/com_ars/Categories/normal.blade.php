@@ -22,6 +22,8 @@ defined('_JEXEC') or die;
 				?>
 				@if($this->menu->query['vgroupid'] == 1)
 					@include('site:com_ars/Categories/genericcms', ['section' => 'normal', 'title' => ''])
+				@else
+					@include('site:com_ars/Categories/generic', ['section' => 'normal', 'title' => ''])
 				@endif
 			@else
 				@include('site:com_ars/Categories/generic', ['section' => 'normal', 'title' => ''])

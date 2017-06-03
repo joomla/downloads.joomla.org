@@ -63,6 +63,18 @@ switch ($item->maturity)
 				Joomla! {{{ $item->version }}}
 			</h4>
 		@endif
+	@elseif($item->category->visualGroup->id == 5)
+		@if(!$isMenuItemView)
+		<div class="page-header">
+			<h2>
+				Weblinks {{{ $item->version }}}
+			</h2>
+		</div>
+		@else
+			<h4>
+				Weblinks {{{ $item->version }}}
+			</h4>
+		@endif
 	@else
 		<h4>
 			<a href="{{ htmlentities($release_url) }}">

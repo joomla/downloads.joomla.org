@@ -9,7 +9,7 @@ use Akeeba\ReleaseSystem\Site\Helper\Router;
 use Akeeba\ReleaseSystem\Admin\Helper\Format;
 ?>
 <div class="ars-category-{{{ $id }}} <?php echo $item->is_supported ? 'supported' : 'unsupported'; ?>">
-	@if($item->visualGroup->id == 1)
+	@if(in_array($item->visualGroup->id, [1, 5]))
 		@if(!$isMenuItemView)
 		<div class="page-header">
 			<h1>
