@@ -67,12 +67,12 @@ switch ($item->maturity)
 		@if(!$isMenuItemView)
 		<div class="page-header">
 			<h2>
-				Weblinks {{{ $item->version }}}
+				{{ $item->category->title }} {{{ $item->version }}}
 			</h2>
 		</div>
 		@else
 			<h4>
-				Weblinks {{{ $item->version }}}
+				{{ $item->category->title }} {{{ $item->version }}}
 			</h4>
 		@endif
 	@else

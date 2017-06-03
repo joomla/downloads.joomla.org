@@ -31,6 +31,18 @@ $released = $this->container->platform->getDate($item->created);
 				Joomla! {{{ $item->version }}}
 			</h4>
 		@endif
+	@elseif($item->category->visualGroup->id == 5)
+		@if(!$isMenuItemView)
+		<div class="page-header">
+			<h1>
+				{{ $item->category->title }} {{{ $item->version }}}
+			</h1>
+		</div>
+		@else
+			<h4 class="text-muted">
+				{{ $item->category->title }} {{{ $item->version }}}
+			</h4>
+		@endif
 	@else
 		<h4 class="text-muted">
 			{{{ $item->category->title }}}
