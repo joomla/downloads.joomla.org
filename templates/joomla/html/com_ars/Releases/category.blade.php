@@ -7,9 +7,11 @@ defined('_JEXEC') or die;
 use Akeeba\ReleaseSystem\Site\Helper\Filter;
 use Akeeba\ReleaseSystem\Site\Helper\Router;
 use Akeeba\ReleaseSystem\Admin\Helper\Format;
+
+$extLangKey = 'ARS_EXTENSION_CATEGORY_' . strtoupper(str_replace([' ', '!'], '', $item->title)) . '_TITLE';
 ?>
 <div class="ars-category-{{{ $id }}} <?php echo $item->is_supported ? 'supported' : 'unsupported'; ?>">
-	@if(in_array($item->visualGroup->id, [1, 5]))
+	@if($item->visualGroup->id == 1)
 		@if(!$isMenuItemView)
 		<div class="page-header">
 			<h1>
@@ -19,6 +21,18 @@ use Akeeba\ReleaseSystem\Admin\Helper\Format;
 		@else
 			<h4 class="text-muted">
 				{{{ $item->title }}}
+			</h4>
+		@endif
+	@elseif($item->visualGroup->id == 5)
+		@if(!$isMenuItemView)
+		<div class="page-header">
+			<h1>
+				@lang($extLangKey)
+			</h1>
+		</div>
+		@else
+			<h4 class="text-muted">
+				@lang($extLangKey)
 			</h4>
 		@endif
 	@else

@@ -16,10 +16,11 @@ if (!Filter::filterItem($item, false, $this->getContainer()->platform->getUser()
 }
 
 $langKey = 'ARS_EXTENSION_CATEGORY_' . strtoupper(str_replace([' ', '!'], '', $item->title));
+$extLangKey = 'ARS_EXTENSION_CATEGORY_' . strtoupper(str_replace([' ', '!'], '', $item->title)) . '_TITLE';
 ?>
 <div class="ars-category-{{{ $id }}} well <?php echo $item->is_supported ? 'supported' : 'unsupported'; ?>">
 	<h3{{ $item->type == 'bleedingedge' ? ' class="warning"' : '' }}>
-		{{{ $item->title }}}
+		@lang($extLangKey)
 	</h3>
 
 	@unless(empty($item->description))
