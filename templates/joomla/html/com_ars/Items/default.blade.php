@@ -66,7 +66,6 @@ if (!$isMenuItemView)
 			@if($this->release->category->visualGroup->id == 1)
 				<h2>@lang('ARS_CMS_FULL_DOWNLOADS')</h2>
 				<p class="lead">@lang('ARS_CMS_FULL_DOWNLOADS_LEAD')</p>
-				<div class="row-fluid">
 				@foreach($this->items->filter(function ($item)
 				{
 					if (strpos($item->title, 'Full Package') !== false)
@@ -74,11 +73,8 @@ if (!$isMenuItemView)
 						return \Akeeba\ReleaseSystem\Site\Helper\Filter::filterItem($item, true);
 					}
 				}) as $item)
-					<div class="span4">
 					@include('site:com_ars/Items/item', ['item' => $item, 'Itemid' => $this->Itemid, 'isMenuItemView' => $isMenuItemView])
-					</div>
 				@endforeach
-				</div>
 				<h2>@lang('ARS_CMS_UPDATE_DOWNLOADS')</h2>
 				<p class="lead">@lang('ARS_CMS_UPDATE_DOWNLOADS_LEAD')</p>
 				@foreach($this->items->filter(function ($item)
