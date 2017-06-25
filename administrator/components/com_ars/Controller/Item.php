@@ -27,6 +27,22 @@ class Item extends DataController
 
 	protected function onBeforeApplySave(&$data)
 	{
+		if ($data['release_id'])
+		{
+			/** @var \Akeeba\ReleaseSystem\Admin\Model\Releases $releasesModel */
+			$releasesModel = $this->getModel('Releases');
+			$releasesModel->load($data['release_id']);
+
+			$permission = $data['id'] ? 'core.edit' : 'core.create';
+
+			if (!$this->container->platform->getUser()->authorise($permission, $this->container->componentName . '.category.' . $releasesModel->category_id))
+			{
+				$message = $data['id'] ? 'JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED' : 'JLIB_APPLICATION_ERROR_EDIT_NOT_PERMITTED';
+
+				throw new \RuntimeException(\JText::_($message), 403);
+			}
+		}
+
 		// When you deselect all items Chosen doesn't return any items in the request :(
 		if (!isset($data['groups']))
 		{

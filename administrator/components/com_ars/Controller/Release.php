@@ -17,6 +17,18 @@ class Release extends DataController
 {
 	protected function onBeforeApplySave(&$data)
 	{
+		if ($data['category_id'])
+		{
+			$permission = $data['id'] ? 'core.edit' : 'core.create';
+
+			if (!$this->container->platform->getUser()->authorise($permission, $this->container->componentName . '.category.' . $data['category_id']))
+			{
+				$message = $data['id'] ? 'JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED' : 'JLIB_APPLICATION_ERROR_EDIT_NOT_PERMITTED';
+
+				throw new \RuntimeException(\JText::_($message), 403);
+			}
+		}
+
 		// When you deselect all items Chosen doesn't return any items in the request :(
 		if (!isset($data['groups']))
 		{
