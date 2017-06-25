@@ -54,27 +54,4 @@ class Category extends DataController
 			}
 		}
 	}
-
-	protected function onBeforeEdit()
-	{
-		/** @var \Akeeba\ReleaseSystem\Admin\Model\Items $model */
-		$model = $this->getModel()->savestate(false);
-
-		// If there is no record loaded, try loading a record based on the id passed in the input object
-		if (!$model->getId())
-		{
-			$ids = $this->getIDsFromRequest($model, true);
-
-			if ($model->getId() != reset($ids))
-			{
-				$key = strtoupper($this->container->componentName . '_ERR_' . $model->getName() . '_NOTFOUND');
-				throw new ItemNotFound(\JText::_($key), 404);
-			}
-		}
-
-		if (!$this->container->platform->getUser()->authorise('core.edit', $this->container->componentName . '.category.' . $model->id))
-		{
-			throw new \RuntimeException(\JText::_('JLIB_APPLICATION_ERROR_ACCESS_FORBIDDEN'), 403);
-		}
-	}
 }
