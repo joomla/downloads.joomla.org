@@ -71,5 +71,11 @@
 			   section="category"
 				/>
 
+		<field
+			name="asset_id"
+			type="Hidden"
+			filter="unset"
+		/>
+
 	</fieldset>
 </form>
