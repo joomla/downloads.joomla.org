@@ -20,13 +20,21 @@ if (!$isMenuItemView)
 
 	$sitename = $app->get('sitename');
 
-	$title       = '';
-	$description = '';
+	$title       = $this->menu->getParams()->get('page_title', $this->menu->title);
+	$description = $this->menu->getParams()->get('menu-meta_description', '');
 
 	if ($this->release->category->visualGroup->id == 1)
 	{
 		$title       = \JText::sprintf('ARS_CMS_RELEASE_BROWSER_TITLE', $this->release->version);
 		$description = \JText::sprintf('ARS_CMS_RELEASE_BROWSER_DESCRIPTION', $this->release->version);
+	}
+	elseif ($this->release->category->visualGroup->id == 5)
+	{
+		$titleLangKey = 'ARS_EXTENSIONS_RELEASE_BROWSER_TITLE_' . strtoupper(str_replace([' ', '!'], '', $this->release->category->title));
+		$descLangKey  = 'ARS_EXTENSIONS_RELEASE_BROWSER_DESCRIPTION_' . strtoupper(str_replace([' ', '!'], '', $this->release->category->title));
+
+		$title       = \JText::sprintf($titleLangKey, $this->release->version);
+		$description = \JText::sprintf($descLangKey, $this->release->version);
 	}
 
 	if ($app->get('sitename_pagetitles', 0) == 1)
