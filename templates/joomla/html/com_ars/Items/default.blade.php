@@ -16,7 +16,8 @@ $isMenuItemView = isset($this->menu->query) && isset($this->menu->query['view'])
 
 if (!$isMenuItemView)
 {
-	$app = \JFactory::getApplication();
+	$app  = \JFactory::getApplication();
+	$lang = \JFactory::getLanguage();
 
 	$sitename = $app->get('sitename');
 
