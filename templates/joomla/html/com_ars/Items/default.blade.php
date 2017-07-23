@@ -61,7 +61,7 @@ if (!$isMenuItemView)
 
 	@include('site:com_ars/Items/release', ['id' => $this->release->id, 'item' => $this->release, 'Itemid' => $this->Itemid, 'no_link' => true, 'isMenuItemView' => $isMenuItemView])
 
-	<div class="ars-items <?php echo $this->release->category->is_supported ? 'supported' : 'unsupported'; ?>">
+	<div class="ars-items ars-items-{{ $this->release->category->is_supported ? 'supported' : 'unsupported' }}">
 		@if(count($this->items))
 			@if($this->release->category->visualGroup->id == 1)
 				<h2>@lang('ARS_CMS_FULL_DOWNLOADS')</h2>

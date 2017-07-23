@@ -17,7 +17,7 @@ if (!Filter::filterItem($item, false, $this->getContainer()->platform->getUser()
 
 $langKey = 'ARS_CMS_CATEGORY_' . strtoupper(str_replace([' ', '!'], '', $item->title));
 ?>
-<div class="ars-category-{{{ $id }}} well <?php echo $item->is_supported ? 'supported' : 'unsupported'; ?>">
+<div class="ars-category-{{{ $id }}} well ars-category-{{ $item->is_supported ? 'supported' : 'unsupported' }}">
 	<h3{{ $item->type == 'bleedingedge' ? ' class="warning"' : '' }}>
 		{{{ $item->title }}}
 	</h3>

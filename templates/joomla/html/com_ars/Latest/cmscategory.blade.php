@@ -56,7 +56,7 @@ switch ($release->maturity)
 
 ?>
 
-<div class="ars-category-{{{ $item->id }}} <?php echo $item->is_supported ? 'supported' : 'unsupported'; ?>">
+<div class="ars-category-{{{ $item->id }}} ars-category-{{ $item->is_supported ? 'supported' : 'unsupported' }}">
 	<h2{{ $item->type == 'bleedingedge' ? ' class="warning"' : '' }}>
 		@unless($view == 'latest')
 			<span class="label {{{ $maturityClass }}} pull-right">

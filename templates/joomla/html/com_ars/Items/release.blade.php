@@ -18,7 +18,7 @@ $released = $this->container->platform->getDate($item->created);
 
 ?>
 
-<div class="ars-release-{{{ $item->id }}} well <?php echo $item->category->is_supported ? 'supported' : 'unsupported'; ?>">
+<div class="ars-release-{{{ $item->id }}} well ars-release-{{ $this->release->category->is_supported ? 'supported' : 'unsupported' }}">
 	@if($item->category->visualGroup->id == 1)
 		@if(!$isMenuItemView)
 		<div class="page-header">

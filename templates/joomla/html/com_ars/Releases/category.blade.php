@@ -10,7 +10,7 @@ use Akeeba\ReleaseSystem\Admin\Helper\Format;
 
 $extLangKey = 'ARS_EXTENSION_CATEGORY_' . strtoupper(str_replace([' ', '!'], '', $item->title)) . '_TITLE';
 ?>
-<div class="ars-category-{{{ $id }}} <?php echo $item->is_supported ? 'supported' : 'unsupported'; ?>">
+<div class="ars-category-{{{ $id }}} ars-category-{{ $item->is_supported ? 'supported' : 'unsupported' }}">
 	@if($item->visualGroup->id == 1)
 		@if(!$isMenuItemView)
 		<div class="page-header">
