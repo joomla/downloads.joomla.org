@@ -14,7 +14,8 @@ $isMenuItemView = isset($this->menu->query) && isset($this->menu->query['view'])
 
 if (!$isMenuItemView)
 {
-	$app = \JFactory::getApplication();
+	$app  = \JFactory::getApplication();
+	$lang = \JFactory::getLanguage();
 
 	$sitename = $app->get('sitename');
 
@@ -25,15 +26,31 @@ if (!$isMenuItemView)
 	{
 		$titleLangKey = 'ARS_CMS_RELEASES_BROWSER_TITLE_' . strtoupper(str_replace([' ', '!'], '', $this->category->title));
 		$descLangKey  = 'ARS_CMS_RELEASES_BROWSER_DESCRIPTION_' . strtoupper(str_replace([' ', '!'], '', $this->category->title));
-		$title        = \JText::_($titleLangKey);
-		$description  = \JText::_($descLangKey);
+
+		if ($lang->hasKey($titleLangKey))
+		{
+			$title = \JText::_($titleLangKey);
+		}
+
+		if ($lang->hasKey($descLangKey))
+		{
+			$description = \JText::_($descLangKey);
+		}
 	}
 	elseif ($this->category->visualGroup->id == 5)
 	{
 		$titleLangKey = 'ARS_EXTENSIONS_RELEASES_BROWSER_TITLE_' . strtoupper(str_replace([' ', '!'], '', $this->category->title));
 		$descLangKey  = 'ARS_EXTENSIONS_RELEASES_BROWSER_DESCRIPTION_' . strtoupper(str_replace([' ', '!'], '', $this->category->title));
-		$title        = \JText::_($titleLangKey);
-		$description  = \JText::_($descLangKey);
+
+		if ($lang->hasKey($titleLangKey))
+		{
+			$title = \JText::_($titleLangKey);
+		}
+
+		if ($lang->hasKey($descLangKey))
+		{
+			$description = \JText::_($descLangKey);
+		}
 	}
 
 	if ($app->get('sitename_pagetitles', 0) == 1)
