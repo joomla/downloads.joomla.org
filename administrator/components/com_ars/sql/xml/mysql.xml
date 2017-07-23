@@ -42,6 +42,7 @@ CREATE TABLE `#__ars_vgroups` (
             <query><![CDATA[
 CREATE TABLE `#__ars_categories` (
     `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `asset_id` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.'
     `title` varchar(255) NOT NULL,
     `alias` varchar(255) NOT NULL,
     `description` mediumtext,
@@ -440,6 +441,14 @@ ALTER TABLE `#__ars_categories` ADD COLUMN `is_supported` TINYINT NOT NULL DEFAU
             <condition type="missing" value="announcement_url" />
             <query><![CDATA[
 ALTER TABLE `#__ars_releases` ADD COLUMN `announcement_url` VARCHAR(2048) NOT NULL DEFAULT '' AFTER `language`;
+            ]]></query>
+        </action>
+
+        <!-- Joomla Customization - ACL support -->
+        <action table="#__ars_categories" canfail="0">
+            <condition type="missing" value="asset_id" />
+            <query><![CDATA[
+ALTER TABLE `#__ars_categories` ADD COLUMN `asset_id` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.' AFTER `id`;
             ]]></query>
         </action>
 
