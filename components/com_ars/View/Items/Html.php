@@ -16,7 +16,7 @@ use Akeeba\ReleaseSystem\Site\Model\Categories;
 use Akeeba\ReleaseSystem\Site\Model\Releases;
 use Akeeba\ReleaseSystem\Site\Model\Items;
 use FOF30\Model\DataModel\Collection;
-use FOF30\View\View as BaseView;
+use FOF30\View\DataView\Html as BaseView;
 
 class Html extends BaseView
 {
