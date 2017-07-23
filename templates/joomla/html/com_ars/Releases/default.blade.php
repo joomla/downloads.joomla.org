@@ -28,6 +28,13 @@ if (!$isMenuItemView)
 		$title        = \JText::_($titleLangKey);
 		$description  = \JText::_($descLangKey);
 	}
+	elseif ($this->category->visualGroup->id == 5)
+	{
+		$titleLangKey = 'ARS_EXTENSIONS_RELEASES_BROWSER_TITLE_' . strtoupper(str_replace([' ', '!'], '', $this->category->title));
+		$descLangKey  = 'ARS_EXTENSIONS_RELEASES_BROWSER_DESCRIPTION_' . strtoupper(str_replace([' ', '!'], '', $this->category->title));
+		$title        = \JText::_($titleLangKey);
+		$description  = \JText::_($descLangKey);
+	}
 
 	if ($app->get('sitename_pagetitles', 0) == 1)
 	{
