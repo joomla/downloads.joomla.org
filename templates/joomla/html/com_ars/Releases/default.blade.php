@@ -18,8 +18,8 @@ if (!$isMenuItemView)
 
 	$sitename = $app->get('sitename');
 
-	$title       = '';
-	$description = '';
+	$title       = $this->menu->getParams()->get('page_title', $this->menu->title);
+	$description = $this->menu->getParams()->get('menu-meta_description', '');
 
 	if ($this->category->visualGroup->id == 1)
 	{
