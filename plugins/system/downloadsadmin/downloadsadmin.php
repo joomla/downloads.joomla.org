@@ -94,6 +94,26 @@ class PlgSystemDownloadsAdmin extends JPlugin
 				),
 				'icon'  => 'download',
 			],
+			[
+				'title' => JText::_('PLG_SYSTEM_DOWNLOADSADMIN_IFW_DOWNLOAD_COUNT'),
+				'data'  => number_format(
+					\Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory(208),
+					0,
+					JText::_('DECIMALS_SEPARATOR'),
+					JText::_('THOUSANDS_SEPARATOR')
+				),
+				'icon'  => 'download',
+			],
+			[
+				'title' => JText::_('PLG_SYSTEM_DOWNLOADSADMIN_WEBLINKS_DOWNLOAD_COUNT'),
+				'data'  => number_format(
+					\Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory(207),
+					0,
+					JText::_('DECIMALS_SEPARATOR'),
+					JText::_('THOUSANDS_SEPARATOR')
+				),
+				'icon'  => 'download',
+			],
 		];
 	}
 
