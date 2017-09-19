@@ -8,6 +8,9 @@
 
 defined('_JEXEC') or die;
 
+use Akeeba\ReleaseSystem\Site\Helper\DownloadCounter;
+use FOF30\Container\Container;
+
 /**
  * Controller processing requests for the total downloads count
  *
@@ -25,16 +28,16 @@ class ApiControllerBreakdownMajor extends JControllerBase
 	public function execute()
 	{
 		// This will autoload the ARS files
-		FOF30\Container\Container::getInstance('com_ars');
+		Container::getInstance('com_ars');
 
 		// Now get the totals
 		$item = [
-			'total'    => Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForVgroup(1),
+			'total'    => DownloadCounter::getCountForVgroup(1),
 			'branches' => [
-				(object) ['version' => '1.0', 'count' => Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory(1)],
-				(object) ['version' => '1.5', 'count' => Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory(2)],
-				(object) ['version' => '2.5', 'count' => Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory(3)],
-				(object) ['version' => '3.0', 'count' => Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory(4)],
+				(object) ['version' => '1.0', 'count' => DownloadCounter::getCountForCategory(1)],
+				(object) ['version' => '1.5', 'count' => DownloadCounter::getCountForCategory(2)],
+				(object) ['version' => '2.5', 'count' => DownloadCounter::getCountForCategory(3)],
+				(object) ['version' => '3.0', 'count' => DownloadCounter::getCountForCategory(4)],
 			],
 		];
 

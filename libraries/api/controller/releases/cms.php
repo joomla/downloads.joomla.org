@@ -8,6 +8,9 @@
 
 defined('_JEXEC') or die;
 
+use FOF30\Container\Container;
+use Joomla\CMS\Uri\Uri;
+
 /**
  * Controller processing requests for the CMS release list
  *
@@ -25,7 +28,7 @@ class ApiControllerReleasesCms extends JControllerBase
 	public function execute()
 	{
 		// This will autoload the ARS files
-		$container = FOF30\Container\Container::getInstance('com_ars');
+		$container = Container::getInstance('com_ars');
 
 		/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
 		$releasesModel = $container->factory->model('Releases');
@@ -41,7 +44,7 @@ class ApiControllerReleasesCms extends JControllerBase
 		$releaseList = [];
 
 		// Prepare signature link
-		$signatureLink = JUri::base() . "v1/signatures/cms/%s";
+		$signatureLink = Uri::base() . "v1/signatures/cms/%s";
 
 		// Process release list
 		if ($releases->count())

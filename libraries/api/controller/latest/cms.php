@@ -8,6 +8,9 @@
 
 defined('_JEXEC') or die;
 
+use Akeeba\ReleaseSystem\Site\Helper\Filter;
+use FOF30\Container\Container;
+
 /**
  * Controller processing requests for the latest CMS versions on each branch
  *
@@ -25,7 +28,7 @@ class ApiControllerLatestCms extends JControllerBase
 	public function execute()
 	{
 		// This will autoload the ARS files
-		$container = FOF30\Container\Container::getInstance('com_ars');
+		$container = Container::getInstance('com_ars');
 
 		/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
 		$releasesModel = $container->factory->model('Releases');
@@ -50,7 +53,7 @@ class ApiControllerLatestCms extends JControllerBase
 		// Assign data to the view, part 1 (we need this later on)
 		$categories = $categoriesModel->get(true)->filter(function ($item)
 		{
-			return \Akeeba\ReleaseSystem\Site\Helper\Filter::filterItem($item, true);
+			return Filter::filterItem($item, true);
 		});
 
 		$releases = $releasesModel->get(true);

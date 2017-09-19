@@ -1,12 +1,14 @@
 <?php
 /**
- * Joomla! API Application
+ * Joomla! Downloads API Application
  *
- * @copyright  Copyright (C) 2016 Michael Babker. All rights reserved.
+ * @copyright  Copyright (C) 2016 Open Source Matters, Inc. All rights reserved.
  * @license    http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License Version 2 or Later
  */
 
 defined('_JEXEC') or die;
+
+use Joomla\CMS\Factory;
 
 /**
  * Class to handle application errors
@@ -31,7 +33,7 @@ class ApiError
 			case E_NOTICE:
 			case E_WARNING:
 				$type = E_NOTICE ? 'info' : 'warning';
-				JFactory::getApplication()->enqueueMessage($error->getMessage(), $type);
+				Factory::getApplication()->enqueueMessage($error->getMessage(), $type);
 
 				break;
 
@@ -62,7 +64,7 @@ class ApiError
 			);
 		}
 
-		$app = JFactory::getApplication();
+		$app = Factory::getApplication();
 
 		// Set the status header
 		$status = $throwable->getCode();

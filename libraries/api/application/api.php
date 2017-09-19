@@ -8,6 +8,15 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\Application\Web\WebClient;
+use Joomla\CMS\Application\CMSApplication;
+use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Date\Date;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Input\Input;
+use Joomla\CMS\Language\Language;
+use Joomla\CMS\Language\LanguageHelper;
+use Joomla\CMS\Uri\Uri;
 use Joomla\Registry\Registry;
 
 /**
@@ -15,7 +24,7 @@ use Joomla\Registry\Registry;
  *
  * @since  1.0
  */
-final class JApplicationApi extends JApplicationCms
+final class JApplicationApi extends CMSApplication
 {
 	/**
 	 * The client identifier.
@@ -44,7 +53,7 @@ final class JApplicationApi extends JApplicationCms
 	/**
 	 * The name of the application.
 	 *
-	 * @var    array
+	 * @var    string
 	 * @since  1.0
 	 */
 	protected $name = 'api';
@@ -60,25 +69,25 @@ final class JApplicationApi extends JApplicationCms
 	/**
 	 * Class constructor.
 	 *
-	 * @param   JInput                 $input   An optional argument to provide dependency injection for the application's
-	 *                                          input object.  If the argument is a JInput object that object will become
-	 *                                          the application's input object, otherwise a default input object is created.
-	 * @param   Registry               $config  An optional argument to provide dependency injection for the application's
-	 *                                          config object.  If the argument is a Registry object that object will become
-	 *                                          the application's config object, otherwise a default config object is created.
-	 * @param   JApplicationWebClient  $client  An optional argument to provide dependency injection for the application's
-	 *                                          client object.  If the argument is a JApplicationWebClient object that object will become
-	 *                                          the application's client object, otherwise a default client object is created.
+	 * @param   Input      $input   An optional argument to provide dependency injection for the application's
+	 *                              input object.  If the argument is a Input object that object will become
+	 *                              the application's input object, otherwise a default input object is created.
+	 * @param   Registry   $config  An optional argument to provide dependency injection for the application's
+	 *                              config object.  If the argument is a Registry object that object will become
+	 *                              the application's config object, otherwise a default config object is created.
+	 * @param   WebClient  $client  An optional argument to provide dependency injection for the application's
+	 *                              client object.  If the argument is a JApplicationWebClient object that object will become
+	 *                              the application's client object, otherwise a default client object is created.
 	 *
 	 * @since   1.0
 	 */
-	public function __construct(JInput $input = null, Registry $config = null, JApplicationWebClient $client = null)
+	public function __construct(Input $input = null, Registry $config = null, WebClient $client = null)
 	{
 		// Execute the parent constructor
 		parent::__construct($input, $config, $client);
 
 		// Set the root in the URI based on the application name
-		JUri::root(null, str_ireplace('/' . $this->getName(), '', JUri::base(true)));
+		Uri::root(null, str_ireplace('/' . $this->getName(), '', Uri::base(true)));
 
 		// Create the application router
 		$this->router = new ApiRouter($this, $this->input);
@@ -144,8 +153,8 @@ final class JApplicationApi extends JApplicationCms
 		// Load the document to the API
 		$this->loadDocument();
 
-		// Register the document object with JFactory
-		JFactory::$document = $this->getDocument();
+		// Register the document object with Factory
+		Factory::$document = $this->getDocument();
 
 		// Define component paths for application compatibility.
 		if (!defined('JPATH_COMPONENT'))
@@ -273,7 +282,7 @@ final class JApplicationApi extends JApplicationCms
 			}
 
 			// Get new instance of component global parameters
-			$params[$hash] = clone JComponentHelper::getParams($option);
+			$params[$hash] = clone ComponentHelper::getParams($option);
 
 			// Get menu parameters
 			$menus = $this->getMenu();
@@ -281,7 +290,7 @@ final class JApplicationApi extends JApplicationCms
 
 			// Get language
 			$lang_code = $this->getLanguage()->getTag();
-			$languages = JLanguageHelper::getLanguages('lang_code');
+			$languages = LanguageHelper::getLanguages('lang_code');
 
 			$title = $this->get('sitename');
 
@@ -298,7 +307,7 @@ final class JApplicationApi extends JApplicationCms
 			$robots = $this->get('robots');
 
 			// Retrieve com_menu global settings
-			$temp = clone JComponentHelper::getParams('com_menus');
+			$temp = clone ComponentHelper::getParams('com_menus');
 
 			// Lets cascade the parameters if we have menu item parameters
 			if (is_object($menu))
@@ -360,7 +369,7 @@ final class JApplicationApi extends JApplicationCms
 	 */
 	public static function getRouter($name = 'site', array $options = array())
 	{
-		$options['mode'] = JFactory::getConfig()->get('sef');
+		$options['mode'] = Factory::getConfig()->get('sef');
 
 		return parent::getRouter($name, $options);
 	}
@@ -392,16 +401,16 @@ final class JApplicationApi extends JApplicationCms
 	protected function initialiseApp($options = array())
 	{
 		// Build our language object
-		$lang = JLanguage::getInstance($this->get('language'), $this->get('debug_lang'));
+		$lang = Language::getInstance($this->get('language'), $this->get('debug_lang'));
 
-		// Load the frontend's language strings (not loaded here since JLanguage uses JPATH_BASE as the default parameter)
+		// Load the frontend's language strings (not loaded here since Language uses JPATH_BASE as the default parameter)
 		$lang->load('joomla', JPATH_SITE, null, false, true);
 
 		// Load the language to the API
 		$this->loadLanguage($lang);
 
-		// Register the language object with JFactory
-		JFactory::$language = $this->getLanguage();
+		// Register the language object with Factory
+		Factory::$language = $this->getLanguage();
 
 		/*
 		 * Try the lib_joomla file in the current language (without allowing the loading of the file in the default language)
@@ -460,7 +469,7 @@ final class JApplicationApi extends JApplicationCms
 			$this->setHeader('Expires', gmdate('D, d M Y H:i:s', time() + 900) . ' GMT');
 
 			// Last modified.
-			if ($this->modifiedDate instanceof JDate)
+			if ($this->modifiedDate instanceof Date)
 			{
 				$this->setHeader('Last-Modified', $this->modifiedDate->format('D, d M Y H:i:s'));
 			}

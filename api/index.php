@@ -61,4 +61,4 @@ require_once JPATH_BASE . '/includes/framework.php';
 JDEBUG ? $_PROFILER->setStart($startTime, $startMem)->mark('afterLoad') : null;
 
 // Instantiate and execute the application.
-JFactory::getApplication('api')->execute();
+Joomla\CMS\Factory::getApplication('api')->execute();

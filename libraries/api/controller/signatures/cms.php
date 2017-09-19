@@ -8,6 +8,8 @@
 
 defined('_JEXEC') or die;
 
+use FOF30\Container\Container;
+
 /**
  * Controller processing requests for the hash signatures for a CMS release
  *
@@ -26,7 +28,7 @@ class ApiControllerSignaturesCms extends JControllerBase
 	public function execute()
 	{
 		// This will autoload the ARS files
-		$container = FOF30\Container\Container::getInstance('com_ars');
+		$container = Container::getInstance('com_ars');
 
 		$version = $this->getInput()->getString('version');
 

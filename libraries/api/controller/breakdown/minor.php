@@ -8,6 +8,9 @@
 
 defined('_JEXEC') or die;
 
+use Akeeba\ReleaseSystem\Site\Helper\DownloadCounter;
+use FOF30\Container\Container;
+
 /**
  * Controller processing requests for the total downloads count for a Joomla release branch
  *
@@ -26,7 +29,7 @@ class ApiControllerBreakdownMinor extends JControllerBase
 	public function execute()
 	{
 		// This will autoload the ARS files
-		$container = FOF30\Container\Container::getInstance('com_ars');
+		$container = Container::getInstance('com_ars');
 
 		$mapping = [
 			10 => 1,
@@ -44,7 +47,7 @@ class ApiControllerBreakdownMinor extends JControllerBase
 
 		$categoryId = $mapping[$majorVersion];
 
-		$categoryTotal = Akeeba\ReleaseSystem\Site\Helper\DownloadCounter::getCountForCategory($categoryId);
+		$categoryTotal = DownloadCounter::getCountForCategory($categoryId);
 
 		/** @var \Akeeba\ReleaseSystem\Site\Model\Categories $categoriesModel */
 		$categoriesModel = $container->factory->model('Categories');

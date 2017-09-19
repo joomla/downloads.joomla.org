@@ -40,9 +40,9 @@ restore_exception_handler();
 set_exception_handler(array('ApiError', 'handleUncaughtThrowable'));
 
 // Register the application client
-JApplicationHelper::addClientInfo((object) array('id' => 3, 'name' => 'api', 'path' => JPATH_BASE));
+Joomla\CMS\Application\ApplicationHelper::addClientInfo((object) array('id' => 3, 'name' => 'api', 'path' => JPATH_BASE));
 
-$version = new JVersion;
+$version = new Joomla\CMS\Version;
 
 // Installation check, and check on removal of the install directory.
 if (!file_exists(JPATH_CONFIGURATION . '/configuration.php')
@@ -109,5 +109,5 @@ unset($config);
 // System profiler
 if (JDEBUG)
 {
-	$_PROFILER = JProfiler::getInstance('Application');
+	$_PROFILER = Joomla\CMS\Profiler\Profiler::getInstance('Application');
 }
