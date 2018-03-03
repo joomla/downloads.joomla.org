@@ -1448,6 +1448,12 @@ function arsParseRouteHtml(&$segments)
 
 			if (empty($rel))
 			{
+				// Joomla hack - We aren't using the repository view for the CMS section
+				if (isset($menu->query['vgroupid']) && $menu->query['vgroupid'] == '1')
+				{
+					throw new InvalidArgumentException('Release not found', 404);
+				}
+
 				$query['view'] = 'Categories';
 				$query['layout'] = 'repository';
 			}
@@ -1470,6 +1476,12 @@ function arsParseRouteHtml(&$segments)
 
 			if (empty($cat))
 			{
+				// Joomla hack - We aren't using the repository view for the CMS section
+				if (isset($menu->query['vgroupid']) && $menu->query['vgroupid'] == '1')
+				{
+					throw new InvalidArgumentException('Category not found', 404);
+				}
+
 				$query['view'] = 'Categories';
 				$query['layout'] = 'repository';
 			}
@@ -1562,7 +1574,8 @@ function arsParseRouteRaw(&$segments)
 						  $db->qn('r') . '.' . $db->qn('id') . '=' . $db->qn('i') . '.' . $db->qn('release_id') . ')')
 					  ->innerJoin($db->qn('#__ars_categories') . ' AS ' . $db->qn('c') . ' ON(' .
 						  $db->qn('c') . '.' . $db->qn('id') . '=' . $db->qn('r') . '.' . $db->qn('category_id') . ')')
-					  ->where($db->qn('i') . '.' . $db->qn('alias') . ' = ' . $db->q($itemalias))
+					  // Joomla Hack - Allow to be routed by an item's alias or filename
+					  ->where('(' . $db->qn('i.alias') . ' = ' . $db->q($itemalias) . 'OR ' . $db->qn('i.filename') . ' = ' . $db->q($itemalias) . ')')
 					  ->where($db->qn('r') . '.' . $db->qn('alias') . ' = ' . $db->q($relalias))
 					  ->where($db->qn('c') . '.' . $db->qn('alias') . ' = ' . $db->q($catalias));
 
@@ -1634,7 +1647,8 @@ function arsParseRouteRaw(&$segments)
 						  $db->qn('r') . '.' . $db->qn('id') . '=' . $db->qn('i') . '.' . $db->qn('release_id') . ')')
 					  ->innerJoin($db->qn('#__ars_categories') . ' AS ' . $db->qn('c') . ' ON(' .
 						  $db->qn('c') . '.' . $db->qn('id') . '=' . $db->qn('r') . '.' . $db->qn('category_id') . ')')
-					  ->where($db->qn('i') . '.' . $db->qn('alias') . ' = ' . $db->q($itemalias));
+					  // Joomla Hack - Allow to be routed by an item's alias or filename
+					  ->where('(' . $db->qn('i.alias') . ' = ' . $db->q($itemalias) . 'OR ' . $db->qn('i.filename') . ' = ' . $db->q($itemalias) . ')');
 
 		if (!empty($relalias))
 		{
