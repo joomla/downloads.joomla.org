@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -315,6 +315,6 @@ class AmazonS3 extends \JObject
 	 */
 	public function getAuthenticatedURL($path)
 	{
-		return $this->s3Client->getAuthenticatedURL(self::$bucket, $path, self::$timeForSignedRequests, true);
+		return $this->s3Client->getAuthenticatedURL(self::$bucket, $path, self::$timeForSignedRequests, self::$useSSL);
 	}
 }

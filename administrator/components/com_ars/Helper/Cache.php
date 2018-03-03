@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -10,11 +10,11 @@ namespace Akeeba\ReleaseSystem\Admin\Helper;
 // Protect from unauthorized access
 defined('_JEXEC') or die();
 
-use JFilterInput;
-use JRegistry;
-use JLoader;
-use JFolder;
 use JFile;
+use JFilterInput;
+use JFolder;
+use JLoader;
+use JRegistry;
 
 /**
  * Handles the caching of lengthy database operations, irrespective of Joomla!'s cache status

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -143,8 +143,6 @@ class Categories extends DataModel
 		$this->addBehaviour('Filters');
 		$this->addBehaviour('Created');
 		$this->addBehaviour('Modified');
-
-		// Joomla Customization - ACL support
 		$this->addBehaviour('Assets');
 
 		// Some filters we will have to handle programmatically so we need to exclude them from the behaviour
@@ -169,7 +167,7 @@ class Categories extends DataModel
 		// Visual Groups filter. Normally we use vgroup but old requests + frontend menu items use vgroupid.
 		$fltVgroup = $this->getState('vgroupid', null, 'int');
 		$fltVgroup = $this->getState('vgroup', $fltVgroup, 'int');
-		// Noremove the old style visual group filter from the state, if it was set
+		// Now remove the old style visual group filter from the state, if it was set
 		$this->setState('vgroupid', null);
 
 		if ($fltVgroup)
@@ -214,7 +212,7 @@ class Categories extends DataModel
 			$query->where($db->qn('language') . ' = ' . $db->q($fltLanguage2));
 		}
 
-		// Joomla customisation - allow filtering only for supported categories
+		// Allow filtering for only supported categories
 		$fltIsSupported = $this->getState('is_supported', false, 'bool');
 
 		if ($fltIsSupported)
@@ -386,7 +384,7 @@ class Categories extends DataModel
 	 *
 	 * @return  void
 	 */
-	function onBeforeDelete(&$oid)
+	public function onBeforeDelete(&$oid)
 	{
 		$joins = array(
 			array(
@@ -518,8 +516,8 @@ class Categories extends DataModel
 	 * primary name of the row. If this method is not overridden, the asset name is used.
 	 *
 	 * @return  string  The string to use as the title in the asset table.
-     *
-     * @codeCoverageIgnore
+	 *
+	 * @codeCoverageIgnore
 	 */
 	public function getAssetTitle()
 	{
@@ -557,5 +555,37 @@ class Categories extends DataModel
 		}
 
 		return parent::getAssetParentId($model, $id);
+	}
+
+	/**
+	 * Helper function to force eager loading of the whole set. In this way we can perform lookup on fields without the
+	 * need to setup the whole relationship on the model
+	 *
+	 * @param $id
+	 * @param $field
+	 *
+	 * @return null|string
+	 */
+	public static function forceEagerLoad($id, $field)
+	{
+		static $cache;
+
+		if (!$cache)
+		{
+			$container = Container::getInstance('com_ars');
+			$db = $container->db;
+
+			$query = $db->getQuery(true)
+				->select('*')
+				->from($db->qn('#__ars_categories'));
+			$cache = $db->setQuery($query)->loadObjectList('id');
+		}
+
+		if (!isset($cache[$id]) || !isset($cache[$id]->$field))
+		{
+			return null;
+		}
+
+		return $cache[$id]->$field;
 	}
 }

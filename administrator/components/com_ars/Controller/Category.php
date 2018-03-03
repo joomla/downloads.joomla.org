@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -38,12 +38,12 @@ class Category extends DataController
 		}
 
 		$this->defaultsForAdd = [
-			'vgroup_id' => 0,
-			'type'      => 'normal',
-			'access'    => 1,
-			'published' => 0,
-			'language'  => '*',
+			'vgroup_id'    => 0,
+			'type'         => 'normal',
+			'access'       => 1,
+			'published'    => 0,
 			'is_supported' => 1,
+			'language'     => '*',
 		];
 
 		foreach ($this->defaultsForAdd as $k => $v)
