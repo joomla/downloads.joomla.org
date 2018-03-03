@@ -94,6 +94,7 @@ CREATE TABLE `#__ars_releases` (
     `redirect_unauth` VARCHAR( 255 ) NOT NULL,
     `published` tinyint(1) NOT NULL DEFAULT '1',
 	`language` char(7) NOT NULL DEFAULT '*',
+    `announcement_url` VARCHAR(2048) NOT NULL,
 	PRIMARY KEY `id` (`id`),
 	KEY `#__ars_releases_category_id` (`category_id`),
 	KEY `#__ars_releases_published` (`published`)
@@ -438,6 +439,14 @@ ALTER TABLE `#__ars_categories` ADD COLUMN `is_supported` TINYINT NOT NULL DEFAU
             <condition type="missing" value="asset_id" />
             <query><![CDATA[
 ALTER TABLE `#__ars_categories` ADD COLUMN `asset_id` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.' AFTER `id`;
+            ]]></query>
+        </action>
+
+        <!-- Joomla Customization - Add the URL for the release announcement -->
+        <action table="#__ars_releases" canfail="0">
+            <condition type="missing" value="announcement_url" />
+            <query><![CDATA[
+ALTER TABLE `#__ars_releases` ADD COLUMN `announcement_url` VARCHAR(2048) NOT NULL DEFAULT '' AFTER `language`;
             ]]></query>
         </action>
     </sql>
