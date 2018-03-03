@@ -35,6 +35,7 @@ use FOF30\Model\DataModel;
  * @property  string  $redirect_unauth
  * @property  bool    $published
  * @property  string  $language
+ * @property  string  $announcement_url
  *
  * Filters:
  *
@@ -143,7 +144,8 @@ class Releases extends DataModel
 		$this->blacklistFilters([
 			//'category_id', // I actually need this for eager loading...
 			'language',
-			'maturity'
+			'maturity',
+			'announcement_url'
 		]);
 
 		// Defaults
