@@ -2,7 +2,7 @@
 /**
  * @package    AkeebaReleaseSystem
  * @subpackage plugins.arsdlid
- * @copyright  Copyright (c)2010-2017 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license    GNU General Public License version 3, or later
  */
 
@@ -51,7 +51,10 @@ class plgContentArsdlid extends JPlugin
 			$this->enabled = false;
 		}
 
-		$this->container = Container::getInstance('com_ars');
+		if ($this->enabled)
+		{
+			$this->container = Container::getInstance('com_ars');
+		}
 	}
 
 
