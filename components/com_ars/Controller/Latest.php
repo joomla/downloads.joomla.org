@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -23,14 +23,6 @@ class Latest extends Controller
 	 * @var  Registry
 	 */
 	public $params;
-
-	public function __construct(Container $container, array $config = array())
-	{
-		// Tell our controller to use the Releases model
-		$config['modelName'] = 'Releases';
-
-		parent::__construct($container, $config);
-	}
 
 	/**
 	 * Overrides the default display method to add caching support
@@ -93,7 +85,7 @@ class Latest extends Controller
 		$categoriesModel->reset(true)
 		                ->orderby_filter($this->params->get('orderby', 'order'))
 		                ->published(1)
-			            ->is_supported((bool) $this->params->get('cat_is_supported', false)) // Joomla customisation - allow filtering only for supported categories
+		                ->is_supported((bool) $this->params->get('cat_is_supported', false))
 		                ->access_user($this->container->platform->getUser()->id)
 		                ->with([]);
 		$this->getView()->setModel('Categories', $categoriesModel);

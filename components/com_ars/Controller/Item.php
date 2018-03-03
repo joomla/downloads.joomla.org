@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -201,24 +201,6 @@ class Item extends DataController
 		// Push the models to the view
 		$this->getView()->setDefaultModel($itemsModel);
 		$this->getView()->setModel('Releases', $releaseModel);
-	}
-
-	public function onAfterBrowse()
-	{
-		/** @var Releases $releaseModel */
-		$releaseModel = $this->getView()->getModel('Releases');
-
-		try
-		{
-			// Hit the release
-			$releaseModel->save([
-				'hits' => ++$releaseModel->hits
-			]);
-		}
-		catch (\Exception $e)
-		{
-			// ¯\_(ツ)_/¯
-		}
 	}
 
 	public function onBeforeBrowseModal()
@@ -432,7 +414,7 @@ class Item extends DataController
 
 			// Let's fire the system plugin event. If Admin Tools is installed, it will handle this and ban the user
 			$app->triggerEvent('onAdminToolsThirdpartyException', array(
-				'ARSscraper',
+				'external',
 				\JText::_('COM_ARS_BLOCKED_MESSAGE'),
 				array($extraMessage)
 			),
