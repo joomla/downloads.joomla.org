@@ -203,6 +203,24 @@ class Item extends DataController
 		$this->getView()->setModel('Releases', $releaseModel);
 	}
 
+	public function onAfterBrowse()
+	{
+		/** @var Releases $releaseModel */
+		$releaseModel = $this->getView()->getModel('Releases');
+
+		try
+		{
+			// Hit the release
+			$releaseModel->save([
+				'hits' => ++$releaseModel->hits
+			]);
+		}
+		catch (\Exception $e)
+		{
+			// ¯\_(ツ)_/¯
+		}
+	}
+
 	public function onBeforeBrowseModal()
 	{
 	}
