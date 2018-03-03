@@ -93,6 +93,12 @@ $item = $this->getItem();
 
 					<?php echo Select::languages('language', $item->language)?>
                 </div>
+
+                <div class="akeeba-form-group">
+                    <label for="announcement_url"><?php echo JText::_('COM_ARS_FIELD_ANNOUNCEMENT_URL'); ?></label>
+
+					<input type="text" name="announcement_url" id="announcement_url" value="<?php echo $this->escape($item->announcement_url); ?>" />
+                </div>
             </div>
         </div>
 
