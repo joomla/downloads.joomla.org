@@ -70,7 +70,6 @@
 !/templates/joomla/media/akeeba_strapper
 /tests
 /tmp
-/.htaccess
 /.travis.yml
 /CONTRIBUTING.md
 /LICENSE.txt
