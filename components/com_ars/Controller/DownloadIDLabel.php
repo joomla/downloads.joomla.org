@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -11,7 +11,6 @@ defined('_JEXEC') or die;
 
 use Akeeba\ReleaseSystem\Admin\Controller\DownloadIDLabels;
 use FOF30\Container\Container;
-use FOF30\Controller\DataController;
 
 class DownloadIDLabel extends DownloadIDLabels
 {

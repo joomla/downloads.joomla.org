@@ -1,16 +1,13 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
 namespace Akeeba\ReleaseSystem\Admin\Helper;
 
 use FOF30\Container\Container;
-use JComponentHelper;
-use JFactory;
-use JLoader;
 
 defined('_JEXEC') or die;
 

@@ -1,7 +1,14 @@
 <?php
+/**
+ * @package   AkeebaReleaseSystem
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
+ */
+
 defined('_JEXEC') or die;
 
 /** @var  \Akeeba\ReleaseSystem\Site\View\Categories\Html $this */
+/** @var  \Akeeba\ReleaseSystem\Site\Model\Categories $item */
 
 use Akeeba\ReleaseSystem\Site\Helper\Filter;
 use Akeeba\ReleaseSystem\Site\Helper\Router;
@@ -14,7 +21,7 @@ if (!Filter::filterItem($item, false, $this->getContainer()->platform->getUser()
 	$category_url = $item->redirect_unauth;
 }
 ?>
-<div class="ars-category-{{{ $id }}}">
+<div class="ars-category-{{{ $id }}} ars-category-{{ $item->is_supported ? 'supported' : 'unsupported' }}">
 
 	<h4 class="{{ $item->type == 'bleedingedge' ? 'warning' : '' }}">
 		<a href="{{ htmlentities($category_url) }}">
@@ -22,21 +29,21 @@ if (!Filter::filterItem($item, false, $this->getContainer()->platform->getUser()
 		</a>
 	</h4>
 	<p>
-		<button class="btn btn-link" type="button" data-toggle="collapse"
+		<button class="akeeba-btn--small" type="button" data-toggle="collapse"
 				data-target="#ars-category-{{{ $id }}}-info" aria-expanded="false"
 				aria-controls="ars-category-{{{ $id }}}-info">
-			<span class="glyphicon glyphicon-info-sign"></span>
+			<span class="akion-information-circled"></span>
 			@lang('COM_ARS_RELEASES_MOREINFO')
 		</button>
 
-		<a href="{{ htmlentities($category_url) }}" class="btn btn-link">
-			<span class="glyphicon glyphicon-folder-open"></span>
+		<a href="{{ htmlentities($category_url) }}" class="akeeba-btn--small--dark">
+			<span class="akion-folder"></span>
 			@lang('COM_ARS_CATEGORIES_AVAILABLEVERSIONS')
 		</a>
 	</p>
 
 	<div class="collapse" id="ars-category-{{{ $id }}}-info">
-		<div class="ars-browse-category well">
+		<div class="ars-browse-category akeeba-panel--info">
 			<div class="ars-category-description">
 				{{ Format::preProcessMessage($item->description, 'com_ars.category_description') }}
 			</div>

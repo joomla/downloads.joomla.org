@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -93,7 +93,6 @@ class Item extends DataController
 			if ($model->getId() != reset($ids))
 			{
 				$key = strtoupper($this->container->componentName . '_ERR_' . $model->getName() . '_NOTFOUND');
-
 				throw new ItemNotFound(\JText::_($key), 404);
 			}
 		}

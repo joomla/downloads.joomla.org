@@ -2,7 +2,7 @@
 /**
  * @package    AkeebaReleaseSystem
  * @subpackage plugins.arsdlid
- * @copyright  Copyright (c)2010-2017 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license    GNU General Public License version 3, or later
  */
 
@@ -58,7 +58,10 @@ class plgContentArslatest extends JPlugin
 			return;
 		}
 
-		$this->container = Container::getInstance('com_ars');
+		if ($this->enabled)
+		{
+			$this->container = Container::getInstance('com_ars');
+		}
 	}
 
 	/**
@@ -140,6 +143,7 @@ class plgContentArslatest extends JPlugin
 					$ret = $this->parseStreamLink($content);
 				}
 				break;
+			// Joomla Customisation - Get the total downloads for a visual group
 			case 'vgroup_downloads':
 				$ret = $this->getVgroupDownloadCount($content);
 				break;
