@@ -323,5 +323,6 @@ class PlgSystemDownloadsAdmin extends JPlugin
 		$document = $this->app->getDocument();
 
 		unset($document->_styleSheets['/media/fef/css/style.min.css']);
+		unset($document->_styleSheets['/media/fef/css/reset.min.css']);
 	}
 }
