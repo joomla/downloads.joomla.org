@@ -81,3 +81,11 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L]
 #
 ## End - Joomla! core SEF Section.
+
+##################### Security Header #####################
+<IfModule mod_headers.c>
+	# Allow CORS
+	Header always set Access-Control-Allow-Origin "*"
+	Header always set Access-Control-Allow-Headers "*"
+</IfModule>
+##################### Security Header #####################
