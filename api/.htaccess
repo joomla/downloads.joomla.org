@@ -86,6 +86,7 @@ RewriteRule .* index.php [L]
 <IfModule mod_headers.c>
 	# Allow CORS
 	Header always set Access-Control-Allow-Origin "*"
+	Header always set Access-Control-Allow-Methods "GET"
 	Header always set Access-Control-Allow-Headers "*"
 </IfModule>
 ##################### Security Header #####################
