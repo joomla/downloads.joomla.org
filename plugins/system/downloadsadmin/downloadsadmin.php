@@ -304,25 +304,4 @@ class PlgSystemDownloadsAdmin extends JPlugin
 			}
 		}
 	}
-
-	/**
-	 * Remove Akeeba FEF styling from the frontend due to design conflicts
-	 *
-	 * @return  void
-	 *
-	 * @since   1.0
-	 */
-	public function onBeforeCompileHead()
-	{
-		if (!$this->app->isSite())
-		{
-			return;
-		}
-
-		/** @var \Joomla\CMS\Document\HtmlDocument $document */
-		$document = $this->app->getDocument();
-
-		unset($document->_styleSheets['/media/fef/css/style.min.css']);
-		unset($document->_styleSheets['/media/fef/css/reset.min.css']);
-	}
 }
