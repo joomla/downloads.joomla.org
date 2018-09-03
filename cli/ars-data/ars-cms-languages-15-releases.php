@@ -1426,11 +1426,23 @@ $releases = [
 	 * Joomla! 1.5 - Pashto (Afghanistan)
 	 */
 	[
-		'category_id' => '48',
+		'category_id' => '49',
 		'version'     => '1.5.12',
 		'alias'       => '1-5-12',
 		'maturity'    => 'stable',
 		'description' => '<p>Pashto (Afghanistan) Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-08-24 14:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
+
+	/*
+	 * Joomla! 1.5 - Persian (Farsi)
+	 */
+	[
+		'category_id' => '50',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Persian (Farsi) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-05 04:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
 ];
