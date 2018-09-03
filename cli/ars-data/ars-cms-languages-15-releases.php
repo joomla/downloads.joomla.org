@@ -956,4 +956,16 @@ $releases = [
 		'description' => '<p>Hungarian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-04-27 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Icelandic
+	 */
+	[
+		'category_id' => '35',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Icelandic Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-04-03 19:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
