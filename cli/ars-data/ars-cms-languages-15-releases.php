@@ -2354,4 +2354,16 @@ $releases = [
 		'description' => '<p>Urdu (Pakistan) Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-19 13:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Vietnamese
+	 */
+	[
+		'category_id' => '71',
+		'version'     => '1.5.20',
+		'alias'       => '1-5-20',
+		'maturity'    => 'stable',
+		'description' => '<p>Vietnamese Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-07-18 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
