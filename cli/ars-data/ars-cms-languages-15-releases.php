@@ -1353,4 +1353,72 @@ $releases = [
 		'description' => '<p>Montenegrin Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-23 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Norwegian
+	 */
+	[
+		'category_id' => '48',
+		'version'     => '1.5.11',
+		'alias'       => '1-5-11',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-06-03 03:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.12',
+		'alias'       => '1-5-12',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-01 02:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.13',
+		'alias'       => '1-5-13',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-23 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-30 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-04 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.17',
+		'alias'       => '1-5-17',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-04-27 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.20',
+		'alias'       => '1-5-20',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-07-19 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '48',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Norwegian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-12-08 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
