@@ -1132,4 +1132,64 @@ $releases = [
 		'description' => '<p>Japanese Language Packs</p>',
 		'created'     => $this->platform->getDate('2012-03-27 18:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Khmer (Cambodia)
+	 */
+	[
+		'category_id' => '39',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-09-08 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '39',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-07 11:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '39',
+		'version'     => '1.5.16',
+		'alias'       => '1-5-16',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-05-17 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '39',
+		'version'     => '1.5.17',
+		'alias'       => '1-5-17',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-05-16 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '39',
+		'version'     => '1.5.18',
+		'alias'       => '1-5-18',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-06-17 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '39',
+		'version'     => '1.5.19',
+		'alias'       => '1-5-19',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-07-15 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '39',
+		'version'     => '1.5.20',
+		'alias'       => '1-5-20',
+		'maturity'    => 'stable',
+		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-07-17 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
