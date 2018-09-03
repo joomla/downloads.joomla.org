@@ -2150,4 +2150,40 @@ $releases = [
 		'description' => '<p>Tamil (India) Language Packs</p>',
 		'created'     => $this->platform->getDate('2011-11-16 12:30:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Tamil (Sri Lanka)
+	 */
+	[
+		'category_id' => '66',
+		'version'     => '1.5.8',
+		'alias'       => '1-5-8',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (Sri Lanka) Language Packs</p>',
+		'created'     => $this->platform->getDate('2008-12-24 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '66',
+		'version'     => '1.5.9',
+		'alias'       => '1-5-9',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (Sri Lanka) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-02-25 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '66',
+		'version'     => '1.5.10',
+		'alias'       => '1-5-10',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (Sri Lanka) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-04-05 13:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '66',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (Sri Lanka) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-20 12:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
