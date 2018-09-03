@@ -1252,4 +1252,24 @@ $releases = [
 		'description' => '<p>Laotian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-10-19 12:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Latvian
+	 */
+	[
+		'category_id' => '41',
+		'version'     => '1.5.9',
+		'alias'       => '1-5-9',
+		'maturity'    => 'stable',
+		'description' => '<p>Latvian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-01-09 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '41',
+		'version'     => '1.5.20',
+		'alias'       => '1-5-20',
+		'maturity'    => 'stable',
+		'description' => '<p>Latvian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-07-26 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
