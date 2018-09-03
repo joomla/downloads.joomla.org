@@ -1634,4 +1634,48 @@ $releases = [
 		'description' => '<p>Slovenian Language Packs</p>',
 		'created'     => $this->platform->getDate('2011-01-15 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Spanish
+	 */
+	[
+		'category_id' => '61',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Spanish Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-03-01 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '61',
+		'version'     => '1.5.23',
+		'alias'       => '1-5-23',
+		'maturity'    => 'stable',
+		'description' => '<p>Spanish Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-04-04 19:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '61',
+		'version'     => '1.5.24',
+		'alias'       => '1-5-24',
+		'maturity'    => 'stable',
+		'description' => '<p>Spanish Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-10-17 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '61',
+		'version'     => '1.5.25',
+		'alias'       => '1-5-25',
+		'maturity'    => 'stable',
+		'description' => '<p>Spanish Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-11-14 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '61',
+		'version'     => '1.5.26',
+		'alias'       => '1-5-26',
+		'maturity'    => 'stable',
+		'description' => '<p>Spanish Language Packs</p>',
+		'created'     => $this->platform->getDate('2012-03-27 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
