@@ -2186,4 +2186,48 @@ $releases = [
 		'description' => '<p>Tamil (Sri Lanka) Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-20 12:30:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Thai
+	 */
+	[
+		'category_id' => '67',
+		'version'     => '1.5.10',
+		'alias'       => '1-5-10',
+		'maturity'    => 'stable',
+		'description' => '<p>Thai Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-03-27 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '67',
+		'version'     => '1.5.11',
+		'alias'       => '1-5-11',
+		'maturity'    => 'stable',
+		'description' => '<p>Thai Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-06-03 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '67',
+		'version'     => '1.5.12',
+		'alias'       => '1-5-12',
+		'maturity'    => 'stable',
+		'description' => '<p>Thai Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-01 02:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '67',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Thai Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-30 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '67',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Thai Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-05 04:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
