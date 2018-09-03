@@ -2086,4 +2086,24 @@ $releases = [
 		'description' => '<p>Syriac (East) Language Packs</p>',
 		'created'     => $this->platform->getDate('2011-01-21 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Tagalog (Philippines)
+	 */
+	[
+		'category_id' => '64',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Tagalog (Philippines) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-09-06 11:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '64',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Tagalog (Philippines) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-05 04:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
