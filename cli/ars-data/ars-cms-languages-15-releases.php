@@ -2342,4 +2342,16 @@ $releases = [
 		'description' => '<p>Ukrainian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-04-28 16:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Urdu (Pakistan)
+	 */
+	[
+		'category_id' => '70',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Urdu (Pakistan) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-19 13:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
