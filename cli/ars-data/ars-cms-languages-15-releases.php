@@ -1594,4 +1594,16 @@ $releases = [
 		'description' => '<p>Sinhala Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-05 12:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Slovak
+	 */
+	[
+		'category_id' => '29',
+		'version'     => '1.5.21',
+		'alias'       => '1-5-21',
+		'maturity'    => 'stable',
+		'description' => '<p>Slovak Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-10-08 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
