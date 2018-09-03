@@ -944,4 +944,16 @@ $releases = [
 		'description' => '<p>Hindi (India) Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-03-29 15:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Hungarian
+	 */
+	[
+		'category_id' => '34',
+		'version'     => '1.5.17',
+		'alias'       => '1-5-17',
+		'maturity'    => 'stable',
+		'description' => '<p>Hungarian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-04-27 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
