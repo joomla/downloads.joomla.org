@@ -968,4 +968,24 @@ $releases = [
 		'description' => '<p>Icelandic Language Packs</p>',
 		'created'     => $this->platform->getDate('2011-04-03 19:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Indonesian (Bahasa Indonesia)
+	 */
+	[
+		'category_id' => '36',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Indonesian (Bahasa Indonesia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-08-08 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '36',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Indonesian (Bahasa Indonesia) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-08-08 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
