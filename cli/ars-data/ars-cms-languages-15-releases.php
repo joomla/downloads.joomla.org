@@ -1518,4 +1518,16 @@ $releases = [
 		'description' => '<p>Romanian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-11-04 18:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Russian
+	 */
+	[
+		'category_id' => '55',
+		'version'     => '1.5.25',
+		'alias'       => '1-5-25',
+		'maturity'    => 'stable',
+		'description' => '<p>Russian Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-11-17 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
