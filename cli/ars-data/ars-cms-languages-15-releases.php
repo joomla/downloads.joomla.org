@@ -1489,4 +1489,16 @@ $releases = [
 		'description' => '<p>Polish Language Packs</p>',
 		'created'     => $this->platform->getDate('2012-03-27 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Portuguese (Brazil)
+	 */
+	[
+		'category_id' => '52',
+		'version'     => '1.5.17',
+		'alias'       => '1-5-17',
+		'maturity'    => 'stable',
+		'description' => '<p>Portuguese (Brazil) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-05-14 22:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
