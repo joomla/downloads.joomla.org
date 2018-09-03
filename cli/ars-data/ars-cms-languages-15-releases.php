@@ -2026,4 +2026,64 @@ $releases = [
 		'description' => '<p>Swedish Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-07-18 18:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Syriac (East)
+	 */
+	[
+		'category_id' => '63',
+		'version'     => '1.5.3',
+		'alias'       => '1-5-3',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2008-06-12 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '63',
+		'version'     => '1.5.9',
+		'alias'       => '1-5-9',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-01-13 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '63',
+		'version'     => '1.5.10',
+		'alias'       => '1-5-10',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-03-30 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '63',
+		'version'     => '1.5.11',
+		'alias'       => '1-5-11',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-06-13 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '63',
+		'version'     => '1.5.12',
+		'alias'       => '1-5-12',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-06 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '63',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-08 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '63',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Syriac (East) Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-01-21 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
