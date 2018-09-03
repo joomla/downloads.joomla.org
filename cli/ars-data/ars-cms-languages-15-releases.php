@@ -1501,4 +1501,9 @@ $releases = [
 		'description' => '<p>Portuguese (Brazil) Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-05-14 22:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Portuguese (Portugal)
+	 * NO RELEASES
+	 */
 ];
