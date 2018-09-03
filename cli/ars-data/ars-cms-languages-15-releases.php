@@ -1192,4 +1192,64 @@ $releases = [
 		'description' => '<p>Khmer (Cambodia) Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-07-17 12:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Laotian
+	 */
+	[
+		'category_id' => '40',
+		'version'     => '1.5.8',
+		'alias'       => '1-5-8',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2008-11-10 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '40',
+		'version'     => '1.5.9',
+		'alias'       => '1-5-9',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-01-09 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '40',
+		'version'     => '1.5.10',
+		'alias'       => '1-5-10',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-03-27 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '40',
+		'version'     => '1.5.12',
+		'alias'       => '1-5-12',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-07-27 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '40',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-10-15 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '40',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-08 11:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '40',
+		'version'     => '1.5.21',
+		'alias'       => '1-5-21',
+		'maturity'    => 'stable',
+		'description' => '<p>Laotian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-10-19 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
