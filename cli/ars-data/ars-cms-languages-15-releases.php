@@ -1301,4 +1301,16 @@ $releases = [
 	 * Joomla! 1.5 - Malay
 	 * NO RELEASES
 	 */
+
+	/*
+	 * Joomla! 1.5 - Malayalam
+	 */
+	[
+		'category_id' => '45',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Malayalam Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-30 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
