@@ -2330,4 +2330,16 @@ $releases = [
 		'description' => '<p>Turkish Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-07-18 18:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Ukrainian
+	 */
+	[
+		'category_id' => '69',
+		'version'     => '1.5.17',
+		'alias'       => '1-5-17',
+		'maturity'    => 'stable',
+		'description' => '<p>Ukrainian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-04-28 16:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
