@@ -2106,4 +2106,48 @@ $releases = [
 		'description' => '<p>Tagalog (Philippines) Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-05 04:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Tamil (India)
+	 */
+	[
+		'category_id' => '65',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (India) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-04-13 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '65',
+		'version'     => '1.5.17',
+		'alias'       => '1-5-17',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (India) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-05-29 03:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '65',
+		'version'     => '1.5.18',
+		'alias'       => '1-5-18',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (India) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-05-31 03:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '65',
+		'version'     => '1.5.24',
+		'alias'       => '1-5-24',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (India) Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-10-18 03:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '65',
+		'version'     => '1.5.25',
+		'alias'       => '1-5-25',
+		'maturity'    => 'stable',
+		'description' => '<p>Tamil (India) Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-11-16 12:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
