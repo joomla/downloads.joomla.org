@@ -988,4 +988,16 @@ $releases = [
 		'description' => '<p>Indonesian (Bahasa Indonesia) Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-08-08 12:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Italian
+	 */
+	[
+		'category_id' => '37',
+		'version'     => '1.5.24',
+		'alias'       => '1-5-24',
+		'maturity'    => 'stable',
+		'description' => '<p>Italian Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-10-17 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
