@@ -553,11 +553,21 @@ $categories = [
 	],
 	// ID: 56
 	[
-		'title'        => 'Joomla! 1.5 - Serbian',
-		'alias'        => 'joomla15-serbian',
+		'title'        => 'Joomla! 1.5 - Serbian (Cyrillic)',
+		'alias'        => 'joomla15-serbian-cyrillic',
 		'description'  => '<p>Language: Serbian (sr-RS)<br />Coordinator: <a href="http://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147895">cicans</a><br />Team Members: 1<br />Contact: <a href="mailto:svetlana.zec@gmail.com">svetlana.zec@gmail.com</a></p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sr-RS',
+		'vgroup_id'    => '2',
+		'is_supported' => '0',
+	],
+	// ID: 209
+	[
+		'title'        => 'Joomla! 1.5 - Serbian (Latin)',
+		'alias'        => 'joomla15-serbian-latin',
+		'description'  => '<p>Language: Serbian (sr-YU)<br />Coordinator: <a href="http://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147895">cicans</a><br />Team Members: 1<br />Contact: <a href="mailto:svetlana.zec@gmail.com">svetlana.zec@gmail.com</a></p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/translations/joomla15/sr-YU',
 		'vgroup_id'    => '2',
 		'is_supported' => '0',
 	],
