@@ -1599,11 +1599,39 @@ $releases = [
 	 * Joomla! 1.5 - Slovak
 	 */
 	[
-		'category_id' => '29',
+		'category_id' => '59',
 		'version'     => '1.5.21',
 		'alias'       => '1-5-21',
 		'maturity'    => 'stable',
 		'description' => '<p>Slovak Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-10-08 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+
+	/*
+	 * Joomla! 1.5 - Slovenian
+	 */
+	[
+		'category_id' => '60',
+		'version'     => '1.5.14',
+		'alias'       => '1-5-14',
+		'maturity'    => 'stable',
+		'description' => '<p>Slovenian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-08-31 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '60',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Slovenian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-12-31 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '60',
+		'version'     => '1.5.20',
+		'alias'       => '1-5-20',
+		'maturity'    => 'stable',
+		'description' => '<p>Slovenian Language Packs</p>',
+		'created'     => $this->platform->getDate('2011-01-15 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
 ];
