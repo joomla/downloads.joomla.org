@@ -932,4 +932,16 @@ $releases = [
 		'description' => '<p>Hebrew Language Packs</p>',
 		'created'     => $this->platform->getDate('2011-05-30 16:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Hindi (India)
+	 */
+	[
+		'category_id' => '33',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Hindi (India) Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-03-29 15:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
