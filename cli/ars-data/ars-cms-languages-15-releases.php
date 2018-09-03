@@ -1506,4 +1506,16 @@ $releases = [
 	 * Joomla! 1.5 - Portuguese (Portugal)
 	 * NO RELEASES
 	 */
+
+	/*
+	 * Joomla! 1.5 - Romanian
+	 */
+	[
+		'category_id' => '54',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Romanian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-11-04 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
