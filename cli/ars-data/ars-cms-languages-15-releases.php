@@ -1421,4 +1421,16 @@ $releases = [
 		'description' => '<p>Norwegian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-12-08 16:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Pashto (Afghanistan)
+	 */
+	[
+		'category_id' => '48',
+		'version'     => '1.5.12',
+		'alias'       => '1-5-12',
+		'maturity'    => 'stable',
+		'description' => '<p>Pashto (Afghanistan) Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-08-24 14:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
