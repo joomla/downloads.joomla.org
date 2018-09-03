@@ -1313,4 +1313,24 @@ $releases = [
 		'description' => '<p>Malayalam Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-30 17:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Mongolian
+	 */
+	[
+		'category_id' => '46',
+		'version'     => '1.5.11',
+		'alias'       => '1-5-11',
+		'maturity'    => 'stable',
+		'description' => '<p>Mongolian Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-06-03 03:30:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '46',
+		'version'     => '1.5.20',
+		'alias'       => '1-5-20',
+		'maturity'    => 'stable',
+		'description' => '<p>Mongolian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-07-17 11:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
