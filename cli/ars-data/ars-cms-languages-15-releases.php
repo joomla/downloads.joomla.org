@@ -1445,4 +1445,48 @@ $releases = [
 		'description' => '<p>Persian (Farsi) Language Packs</p>',
 		'created'     => $this->platform->getDate('2009-11-05 04:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Polish
+	 */
+	[
+		'category_id' => '51',
+		'version'     => '1.5.10',
+		'alias'       => '1-5-10',
+		'maturity'    => 'stable',
+		'description' => '<p>Polish Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-12-11 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '51',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Polish Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-12-11 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '51',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Polish Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-12-11 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '51',
+		'version'     => '1.5.23',
+		'alias'       => '1-5-23',
+		'maturity'    => 'stable',
+		'description' => '<p>Polish Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-12-11 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
+	[
+		'category_id' => '51',
+		'version'     => '1.5.26',
+		'alias'       => '1-5-26',
+		'maturity'    => 'stable',
+		'description' => '<p>Polish Language Packs</p>',
+		'created'     => $this->platform->getDate('2012-03-27 17:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
