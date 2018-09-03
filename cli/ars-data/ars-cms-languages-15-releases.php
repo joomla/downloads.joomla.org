@@ -1570,4 +1570,16 @@ $releases = [
 		'description' => '<p>Serbian (Latin) Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-07-15 18:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Sindhi
+	 */
+	[
+		'category_id' => '57',
+		'version'     => '1.5.8',
+		'alias'       => '1-5-8',
+		'maturity'    => 'stable',
+		'description' => '<p>Sindhi Language Packs</p>',
+		'created'     => $this->platform->getDate('2008-11-10 23:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
