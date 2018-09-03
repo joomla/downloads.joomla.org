@@ -1296,4 +1296,9 @@ $releases = [
 		'description' => '<p>Macedonian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-11-05 18:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Malay
+	 * NO RELEASES
+	 */
 ];
