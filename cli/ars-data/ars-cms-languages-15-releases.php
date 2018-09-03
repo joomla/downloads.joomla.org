@@ -1582,4 +1582,16 @@ $releases = [
 		'description' => '<p>Sindhi Language Packs</p>',
 		'created'     => $this->platform->getDate('2008-11-10 23:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Sinhala
+	 */
+	[
+		'category_id' => '58',
+		'version'     => '1.5.15',
+		'alias'       => '1-5-15',
+		'maturity'    => 'stable',
+		'description' => '<p>Sinhala Language Packs</p>',
+		'created'     => $this->platform->getDate('2009-11-05 12:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
