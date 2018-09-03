@@ -1284,4 +1284,16 @@ $releases = [
 		'description' => '<p>Lithuanian Language Packs</p>',
 		'created'     => $this->platform->getDate('2010-07-17 16:00:00', new DateTimeZone('GMT'))->toSql(),
 	],
+
+	/*
+	 * Joomla! 1.5 - Macedonian
+	 */
+	[
+		'category_id' => '43',
+		'version'     => '1.5.22',
+		'alias'       => '1-5-22',
+		'maturity'    => 'stable',
+		'description' => '<p>Macedonian Language Packs</p>',
+		'created'     => $this->platform->getDate('2010-11-05 18:00:00', new DateTimeZone('GMT'))->toSql(),
+	],
 ];
