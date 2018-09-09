@@ -156,7 +156,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			</tbody>
 			<tbody>
 				<tr>
-					<th scope="rowgroup" colspan="4">Supported Databases:</th>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_DATABASES'); ?></th>
 				</tr>
 				<tr>
 					<th scope="row">MySQL</th>
@@ -177,7 +177,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			</tbody>
 			<tbody>
 				<tr>
-					<th scope="rowgroup" colspan="4">Supported Web Servers:</th>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_WEB_SERVERS'); ?></th>
 				</tr>
 				<tr>
 					<th scope="row">Apache<sup><a href="#footnote-apache">[3]</a></sup></th>
@@ -230,7 +230,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			</tbody>
 			<tbody>
 				<tr>
-					<th scope="rowgroup" colspan="4">Supported Databases:</th>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_DATABASES'); ?></th>
 				</tr>
 				<tr>
 					<th scope="row">MySQL</th>
@@ -243,7 +243,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			</tbody>
 			<tbody>
 				<tr>
-					<th scope="rowgroup" colspan="4">Supported Web Servers:</th>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_WEB_SERVERS'); ?></th>
 				</tr>
 				<tr>
 					<th scope="row">Apache<sup><a href="#footnote-apache">[3]</a></sup></th>
@@ -288,7 +288,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			</tbody>
 			<tbody>
 				<tr>
-					<th scope="rowgroup" colspan="4">Supported Databases:</th>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_DATABASES'); ?></th>
 				</tr>
 				<tr>
 					<th scope="row">MySQL</th>
@@ -301,7 +301,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			</tbody>
 			<tbody>
 				<tr>
-					<th scope="rowgroup" colspan="4">Supported Web Servers:</th>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_WEB_SERVERS'); ?></th>
 				</tr>
 				<tr>
 					<th scope="row">Apache<sup><a href="#footnote-apache">[3]</a></sup></th>
