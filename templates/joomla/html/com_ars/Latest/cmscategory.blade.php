@@ -88,6 +88,8 @@ switch ($release->maturity)
 	<table class="table table-striped">
 		@foreach($release->items->sortBy($this->params->get('items_orderby', 'ordering'))->filter(function ($item)
 		{
+			if (!$item->enabled) return false;
+
 			if (strpos($item->title, 'Full Package') !== false)
 			{
 				return \Akeeba\ReleaseSystem\Site\Helper\Filter::filterItem($item, true);

@@ -161,8 +161,11 @@ class HashGenerator extends JApplicationCli
 
 			if (function_exists('hash_file'))
 			{
-				$data['md5']  = hash_file('md5', $target);
-				$data['sha1'] = hash_file('sha1', $target);
+				$data['md5']    = hash_file('md5', $target);
+				$data['sha1']   = hash_file('sha1', $target);
+				$data['sha256'] = hash_file('sha256', $target);
+				$data['sha384'] = hash_file('sha384', $target);
+				$data['sha512'] = hash_file('sha512', $target);
 			}
 			else
 			{

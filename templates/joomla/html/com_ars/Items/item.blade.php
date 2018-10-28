@@ -120,6 +120,33 @@ $formattedDownloadCount = number_format($item->hits, 0, \JText::_('DECIMALS_SEPA
 			</dd>
 		@endunless
 
+		@unless(empty($item->sha256) || !$this->params->get('show_sha256',1))
+			<dt>
+				@lang('LBL_ITEMS_SHA256')
+			</dt>
+			<dd>
+				{{{ $item->sha256 }}}
+			</dd>
+		@endunless
+
+		@unless(empty($item->sha384) || !$this->params->get('show_sha384',1))
+			<dt>
+				@lang('LBL_ITEMS_SHA384')
+			</dt>
+			<dd>
+				{{{ $item->sha384 }}}
+			</dd>
+		@endunless
+
+		@unless(empty($item->sha512) || !$this->params->get('show_sha512',1))
+			<dt>
+				@lang('LBL_ITEMS_SHA512')
+			</dt>
+			<dd>
+				{{{ $item->sha512 }}}
+			</dd>
+		@endunless
+
 		@if($item->release->category->visualGroup->id != 1)
 			@unless(empty($item->environments) || !$this->params->get('show_environments',1))
 				<dt>

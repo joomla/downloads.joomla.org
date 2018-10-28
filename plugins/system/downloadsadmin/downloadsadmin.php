@@ -204,6 +204,7 @@ class PlgSystemDownloadsAdmin extends JPlugin
 					break;
 
 				case 'index.php?option=com_ars&view=Categories&layout=normal&vgroupid=1':
+				case 'index.php?option=com_ars&view=Categories&layout=normal&vgroupid=5':
 					// We only need to process this route if we aren't on the menu item's page; it gets handled by the filter plugin
 					if (isset($menu->query) && isset($menu->query['view']) && $menu->query['view'] == 'Categories' && $this->app->input->getString('view') == $menu->query['view'])
 					{
@@ -255,6 +256,7 @@ class PlgSystemDownloadsAdmin extends JPlugin
 								break;
 
 							case 'index.php?option=com_ars&view=Categories&layout=normal&vgroupid=1':
+							case 'index.php?option=com_ars&view=Categories&layout=normal&vgroupid=5':
 								$language->link = JRoute::_('index.php?' . http_build_query(array_merge($router->getVars(), ['lang' => $language->sef])));
 
 								break;
@@ -303,26 +305,5 @@ class PlgSystemDownloadsAdmin extends JPlugin
 				}
 			}
 		}
-	}
-
-	/**
-	 * Remove Akeeba FEF styling from the frontend due to design conflicts
-	 *
-	 * @return  void
-	 *
-	 * @since   1.0
-	 */
-	public function onBeforeCompileHead()
-	{
-		if (!$this->app->isSite())
-		{
-			return;
-		}
-
-		/** @var \Joomla\CMS\Document\HtmlDocument $document */
-		$document = $this->app->getDocument();
-
-		unset($document->_styleSheets['/media/fef/css/style.min.css']);
-		unset($document->_styleSheets['/media/fef/css/reset.min.css']);
 	}
 }
