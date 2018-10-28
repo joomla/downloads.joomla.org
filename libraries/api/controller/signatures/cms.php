@@ -45,7 +45,14 @@ class ApiControllerSignaturesCms extends JControllerBase
 		/** @var \Akeeba\ReleaseSystem\Site\Model\Items $item */
 		foreach ($releasesModel->items as $item)
 		{
-			$files[] = (object) ['filename' => $item->filename, 'md5' => $item->md5, 'sha1' => $item->sha1];
+			$files[] = (object) [
+				'filename' => $item->filename,
+				'md5'      => $item->md5,
+				'sha1'     => $item->sha1,
+				'sha256'   => $item->sha256,
+				'sha384'   => $item->sha384,
+				'sha512'   => $item->sha512,
+			];
 		}
 
 		// Now build the response

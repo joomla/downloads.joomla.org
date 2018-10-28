@@ -6,7 +6,7 @@
             "name": "Joomla! Project",
             "url": "https://downloads.joomla.org/api-changelog"
         },
-        "version": "0.2.0"
+        "version": "0.3.0"
     },
     "host": "downloads.joomla.org",
     "basePath": "/api",
@@ -21,7 +21,7 @@
         },
         {
             "name": "signatures",
-            "description": "API endpoints for retrieving the MD5 and SHA1 signatures of a release's files"
+            "description": "API endpoints for retrieving the hash signatures of a release's files"
         },
         {
             "name": "releases",
@@ -124,7 +124,7 @@
                 "tags": [
                     "signatures"
                 ],
-                "description": "Gets the MD5 and SHA1 signatures for all files included in a release of the CMS",
+                "description": "Gets the hash signatures for all files included in a release of the CMS",
                 "operationId": "signaturesCms",
                 "parameters": [
                     {
@@ -250,7 +250,10 @@
             "required": [
                 "filename",
                 "md5",
-                "sha1"
+                "sha1",
+                "sha256",
+                "sha384",
+                "sha512"
             ],
             "properties": {
                 "filename": {
@@ -264,6 +267,18 @@
                 "sha1": {
                     "type": "string",
                     "description": "The SHA1 signature for this file"
+                },
+                "sha256": {
+                    "type": "string",
+                    "description": "The SHA256 signature for this file"
+                },
+                "sha384": {
+                    "type": "string",
+                    "description": "The SHA384 signature for this file"
+                },
+                "sha512": {
+                    "type": "string",
+                    "description": "The SHA512 signature for this file"
                 }
             }
         },
