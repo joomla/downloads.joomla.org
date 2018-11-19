@@ -129,6 +129,11 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 					</td>
 				</tr>
 			</tbody>
+			<tbody>
+				<tr>
+					<th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_BROWSERS'); ?> <a href="https://docs.joomla.org/S:MyLanguage/Joomla_Browser_Support">https://docs.joomla.org/Joomla_Browser_Support</a></th>
+                		</tr>
+			</tbody>
 		</table>
 
 		<h2><?php echo JText::_('TECHNICAL_REQUIREMENTS_HEADING_REQUIREMENTS_FOR_UNSUPPORTED_SOFTWARE'); ?></h2>
