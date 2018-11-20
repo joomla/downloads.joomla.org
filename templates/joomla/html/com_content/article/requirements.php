@@ -130,6 +130,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 				</tr>
 			</tbody>
 		</table>
+		<div class="alert alert-info"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORTED_BROWSERS'); ?></div>
 
 		<h2><?php echo JText::_('TECHNICAL_REQUIREMENTS_HEADING_REQUIREMENTS_FOR_UNSUPPORTED_SOFTWARE'); ?></h2>
 
