@@ -64,7 +64,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 					<td>7.1 +</td>
 					<td>5.3.10</td>
 					<td class="hidden-phone">
-						<div><a href="https://secure.php.net" target="_blank" rel="noopener noreferrer">https://secure.php.net</a></div>
+						<div><a href="https://www.php.net" target="_blank" rel="noopener noreferrer">https://www.php.net</a></div>
 						<small><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_PHP_REQUIREMENTS_FOOTNOTE'); ?></small>
 					</td>
 				</tr>
@@ -151,7 +151,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 					<td>5.6</td>
 					<td>5.2.4</td>
 					<td class="hidden-phone">
-						<a href="https://secure.php.net" target="_blank" rel="noopener noreferrer">https://secure.php.net</a>
+						<a href="https://www.php.net" target="_blank" rel="noopener noreferrer">https://www.php.net</a>
 					</td>
 				</tr>
 			</tbody>
@@ -225,7 +225,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 					<td>5.3</td>
 					<td>4.3.10</td>
 					<td class="hidden-phone">
-						<a href="https://secure.php.net" target="_blank" rel="noopener noreferrer">https://secure.php.net</a>
+						<a href="https://www.php.net" target="_blank" rel="noopener noreferrer">https://www.php.net</a>
 					</td>
 				</tr>
 			</tbody>
@@ -283,7 +283,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 					<td>5.3</td>
 					<td>4.3.10</td>
 					<td class="hidden-phone">
-						<a href="https://secure.php.net" target="_blank" rel="noopener noreferrer">https://secure.php.net</a>
+						<a href="https://www.php.net" target="_blank" rel="noopener noreferrer">https://www.php.net</a>
 					</td>
 				</tr>
 			</tbody>
