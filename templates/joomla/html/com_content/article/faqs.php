@@ -110,6 +110,7 @@ $associatedLanguage = $this->item->language === '*' ? 'en-GB' : $this->item->lan
 				<li><?php echo JText::sprintf('FAQ_FIND_JOOMLA_HOSTING_ANSWER_HOST_CLOUDACCESS', JHtml::_('link', 'http://www.cloudaccess.net/products/joomla-hosting-support.html', 'CloudAccess', ['target' => '_blank', 'rel' => 'noopener noreferrer'])); ?></li>
 				<li><?php echo JText::sprintf('FAQ_FIND_JOOMLA_HOSTING_ANSWER_HOST_ROCHEN', JHtml::_('link', 'https://www.rochen.com/joomla-hosting', 'Rochen', ['target' => '_blank', 'rel' => 'noopener noreferrer'])); ?></li>
 			</ul>
+			<p><?php echo JText::sprintf('FAQ_FIND_JOOMLA_HOSTING_ANSWER_BECOME_A_SPONSOR', JHtml::_('content.prepare', JHtml::_('link', 'mailto:sponsors@opensourcematters.org', 'sponsors@opensourcematters.org'))); ?></p>
 		</div>
 		<?php echo JHtml::_('bootstrap.endSlide'); ?>
 
