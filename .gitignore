@@ -87,3 +87,6 @@
 /robots.txt.dist
 /travisci-phpunit.xml
 /web.config.txt
+
+# Local Composer tools
+/vendor

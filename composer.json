@@ -1,0 +1,14 @@
+{
+    "name": "joomla/downloads.joomla.org",
+    "type": "project",
+    "description": "Joomla! Downloads Portal",
+    "keywords": ["joomla", "cms"],
+    "homepage": "https://github.com/joomla/downloads.joomla.org",
+    "license": "GPL-2.0+",
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "joomla/crowdin-sync": "dev-master"
+    }
+}
