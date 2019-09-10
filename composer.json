@@ -4,7 +4,7 @@
     "description": "Joomla! Downloads Portal",
     "keywords": ["joomla", "cms"],
     "homepage": "https://github.com/joomla/downloads.joomla.org",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "require": {
         "php": "^7.2"
     },
