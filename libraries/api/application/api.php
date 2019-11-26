@@ -431,8 +431,14 @@ final class JApplicationApi extends CMSApplication
 	 */
 	protected function render()
 	{
+		// The JsonDocument forces cache to be disabled, let's respect our decisions in the application instead
+		$preferredCache = $this->allowCache();
+
 		// Render the document.
 		$this->responseData = $this->document->render($this->allowCache());
+
+		// Restore the cache decision
+		$this->allowCache($preferredCache);
 
 		// Mark afterRender in the profiler.
 		JDEBUG ? $this->profiler->mark('afterRender') : null;
