@@ -58,6 +58,10 @@ RewriteRule ^(.*)$ https://downloads.joomla.org/api/$1 [R=301,L,QSA]
 
 ## End - Custom redirects
 
+# Someone is spamming the ever loving crap out of the API, cache responses for the love of all that is sane until the offender is found
+RewriteCond %{REQUEST_URI} ^/api [NC]
+RewriteRule .* - [E=cache-control:max-age=120]
+
 ##
 # Uncomment following line if your webserver's URL
 # is not directly related to physical file paths.
