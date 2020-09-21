@@ -169,8 +169,55 @@ abstract class Html
 		array_unshift($options, JHtml::_('select.option', '', JText::_('JOPTION_ACCESS_SHOW_ALL_LEVELS')));
 
 		return '<span ' . ($id ? $id : '') . ' class="'. $class . '">' .
-			htmlspecialchars(GenericList::getOptionName($options, $value), ENT_COMPAT, 'UTF-8') .
+			htmlspecialchars(static::getOptionName($options, $value), ENT_COMPAT, 'UTF-8') .
 			'</span>';
+	}
+
+	/**
+	 * Gets the active option's label given an array of JHtml options
+	 *
+	 * @param   array   $data         The JHtml options to parse
+	 * @param   mixed   $selected     The currently selected value
+	 * @param   string  $optKey       Key name
+	 * @param   string  $optText      Value name
+	 * @param   bool    $selectFirst  Should I automatically select the first option?
+	 *
+	 * @return  mixed   The label of the currently selected option
+	 */
+	public static function getOptionName($data, $selected = null, $optKey = 'value', $optText = 'text', $selectFirst = true)
+	{
+		$ret = null;
+
+		foreach ($data as $elementKey => &$element)
+		{
+			if (is_array($element))
+			{
+				$key  = $optKey === null ? $elementKey : $element[$optKey];
+				$text = $element[$optText];
+			}
+			elseif (is_object($element))
+			{
+				$key  = $optKey === null ? $elementKey : $element->$optKey;
+				$text = $element->$optText;
+			}
+			else
+			{
+				// This is a simple associative array
+				$key  = $elementKey;
+				$text = $element;
+			}
+
+			if (is_null($ret) && $selectFirst)
+			{
+				$ret = $text;
+			}
+			elseif ($selected == $key)
+			{
+				$ret = $text;
+			}
+		}
+
+		return $ret;
 	}
 
 	public static function renderUserRepeatable($userid, array $attribs = array())
