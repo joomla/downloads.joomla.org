@@ -82,7 +82,7 @@ RewriteRule .* index.php [L]
 
 ##################### Security Header #####################
 <IfModule mod_headers.c>
-	# X-XSS-Protection
+ 	# X-XSS-Protection
 	Header always set X-XSS-Protection "1; mode=block"
 	# X-Frame-Options
 	Header always set X-Frame-Options SAMEORIGIN
@@ -93,6 +93,36 @@ RewriteRule .* index.php [L]
 	# Strict-Transport-Security
 	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 	# Content-Security-Policy-Report-Only 
-	Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.google-analytics.com https://*.googletagmanager.com https://*.googleapis.com https://*.gstatic.com https://*.google.com https://*.joomla.org https://*.pingdom.net https://downloadscdn.joomla.org https://*.googleapis.com https://*.doubleclick.net https://*.buysellads.com; style-src 'self' 'unsafe-inline' https://*.joomla.org https://fonts.googleapis.com; connect-src 'self' https://*.joomla.org https://*.pingdom.net https://*.doubleclick.net https://*.google-analytics.com; frame-src 'self' https://*.google.com https://www.googletagmanager.com https://*.adfront.org; font-src 'self' https://fonts.gstatic.com https://*.joomla.org; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://*.joomla.org https://*.pingdom.net https://*.doubleclick.net https://*.gstatic.com https://*.google.com https://*.googleapis.com https://*.buysellads.com https://online.swagger.io https://*.adfront.org; report-uri https://community.joomla.org/scripts/csp-reporter.php?source=downloads.joomla.org"
+	Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.google-analytics.com https://*.googletagmanager.com https://*.googleapis.com https://*.gstatic.com https://*.google.com https://*.joomla.org https://*.pingdom.net https://downloadscdn.joomla.org https://*.googleapis.com https://*.doubleclick.net https://*.buysellads.com; style-src 'self' 'unsafe-inline' https://*.joomla.org https://fonts.googleapis.com; connect-src 'self' https://*.joomla.org https://*.pingdom.net https://*.doubleclick.net https://*.google-analytics.com; frame-src 'self' https://*.google.com https://www.googletagmanager.com https://*.adfront.org; font-src 'self' https://fonts.gstatic.com https://*.joomla.org; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://*.joomla.org https://*.pingdom.net https://*.doubleclick.net https://*.gstatic.com https://*.google.com https://*.googleapis.com https://*.buysellads.com https://online.swagger.io https://*.adfront.org; frame-ancestors 'self'; report-uri https://joomla.report-uri.com/r/t/csp/enforce"
 </IfModule>
-##################### Security Header #####################
+##################### Security Header
+
+# Someone is spamming the ever loving crap out of the API, cache responses for the love of all that is sane until the offender is found
+<IfModule LiteSpeed>
+CacheEnable public /api/
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors Off
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 32M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php72"
+   php_value upload_max_filesize 16M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php72” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
