@@ -126,6 +126,8 @@ class PlgSystemDownloadsAdmin extends JPlugin
 	 */
 	public function onAfterDispatch()
 	{
+		$this->handleLanguagePackPathways();
+
 		if (!JLanguageMultilang::isEnabled())
 		{
 			return;
@@ -305,5 +307,34 @@ class PlgSystemDownloadsAdmin extends JPlugin
 				}
 			}
 		}
+	}
+
+	/**
+	 * After Dispatch Event. Running after components but before modules.
+	 * Aim is to hide the ARS Menu item from the pathway
+	 *
+	 * @return   void
+	 *
+	 * @since   1.1.0
+	 */
+	private function handleLanguagePackPathways()
+	{
+		if ($this->app->input->getCmd('option') !== 'com_ars')
+		{
+			return;
+		}
+
+		$pathway = $this->app->getPathway()->getPathway();
+
+		// If the top level menu item isn't the language pack component bail
+		if (isset($pathway[0]->link) && strpos($pathway[0]->link, 'option=com_languagepack') === false)
+		{
+			return;
+		}
+
+		// Remove our bodged menu item for ARS
+		unset($pathway[2]);
+
+		$this->app->getPathway()->setPathway(array_values($pathway));
 	}
 }
