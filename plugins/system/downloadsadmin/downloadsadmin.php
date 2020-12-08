@@ -319,7 +319,10 @@ class PlgSystemDownloadsAdmin extends JPlugin
 	 */
 	private function handleLanguagePackPathways()
 	{
-		if ($this->app->input->getCmd('option') !== 'com_ars')
+		if (
+			$this->app->input->getCmd('option') !== 'com_ars' ||
+			!$this->app->isSite()
+		) 
 		{
 			return;
 		}
