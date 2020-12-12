@@ -201,7 +201,7 @@ $categories = [
 		'vgroup_id'    => '2',
 		'is_supported' => '0',
 	],
-	// ID: 21
+	// ID: 21 - Not available on current site
 	[
 		'title'        => 'Joomla! 1.5 - English (Australia)',
 		'alias'        => 'joomla15-english-australia',
@@ -561,7 +561,7 @@ $categories = [
 		'vgroup_id'    => '2',
 		'is_supported' => '0',
 	],
-	// ID: 209
+	// ID: 209 Doesn't exist on current site
 	[
 		'title'        => 'Joomla! 1.5 - Serbian (Latin)',
 		'alias'        => 'joomla15-serbian-latin',
