@@ -1,11 +1,10 @@
 <?php
 /**
  * Akeeba Engine
- * The modular PHP5 site backup engine
  *
- * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
- * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
+ * @copyright Copyright (c)2006-2020 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
  */
 
 namespace Akeeba\Engine\Postproc\Connector\S3v4\Signature;
@@ -77,7 +76,7 @@ class V4 extends Signature
 		 * http://s3-eu-west-1.amazonaws.com/example instead of http://example.amazonaws.com/ for all authenticated URLs
 		 */
 		$region   = $this->request->getConfiguration()->getRegion();
-		$hostname = $this->kot($region);
+		$hostname = $this->getPresignedHostnameForRegion($region);
 		$this->request->setHeader('Host', $hostname);
 
 		// Set the expiration time in seconds
@@ -138,15 +137,21 @@ class V4 extends Signature
 		 *
 		 * @see http://docs.aws.amazon.com/general/latest/gr/sigv4-create-string-to-sign.html
 		 */
-		if (isset($headers['Expires']) && ($verb == 'GET'))
+		if (isset($headers['Expires']))
 		{
 			$gmtDate = clone $signatureDate;
 			$gmtDate->setTimezone(new \DateTimeZone('GMT'));
 
-			$parameters['X-Amz-Algorithm'] = "AWS4-HMAC-SHA256";
-			$parameters['X-Amz-Credential'] = $this->request->getConfiguration()->getAccess() . '/' . $credentialScope;
-			$parameters['X-Amz-Date'] = $gmtDate->format('Ymd\THis\Z');
-			$parameters['X-Amz-Expires'] = sprintf('%u', $headers['Expires']);
+			$parameters['X-Amz-Algorithm']      = "AWS4-HMAC-SHA256";
+			$parameters['X-Amz-Credential']     = $this->request->getConfiguration()->getAccess() . '/' . $credentialScope;
+			$parameters['X-Amz-Date']           = $gmtDate->format('Ymd\THis\Z');
+			$parameters['X-Amz-Expires']        = sprintf('%u', $headers['Expires']);
+			$token                              = $this->request->getConfiguration()->getToken();
+
+			if (!empty($token))
+			{
+				$parameters['x-amz-security-token'] = $token;
+			}
 
 			unset($headers['Expires']);
 			unset($headers['Date']);
@@ -346,7 +351,14 @@ class V4 extends Signature
 		return str_replace('+', '%20', urlencode($string));
 	}
 
-	private function kot($region)
+	/**
+	 * Get the correct hostname for the given AWS region
+	 *
+	 * @param   string  $region
+	 *
+	 * @return  string
+	 */
+	private function getPresignedHostnameForRegion($region)
 	{
 		$endpoint = 's3.amazonaws.com';
 
@@ -354,7 +366,7 @@ class V4 extends Signature
 		{
 			$region = 'external-1';
 		}
-		elseif ($region == 'cn-north-1')
+		elseif (substr($region, 0, 3) == 'cn-')
 		{
 			$endpoint = 'amazonaws.com.cn';
 

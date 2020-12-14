@@ -1,11 +1,10 @@
 <?php
 /**
  * Akeeba Engine
- * The modular PHP5 site backup engine
  *
- * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
- * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
+ * @copyright Copyright (c)2006-2020 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
  */
 
 namespace Akeeba\Engine\Postproc\Connector\S3v4\Signature;
@@ -77,6 +76,16 @@ class V2 extends Signature
 		));
 
 		$query = http_build_query($queryParameters);
+		
+		// fix authenticated url for Google Cloud Storage - https://cloud.google.com/storage/docs/access-control/create-signed-urls-program
+		if ($this->request->getConfiguration()->getEndpoint() === "storage.googleapis.com") {
+		    // replace host with endpoint
+		    $headers['Host'] = 'storage.googleapis.com';
+		    // replace "AWSAccessKeyId" with "GoogleAccessId"
+		    $query = str_replace('AWSAccessKeyId', 'GoogleAccessId', $query);
+		    // add bucket to url
+		    $uri = '/' . $bucket . $uri;
+		}
 
 		$url = $protocol . '://' . $headers['Host'] . $uri;
 		$url .= (strpos($uri, '?') !== false) ? '&' : '?';
@@ -97,9 +106,10 @@ class V2 extends Signature
 		$headers        = $this->request->getHeaders();
 		$amzHeaders     = $this->request->getAmzHeaders();
 		$parameters     = $this->request->getParameters();
+		$bucket         = $this->request->getBucket();
 		$isPresignedURL = false;
 
-		$amz = array();
+		$amz       = array();
 		$amzString = '';
 
 		// Collect AMZ headers for signature
@@ -121,20 +131,29 @@ class V2 extends Signature
 		// If the Expires query string parameter is set up we're pre-signing a download URL. The string to sign is a bit
 		// different in this case; it does not include the Date, it includes the Expires.
 		// See http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html#RESTAuthenticationQueryStringAuth
-		if (isset($headers['Expires']) && ($verb == 'GET'))
+		if (isset($headers['Expires']))
 		{
 			$headers['Date'] = $headers['Expires'];
 			unset ($headers['Expires']);
 
-			$isPresignedURL  = true;
+			$isPresignedURL = true;
+		}
+
+		/**
+		 * The resource path in S3 V2 signatures must ALWAYS contain the bucket name if a bucket is defined, even if we
+		 * are not using path-style access to the resource
+		 */
+		if (!empty($bucket) && !$this->request->getConfiguration()->getUseLegacyPathStyle())
+		{
+			$resourcePath = '/' . $bucket . $resourcePath;
 		}
 
 		$stringToSign = $verb . "\n" .
-						(isset($headers['Content-MD5']) ? $headers['Content-MD5'] : '') . "\n" .
-						(isset($headers['Content-Type']) ? $headers['Content-Type'] : '') . "\n" .
-		                $headers['Date'] .
-		                $amzString . "\n" .
-		                $resourcePath;
+			(isset($headers['Content-MD5']) ? $headers['Content-MD5'] : '') . "\n" .
+			(isset($headers['Content-Type']) ? $headers['Content-Type'] : '') . "\n" .
+			$headers['Date'] .
+			$amzString . "\n" .
+			$resourcePath;
 
 		// CloudFront only requires a date to be signed
 		if ($headers['Host'] == 'cloudfront.amazonaws.com')
@@ -152,8 +171,8 @@ class V2 extends Signature
 		}
 
 		return 'AWS ' .
-		       $this->request->getConfiguration()->getAccess() . ':' .
-		$amazonV2Hash;
+			$this->request->getConfiguration()->getAccess() . ':' .
+			$amazonV2Hash;
 	}
 
 	/**

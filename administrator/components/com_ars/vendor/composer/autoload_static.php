@@ -4,11 +4,27 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd6fe44acbff8acf1cda42c48a8450a46
+class ComposerStaticInit5d735af99e82a477ddda45d73647a91e
 {
+    public static $prefixLengthsPsr4 = array (
+        'A' => 
+        array (
+            'Akeeba\\Engine\\Postproc\\Connector\\S3v4\\' => 38,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Akeeba\\Engine\\Postproc\\Connector\\S3v4\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/akeeba/s3/src',
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5d735af99e82a477ddda45d73647a91e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5d735af99e82a477ddda45d73647a91e::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
