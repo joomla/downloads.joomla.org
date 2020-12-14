@@ -45,7 +45,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Afrikaans',
 		'alias'        => 'joomla15-afrikaans',
-		'description'  => '<p>Language: Afrikaans (af-ZA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=84994">Gerrit Hoekstra</a><br />Contact: <a href="mailto:gerrit@hoekstra.co.uk">gerrit@hoekstra.co.uk</a></p>',
+		'description'  => '<p>Language: Afrikaans (af-ZA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/af-ZA',
 		'vgroup_id'    => '2',
@@ -55,7 +55,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Albanian',
 		'alias'        => 'joomla15-albanian',
-		'description'  => '<p>Language: Albanian (sq-AL)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=130308">Albagen</a><br/>Contact: <a href="mailto:pluhun@gmail.com">pluhun@gmail.com</a></p>',
+		'description'  => '<p>Language: Albanian (sq-AL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sq-AL',
 		'vgroup_id'    => '2',
@@ -65,7 +65,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Arabic Unitag',
 		'alias'        => 'joomla15-arabic-unitag',
-		'description'  => '<p>Language: Arabic Unitag (ar-AA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=172649">Mahmood Alhaj Kassem</a><br />Contact: <a href="mailto:suneye3@gmail.com">suneye3@gmail.com</a></p><p><span class="label label-info">Information</span> As an ISO tag is necessary to comply with IT standards, we chose a UNITAG for Arabic, thus usable in any country. ar-AA is the new tag. It is Classic Arabic.</p>',
+		'description'  => '<p>Language: Arabic Unitag (ar-AA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ar-AA',
 		'vgroup_id'    => '2',
@@ -75,7 +75,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Azeri / Azerbaijani',
 		'alias'        => 'joomla15-azeri',
-		'description'  => '<p>Language: Azeri (Azerbaijan) (az-AZ)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=203862">Mahmud</a><br />Contact: <a href="mailto:joomlazer@gmail.com">joomlazer@gmail.com</a></p>',
+		'description'  => '<p>Language: Azeri (Azerbaijan) (az-AZ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/az-AZ',
 		'vgroup_id'    => '2',
@@ -85,7 +85,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Belarusian',
 		'alias'        => 'joomla15-belarusian',
-		'description'  => '<p>Language: Belarusian (be-BY)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=27443">Dennis Hermatski</a><br />Contact: <a href="mailto:pandenitz@mail.ru">pandenitz@mail.ru</a></p>',
+		'description'  => '<p>Language: Belarusian (be-BY)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/be-BY',
 		'vgroup_id'    => '2',
@@ -95,7 +95,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Bengali (Bangladesh)',
 		'alias'        => 'joomla15-bengali',
-		'description'  => '<p>Language: Bengali (Bangladesh) (bn-BD)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=114153">Kamal Sikder</a><br />Contact: <a href="mailto:kamalsikder@yahoo.co.uk">kamalsikder@yahoo.co.uk</a></p>',
+		'description'  => '<p>Language: Bengali (Bangladesh) (bn-BD)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/bn-BD',
 		'vgroup_id'    => '2',
@@ -105,7 +105,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Bosnian',
 		'alias'        => 'joomla15-bosnian',
-		'description'  => '<p>Language: Bosnian (bs-BA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=434037">Admir Agic</a><br />Contact: <a href="mailto:admir.agic@joomla.ba">admir.agic@joomla.ba</a><br />Website: <a href="http://www.joomla.ba">www.joomla.ba</a></p>',
+		'description'  => '<p>Language: Bosnian (bs-BA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/bs-BA',
 		'vgroup_id'    => '2',
@@ -115,7 +115,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Bulgarian',
 		'alias'        => 'joomla15-bulgarian',
-		'description'  => '<p>Language: Bulgarian (bg-BG)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=54803">Yury Boev</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=36211">Plamen Gradinarov</a><br />Contact: <a href="mailto:imago@abv.bg">imago@abv.bg</a><br />Website: <a href="http://www.joomaker.com/">www.joomaker.com/</a></p>',
+		'description'  => '<p>Language: Bulgarian (bg-BG)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/bg-BG',
 		'vgroup_id'    => '2',
@@ -125,7 +125,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Catalan',
 		'alias'        => 'joomla15-catalan',
-		'description'  => '<p>Language: Catalan (ca-ES)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=53800">Damià Verger</a><br />Contact: <a href="mailto:info@joomla.cat">info@joomla.cat</a><br />Website: <a href="http://www.joomla.cat/">www.joomla.cat</a></p>',
+		'description'  => '<p>Language: Catalan (ca-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ca-ES',
 		'vgroup_id'    => '2',
@@ -135,7 +135,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Chinese (Simplified)',
 		'alias'        => 'joomla15-chinese-simplified',
-		'description'  => '<p>Language: Chinese (Simplified) (zh-CN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=29778">Jonathan Cheung</a><br /> Contact: <a href="mailto:osulcn@gmail.com">osulcn@gmail.com</a><br />Website: <a href="http://www.joomla.cn">www.joomla.cn</a></p>',
+		'description'  => '<p>Language: Chinese (Simplified) (zh-CN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/zh-CN',
 		'vgroup_id'    => '2',
@@ -145,7 +145,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Chinese (Traditional)',
 		'alias'        => 'joomla15-chinese-traditional',
-		'description'  => '<p>Language: Chinese (Traditional) (zh-TW)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1604">Eddy Chang</a><br />Contact: <a href="mailto:taiwanmambo@gmail.co">taiwanmambo@gmail.co</a></p>',
+		'description'  => '<p>Language: Chinese (Traditional) (zh-TW)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/zh-TW',
 		'vgroup_id'    => '2',
@@ -155,7 +155,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Croatian',
 		'alias'        => 'joomla15-croatian',
-		'description'  => '<p>Language: Croatian (hr-HR)<br />Coordinator: Bernard Toplak (1.6/1.7)<br />Contact: <a href="mailto:bernard@joomla-hrvatska.com">bernard@joomla-hrvatska.com</a></p>',
+		'description'  => '<p>Language: Croatian (hr-HR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/hr-HR',
 		'vgroup_id'    => '2',
@@ -165,7 +165,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Czech',
 		'alias'        => 'joomla15-czech',
-		'description'  => '<p>Language: Czech (cs-CZ)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=449">Svatas</a><br />Contact: <a href="mailto:svatopluk.vit@joomlaportal.cz">svatopluk.vit@joomlaportal.cz</a></p>',
+		'description'  => '<p>Language: Czech (cs-CZ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/cs-CZ',
 		'vgroup_id'    => '2',
@@ -175,7 +175,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Danish',
 		'alias'        => 'joomla15-danish',
-		'description'  => '<p>Language: Danish (da-DK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=94264">Ronny Buelund</a><br />Contact: <a href="mailto:rbluelund@email.dk">rbluelund@email.dk</a></p>',
+		'description'  => '<p>Language: Danish (da-DK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/da-DK',
 		'vgroup_id'    => '2',
@@ -185,7 +185,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Dari (Afghanistan)',
 		'alias'        => 'joomla15-dari-afghanistan',
-		'description'  => '<p>Language: Dari (Afghanistan) (fa-AF)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=311081">Daud Nigaresh</a><br />Contact: <a href="mailto:d.nigaresh@paiwastoon.com.af">d.nigaresh@paiwastoon.com.af</a></p>',
+		'description'  => '<p>Language: Dari (Afghanistan) (fa-AF)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/fa-AF',
 		'vgroup_id'    => '2',
@@ -195,7 +195,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Dutch',
 		'alias'        => 'joomla15-dutch',
-		'description'  => '<p>Language: Dutch (nl-NL)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=159718">Marijke Stuivenberg</a><br />Contact: <a href="mailto:taal@joomlacommunity.eu">taal@joomlacommunity.eu</a><br />Website: <a href="http://www.joomlacommunity.eu/">www.joomlacommunity.eu</a></p>',
+		'description'  => '<p>Language: Dutch (nl-NL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/nl-NL',
 		'vgroup_id'    => '2',
@@ -205,7 +205,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - English (Australia)',
 		'alias'        => 'joomla15-english-australia',
-		'description'  => '<p>Language: English (Australia) (en-AU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=368245">Leonard Fitzgerald</a><br />Contact: <a href="mailto:admin@aussiesrus.com.au">admin@aussiesrus.com.au</a></p><p><span class="label label-important">Important!</span> This variant of en-GB is provided to help some search engines recognize the site\'s country (Bing for example). Otherwise, its contents are exactly the same as the default en-GB files.</p>',
+		'description'  => '<p>Language: English (Australia) (en-AU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/en-AU',
 		'vgroup_id'    => '2',
@@ -215,7 +215,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - English (USA)',
 		'alias'        => 'joomla15-english-us',
-		'description'  => '<p>Language: English (USA) (en-US)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1257">Jennifer Marriot</a><br />Contact: <a href="mailto:jennifer.marriott@community.joomla.org">jennifer.marriott@community.joomla.org</a></p>',
+		'description'  => '<p>Language: English (USA) (en-US)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/en-US',
 		'vgroup_id'    => '2',
@@ -225,7 +225,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Esperanto',
 		'alias'        => 'joomla15-esperanto',
-		'description'  => '<p>Language: Esperanto (eo-XX)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=129969">Cindy McKee</a><br />Contact: <a href="mailto:cfmckee@gmail.com">cfmckee@gmail.com</a></p>',
+		'description'  => '<p>Language: Esperanto (eo-XX)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/eo-XX',
 		'vgroup_id'    => '2',
@@ -235,7 +235,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Estonian',
 		'alias'        => 'joomla15-estonian',
-		'description'  => '<p>Language: Estonian (et-EE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1040">Rivo Zängov</a><br />Contact: <a href="mailto:eraser@eraser.ee">eraser@eraser.ee</a><br />Website: <a href="http://www.eraser.ee">www.eraser.ee</a></p>',
+		'description'  => '<p>Language: Estonian (et-EE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/et-EE',
 		'vgroup_id'    => '2',
@@ -245,7 +245,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Finnish',
 		'alias'        => 'joomla15-finnish',
-		'description'  => '<p>Language: Finnish (fi-FI)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=34">Markku Suominen</a><br />Contact: <a href="mailto:admin@joomlaportal.fi">admin@joomlaportal.fi</a></p>',
+		'description'  => '<p>Language: Finnish (fi-FI)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/fi-FI',
 		'vgroup_id'    => '2',
@@ -255,7 +255,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - French',
 		'alias'        => 'joomla15-french',
-		'description'  => '<p>Language: French (fr-FR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=25574">Nicolas OGIER</a><br />Contact: <a href="mailto:opware.joomla@gmail.com">opware.joomla@gmail.com</a><br />Website: <a href="http://www.joomla.fr/">www.joomla.fr</a></p>',
+		'description'  => '<p>Language: French (fr-FR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/fr-FR',
 		'vgroup_id'    => '2',
@@ -265,7 +265,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Galician',
 		'alias'        => 'joomla15-galician',
-		'description'  => '<p>Language: Galician (gl-ES)<br /> Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=202374">damufo</a><br />Contact: <a href="mailto:damufo@gmail.com">damufo@gmail.com</a></p>',
+		'description'  => '<p>Language: Galician (gl-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/gl-ES',
 		'vgroup_id'    => '2',
@@ -275,7 +275,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Georgian',
 		'alias'        => 'joomla15-georgian',
-		'description'  => '<p>Language: Georgian (ka-GE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=460618">j.chutlashvili</a><br />Contact: <a href="mailto:j.chutlashvili@personal-it.ge">j.chutlashvili@personal-it.ge</a></p>',
+		'description'  => '<p>Language: Georgian (ka-GE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ka-GE',
 		'vgroup_id'    => '2',
@@ -285,7 +285,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - German',
 		'alias'        => 'joomla15-german',
-		'description'  => '<p>Language: German (de-DE/de-AT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=60422">Jan Erik Zassenhaus</a><br />Contact: <a href="mailto:info@jgerman.de">info@jgerman.de</a><br />Website: <a href="http://www.jgerman.de">www.jgerman.de</a></p>',
+		'description'  => '<p>Language: German (de-DE/de-AT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/de-DE',
 		'vgroup_id'    => '2',
@@ -295,7 +295,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Greek',
 		'alias'        => 'joomla15-greek',
-		'description'  => '<p>Language: Greek (el-GR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=544">Aris Ntatsis</a><br />Contact: <a href="mailto:joomla@myjoomla.gr">joomla@myjoomla.gr</a><br />Website: <a href="http://www.joomla.gr">www.joomla.gr</a></p>',
+		'description'  => '<p>Language: Greek (el-GR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/el-GR',
 		'vgroup_id'    => '2',
@@ -305,7 +305,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Gujarati',
 		'alias'        => 'joomla15-gujarati',
-		'description'  => '<p>Language: Gujarati (gu-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=173519">Ronak Bhagdev</a><br />Contact: <a href="mailto:ronak@gujaratijoomla.com">ronak@gujaratijoomla.com</a><br />Website: <a href="http://www.gujaratijoomla.com">www.gujaratijoomla.com</a></p>',
+		'description'  => '<p>Language: Gujarati (gu-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/gu-IN',
 		'vgroup_id'    => '2',
@@ -315,7 +315,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Hebrew',
 		'alias'        => 'joomla15-hebrew',
-		'description'  => '<p>Language: Hebrew (he-IL)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147303">Ofer Cohen</a><br />Contact: <a href="mailto:oc666@netvision.net.il">oc666@netvision.net.il</a><br />Website: <a href="http://www.joomla.org.il">www.joomla.org.il</a></p>',
+		'description'  => '<p>Language: Hebrew (he-IL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/he-IL',
 		'vgroup_id'    => '2',
@@ -325,7 +325,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Hindi (India)',
 		'alias'        => 'joomla15-hindi',
-		'description'  => '<p>Language: Hindi (India) (hi-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=367808">Sanjeev Naroliya</a><br />Contact: <a href="mailto:sanjeev.naroliya@gmail.com">sanjeev.naroliya@gmail.com</a></p>',
+		'description'  => '<p>Language: Hindi (India) (hi-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/hi-IN',
 		'vgroup_id'    => '2',
@@ -335,7 +335,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Hungarian',
 		'alias'        => 'joomla15-hungarian',
-		'description'  => '<p>Language: Hungarian (hu-HU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=4846">Herczeg</a><br />Contact: <a href="mailto:herczegjt@joomla.org.hu">herczegjt@joomla.org.hu</a><br />Website: <a href="http://www.joomla.org.hu">www.joomla.org.hu</a></p>',
+		'description'  => '<p>Language: Hungarian (hu-HU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/hu-HU',
 		'vgroup_id'    => '2',
@@ -345,7 +345,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Icelandic',
 		'alias'        => 'joomla15-icelandic',
-		'description'  => '<p>Language: Icelandic (is-IS)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=179205">Magnus Gudlaugsson</a><br />Contact: <a href="mailto:joomlis@joomlis.net">joomlis@joomlis.net</a></p>',
+		'description'  => '<p>Language: Icelandic (is-IS)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/is-IS',
 		'vgroup_id'    => '2',
@@ -355,7 +355,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Indonesian (Bahasa Indonesia)',
 		'alias'        => 'joomla15-indonesian',
-		'description'  => '<p>Language: Indonesian (Bahasa Indonesia) (id-ID)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=635">Andy Sikumbang</a><br />Contact: <a href="mailto:sikumbang@gmail.com">sikumbang@gmail.com</a></p>',
+		'description'  => '<p>Language: Indonesian (Bahasa Indonesia) (id-ID)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/id-ID',
 		'vgroup_id'    => '2',
@@ -365,7 +365,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Italian',
 		'alias'        => 'joomla15-italian',
-		'description'  => '<p>Language: Italian (it-IT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1426">Stefania Gaianigo</a><br />Contact: <a href="mailto:info@joomla.it">info@joomla.it</a><br />Website: <a href="http://www.joomla.it">www.joomla.it</a></p>',
+		'description'  => '<p>Language: Italian (it-IT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/it-IT',
 		'vgroup_id'    => '2',
@@ -375,7 +375,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Japanese',
 		'alias'        => 'joomla15-japanese',
-		'description'  => '<p>Language: Japanese (ja-JP)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=2401">Nori</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=3018">richell</a><br />Website: <a href="http://joomla.jp">joomla.jp</a></p>',
+		'description'  => '<p>Language: Japanese (ja-JP)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ja-JP',
 		'vgroup_id'    => '2',
@@ -385,7 +385,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Khmer (Cambodia)',
 		'alias'        => 'joomla15-khmer',
-		'description'  => '<p>Language: Khmer (Cambodia) (km-KH)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=330483">Heng Sovann</a><br />Contact: <a href="mailto:hengsovann@gmail.com">hengsovann@gmail.com</a></p>',
+		'description'  => '<p>Language: Khmer (Cambodia) (km-KH)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/km-KH',
 		'vgroup_id'    => '2',
@@ -395,7 +395,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Laotian',
 		'alias'        => 'joomla15-laotian',
-		'description'  => '<p>Language: Laotian (lo-LA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=264833">vskphanthanousy</a><br />Contact: <a href="mailto:info@joomlalaolao.com">info@joomlalaolao.com</a><br />Website: <a href="http://www.joomlalaolao.com">www.joomlalaolao.com</a></p>',
+		'description'  => '<p>Language: Laotian (lo-LA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/lo-LA',
 		'vgroup_id'    => '2',
@@ -405,7 +405,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Latvian',
 		'alias'        => 'joomla15-latvian',
-		'description'  => '<p>Language: Latvian (lv-LV)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=8175">Lemings</a><br />Contact: <a href="mailto:lemings@inbox.lv">lemings@inbox.lv</a></p>',
+		'description'  => '<p>Language: Latvian (lv-LV)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/lv-LV',
 		'vgroup_id'    => '2',
@@ -415,7 +415,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Lithuanian',
 		'alias'        => 'joomla15-lithuanian',
-		'description'  => '<p>Language: Lithuanian (lt-LT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=44">Stasys</a><br />Website: <a href="http://www.lithuanianjoomla.com">www.lithuanianjoomla.com</a></p>',
+		'description'  => '<p>Language: Lithuanian (lt-LT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/lt-LT',
 		'vgroup_id'    => '2',
@@ -425,7 +425,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Macedonian',
 		'alias'        => 'joomla15-macedonian',
-		'description'  => '<p>Language: Macedonian (mk-MK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=149928">lija Iliev</a><br />Contact: <a href="mailto:info@joomla.mk">info@joomla.mk</a><br />Website: <a href="http://www.joomla.mk">www.joomla.mk</a></p>',
+		'description'  => '<p>Language: Macedonian (mk-MK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/mk-MK',
 		'vgroup_id'    => '2',
@@ -435,7 +435,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Malay',
 		'alias'        => 'joomla15-malay',
-		'description'  => '<p>Language: Malay (ms-MY)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=279622">Sam Suresh</a><br />Contact: <a href="mailto:support@mu.my">support@mu.my</a></p>',
+		'description'  => '<p>Language: Malay (ms-MY)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ms-MY',
 		'vgroup_id'    => '2',
@@ -445,7 +445,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Malayalam',
 		'alias'        => 'joomla15-malayalam',
-		'description'  => '<p>Language: Malayalam (India) (ml-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=366210">Sujith</a><br />Contact: <a href="mailto:sujith@sujith.co.in">sujith@sujith.co.in</a><br />Website: <a href="http://techlineinfo.com">techlineinfo.com</a></p>',
+		'description'  => '<p>Language: Malayalam (India) (ml-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ml-IN',
 		'vgroup_id'    => '2',
@@ -455,7 +455,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Mongolian',
 		'alias'        => 'joomla15-mongolian',
-		'description'  => '<p>Language: Mongolian (mn-MN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=109009">Altansukh</a><br />Contact: <a href="mailto:altansukh@altansukh.com">altansukh@altansukh.com</a><br />Website: <a href="http://www.n20.mn">www.n20.mn</a></p>',
+		'description'  => '<p>Language: Mongolian (mn-MN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/mn-MN',
 		'vgroup_id'    => '2',
@@ -465,7 +465,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Montenegrin',
 		'alias'        => 'joomla15-montenegrin',
-		'description'  => '<p>Language: Montenegrin (sr-ME)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=79307">Miljan Vujosevic AKA Leftfield</a><br />Contact: <a href="mailto:leftfield@joomlamontenegro.com">leftfield@joomlamontenegro.com</a><br />Website: <a href="http://www.joomlamontenegro.com">www.joomlamontenegro.com</a></p>',
+		'description'  => '<p>Language: Montenegrin (sr-ME)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sr-ME',
 		'vgroup_id'    => '2',
@@ -475,7 +475,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Norwegian',
 		'alias'        => 'joomla15-norwegian',
-		'description'  => '<p>Language: Norwegian (nb-NO)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=5511">Rune Rasmussen</a><br />Contact: <a href="mailto:oversettelser@joomlainorge.no">oversettelser@joomlainorge.no</a><br />Website: <a href="http://www.joomlainorge.no/">www.joomlainorge.no</a></p>',
+		'description'  => '<p>Language: Norwegian (nb-NO)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/nb-NO',
 		'vgroup_id'    => '2',
@@ -485,7 +485,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Pashto (Afghanistan)',
 		'alias'        => 'joomla15-pashto-afghanistan',
-		'description'  => '<p>Language: Pashto (Afghanistan) (ps-AF)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=311081">Daud Nigaresh</a><br />Contact: <a href="mailto:d.nigaresh@paiwastoon.com.af">d.nigaresh@paiwastoon.com.af</a></p>',
+		'description'  => '<p>Language: Pashto (Afghanistan) (ps-AF)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ps-AF',
 		'vgroup_id'    => '2',
@@ -495,7 +495,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Persian (Farsi)',
 		'alias'        => 'joomla15-persian-farsi',
-		'description'  => '<p>Language: Persian (Farsi) (fa-IR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=59896">Mostafa Alavi Nik</a><br />Contact: <a href="mailto:joomfa@gmail.com">joomfa@gmail.com</a><br />Website: <a href="http://joomfa.org">www.joomfa.org</a></p><p><span class="label label-info">Information</span> A specific hack is available to implement jalali date. This is the responsibility of the Translation Team.</p>',
+		'description'  => '<p>Language: Persian (Farsi) (fa-IR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/fa-IR',
 		'vgroup_id'    => '2',
@@ -505,7 +505,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Polish',
 		'alias'        => 'joomla15-polish',
-		'description'  => '<p>Language: Polish (pl-PL)<br />Coordinators: zwiastun, dylek<br />Contact: <a href="mailto:zwiastun@joomla.pl">zwiastun@joomla.pl</a><br />Website: <a href="http://www.joomla.pl">www.joomla.pl</a></p>',
+		'description'  => '<p>Language: Polish (pl-PL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/pl-PL',
 		'vgroup_id'    => '2',
@@ -515,7 +515,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Portuguese (Brazil)',
 		'alias'        => 'joomla15-portuguese-brazil',
-		'description'  => '<p>Language: Portuguese (Brazil) (pt-BR)<br />Coordinators: Costa, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=590">FaBMAK</a><br />Contact: <a href="mailto:traducao@joomla.com.br">traducao@joomla.com.br</a></p>',
+		'description'  => '<p>Language: Portuguese (Brazil) (pt-BR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/pt-BR',
 		'vgroup_id'    => '2',
@@ -525,7 +525,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Portuguese (Portugal)',
 		'alias'        => 'joomla15-portuguese-portugal',
-		'description'  => '<p>Language: Portuguese (Portugal) (pt-PT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=6515">Paulo Izidoro</a><br />Contact: Translators Wiki at <a href="http://joomlapt.wetpaint.com">joomlapt.wetpaint.com</a><br />Website: <a href="http://www.joomlapt.com">www.joomlapt.com</a></p>',
+		'description'  => '<p>Language: Portuguese (Portugal) (pt-PT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/pt-PT',
 		'vgroup_id'    => '2',
@@ -535,7 +535,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Romanian',
 		'alias'        => 'joomla15-romanian',
-		'description'  => '<p>Language: Romanian (ro-RO)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=254">Cosmin Lebu</a><br />Contact: <a href="mailto:contact@joomla.ro">contact@joomla.ro</a><br />Website: <a href="http://www.joomla.ro">www.joomla.ro</a></p>',
+		'description'  => '<p>Language: Romanian (ro-RO)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ro-RO',
 		'vgroup_id'    => '2',
@@ -545,7 +545,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Russian',
 		'alias'        => 'joomla15-russian',
-		'description'  => '<p>Language: Russian (ru-RU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=250">Sergey Litvinov</a><br />Contact: <a href="mailto:serge.litvinov@gmail.com">serge.litvinov@gmail.com</a><br />Website: <a href="http://www.joomlaportal.ru">www.joomlaportal.ru</a></p>',
+		'description'  => '<p>Language: Russian (ru-RU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ru-RU',
 		'vgroup_id'    => '2',
@@ -555,7 +555,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Serbian (Cyrillic)',
 		'alias'        => 'joomla15-serbian-cyrillic',
-		'description'  => '<p>Language: Serbian (sr-RS)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147895">cicans</a><br />Contact: <a href="mailto:svetlana.zec@gmail.com">svetlana.zec@gmail.com</a></p>',
+		'description'  => '<p>Language: Serbian (sr-RS)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sr-RS',
 		'vgroup_id'    => '2',
@@ -565,7 +565,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Serbian (Latin)',
 		'alias'        => 'joomla15-serbian-latin',
-		'description'  => '<p>Language: Serbian (sr-YU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147895">cicans</a><br />Contact: <a href="mailto:svetlana.zec@gmail.com">svetlana.zec@gmail.com</a></p>',
+		'description'  => '<p>Language: Serbian (sr-YU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sr-YU',
 		'vgroup_id'    => '2',
@@ -575,7 +575,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Sindhi',
 		'alias'        => 'joomla15-sindhi',
-		'description'  => '<p>Language: Sindhi (sd-PK)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=150871">Raheel Hussain Kaghzi</a>, Shafiq-ur-rehman Khatri<br />Contact: <a href="mailto:raheelkaghzi@gmail.com">raheelkaghzi@gmail.com</a></p>',
+		'description'  => '<p>Language: Sindhi (sd-PK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sd-PK',
 		'vgroup_id'    => '2',
@@ -585,7 +585,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Sinhala',
 		'alias'        => 'joomla15-sinhala',
-		'description'  => '<p>Language: Sinhala (si-LK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=129016">Rashan Anushka</a><br />Contact: <a href="mailto:rashan.uoc@gmail.com">rashan.uoc@gmail.com</a></p>',
+		'description'  => '<p>Language: Sinhala (si-LK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/si-LK',
 		'vgroup_id'    => '2',
@@ -595,7 +595,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Slovak',
 		'alias'        => 'joomla15-slovak',
-		'description'  => '<p>Language: Slovak (sk-SK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=11439">Karol Čejka</a><br />Contact: <a href="mailto:karol.cejka@joomlahelp.sk">karol.cejka@joomlahelp.sk</a></p>',
+		'description'  => '<p>Language: Slovak (sk-SK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sk-SK',
 		'vgroup_id'    => '2',
@@ -605,7 +605,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Slovenian',
 		'alias'        => 'joomla15-slovenian',
-		'description'  => '<p>Language: Slovenian (sl-SI)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=350939">Borut Planinc</a><br />Contact: <a href="mailto:info@europa-check.de">info@europa-check.de</a></p>',
+		'description'  => '<p>Language: Slovenian (sl-SI)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sl-SI',
 		'vgroup_id'    => '2',
@@ -615,7 +615,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Spanish',
 		'alias'        => 'joomla15-spanish',
-		'description'  => '<p>Language: Spanish (es-ES)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=813">Gustavo Raúl Aragón</a><br />Contact: <a href="mailto:info@comunidadjoomla.org">info@comunidadjoomla.org</a><br />Website: <a href="http://comunidadjoomla.org">comunidadjoomla.org</a> | Forum: <a href="http://foro.comunidadjoomla.org">foro.comunidadjoomla.org</a> | Twitter: <a href="https://twitter.com/comunidadjoomla">twitter.com/comunidadjoomla</a> | Facebook: <a href="https://www.facebook.com/comunidadjoomla.org">www.facebook.com/comunidadjoomla.org</a></p>',
+		'description'  => '<p>Language: Spanish (es-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/es-ES',
 		'vgroup_id'    => '2',
@@ -625,7 +625,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Swedish',
 		'alias'        => 'joomla15-swedish',
-		'description'  => '<p>Language: Swedish (sv-SE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=2468">Sune Hultman</a><br />Contact: <a href="mailto:info@svenskjoomla.se">info@svenskjoomla.se</a><br />Website: <a href="http://www.svenskjoomla.se">www.svenskjoomla.se</a></p>',
+		'description'  => '<p>Language: Swedish (sv-SE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sv-SE',
 		'vgroup_id'    => '2',
@@ -635,7 +635,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Syriac (East)',
 		'alias'        => 'joomla15-syriac-east',
-		'description'  => '<p>Language: Syriac (East) (sy-IQ)<br />Coordinators: Dinka, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=120314">Ninwaya</a><br />Contact: <a href="mailto:pauls@nohadra.com">pauls@nohadra.com</a></p>',
+		'description'  => '<p>Language: Syriac (East) (sy-IQ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/sy-IQ',
 		'vgroup_id'    => '2',
@@ -645,7 +645,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Tagalog (Philippines)',
 		'alias'        => 'joomla15-tagalog-philippines',
-		'description'  => '<p>Language: Tagalog (Philippines) (tl-PH)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=325364">Aristedes Royo</a><br />Contact: <a href="mailto:aris_royo@yahoo.com">aris_royo@yahoo.com</a><br />Website: <a href="http://www.joomla.org.ph">www.joomla.org.ph</a></p>',
+		'description'  => '<p>Language: Tagalog (Philippines) (tl-PH)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/tl-PH',
 		'vgroup_id'    => '2',
@@ -655,7 +655,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Tamil (India)',
 		'alias'        => 'joomla15-tamil-india',
-		'description'  => '<p>Language: Tamil (India) (ta-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=224484">Ilagnayeru \'MIG\' Manickam</a><br />Contact: <a href="mailto:manickam_mig@yahoo.com">manickam_mig@yahoo.com</a></p>',
+		'description'  => '<p>Language: Tamil (India) (ta-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ta-IN',
 		'vgroup_id'    => '2',
@@ -665,7 +665,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Tamil (Sri Lanka)',
 		'alias'        => 'joomla15-tamil-sri-lanka',
-		'description'  => '<p>Language: Tamil (Sri Lanka) (ta-LK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=183546">Sarves</a><br />Contact: <a href="mailto:iamsarves@gmail.com">iamsarves@gmail.com</a><br />Website: <a href="http://joomla.tamil-it.org">joomla.tamil-it.org</a></p>',
+		'description'  => '<p>Language: Tamil (Sri Lanka) (ta-LK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ta-LK',
 		'vgroup_id'    => '2',
@@ -675,7 +675,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Thai',
 		'alias'        => 'joomla15-thai',
-		'description'  => '<p>Language: Thai (th-TH)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=157">Supachai Teasakul</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=4527">Pisan Chueachatchai</a><br />Contact: <a href="mailto:tt@joomlacorner.com">tt@joomlacorner.com</a><br />Website: <a href="http://www.joomlacorner.com">www.joomlacorner.com</a></p>',
+		'description'  => '<p>Language: Thai (th-TH)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/th-TH',
 		'vgroup_id'    => '2',
@@ -685,7 +685,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Turkish',
 		'alias'        => 'joomla15-turkish',
-		'description'  => '<p>Language: Turkish (tr-TR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=100326">Ümit Kenan Gönüllü</a><br />Contact: <a href="mailto:kenan@ukenan.com">kenan@ukenan.com</a></p>',
+		'description'  => '<p>Language: Turkish (tr-TR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/tr-TR',
 		'vgroup_id'    => '2',
@@ -695,7 +695,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Ukrainian',
 		'alias'        => 'joomla15-ukrainian',
-		'description'  => '<p>Language: Ukrainian (uk-UA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=30343">Denys Nosov</a><br />Contact: <a href="mailto:denys@joomla-ua.org">denys@joomla-ua.org</a><br />Website: <a href="http://www.joomla-ua.org">www.joomla-ua.org</a></p>',
+		'description'  => '<p>Language: Ukrainian (uk-UA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/uk-UA',
 		'vgroup_id'    => '2',
@@ -705,7 +705,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Urdu (Pakistan)',
 		'alias'        => 'joomla15-urdu-pakistan',
-		'description'  => '<p>Language: Urdu (Pakistan) (ur-PK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=88724">basim74_36</a><br />Contact: <a href="mailto:basim74_36@hotmail.com">basim74_36@hotmail.com</a></p>',
+		'description'  => '<p>Language: Urdu (Pakistan) (ur-PK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/ur-PK',
 		'vgroup_id'    => '2',
@@ -715,7 +715,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 1.5 - Vietnamese',
 		'alias'        => 'joomla15-vietnamese',
-		'description'  => '<p>Language: Vietnamese (vi-VN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=30421">Viet Hoang Vu</a><br />Contact: <a href="mailto:banquantri@joomlaviet.org">banquantri@joomlaviet.org</a><br />Website: <a href="http://www.joomlaviet.org">www.joomlaviet.org</a></p>',
+		'description'  => '<p>Language: Vietnamese (vi-VN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla15/vi-VN',
 		'vgroup_id'    => '2',
@@ -725,7 +725,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Afrikaans',
 		'alias'        => 'joomla25-afrikaans',
-		'description'  => '<p>Language: Afrikaans (af-ZA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=84994">Gerrit Hoekstra</a><br />Contact: <a href="mailto:gerrit@hoekstra.co.uk">gerrit@hoekstra.co.uk</a></p>',
+		'description'  => '<p>Language: Afrikaans (af-ZA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/af-ZA',
 		'vgroup_id'    => '3',
@@ -735,7 +735,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Albanian',
 		'alias'        => 'joomla25-albanian',
-		'description'  => '<p>Language: Albanian (sq-AL)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=130308">Albagen</a><br/>Contact: <a href="mailto:blendi@blendikraja.info">blendi@blendikraja.info</a></p>',
+		'description'  => '<p>Language: Albanian (sq-AL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sq-AL',
 		'vgroup_id'    => '3',
@@ -745,7 +745,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Arabic Unitag',
 		'alias'        => 'joomla25-arabic-unitag',
-		'description'  => '<p>Language: Arabic Unitag (ar-AA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=172649">Mahmood Alhaj Kassem</a><br />Contact: <a href="mailto:suneye3@gmail.com">suneye3@gmail.com</a></p><p><span class="label label-info">Information</span> As an ISO tag is necessary to comply with IT standards, we chose a UNITAG for Arabic, thus usable in any country. ar-AA is the new tag. It is Classic Arabic.</p><p><span class="label label-info">Information</span> New in Joomla! 2.5 is the plg_system_languagecode plugin that allows site administrators to choose the language tag that will display on their site for SEO purposes.  It allows users to use this package and change the language tag to ar-DZ, ar-SA, ar-EG, ar-TN, etc.</p>',
+		'description'  => '<p>Language: Arabic Unitag (ar-AA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ar-AA',
 		'vgroup_id'    => '3',
@@ -755,7 +755,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Armenian',
 		'alias'        => 'joomla25-armenian',
-		'description'  => '<p>Language: Armenian (hy-AM)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=690540">Andrey Aleksanyants</a><br/>Contact: <a href="mailto:aaleksanyants@yahoo.com">aaleksanyants@yahoo.com</a></p>',
+		'description'  => '<p>Language: Armenian (hy-AM)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/hy-AM',
 		'vgroup_id'    => '3',
@@ -765,7 +765,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Azeri',
 		'alias'        => 'joomla25-azeri',
-		'description'  => '<p>Language: Azeri (az-AZ)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=532498">Guluzade Farhad</a><br />Contact: <a href="mailto:jumancy@yahoo.com">jumancy@yahoo.com</a><br />Website: <a href="http://joomla-az.org">joomla-az.org</a></p>',
+		'description'  => '<p>Language: Azeri (az-AZ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/az-AZ',
 		'vgroup_id'    => '3',
@@ -775,7 +775,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Basque',
 		'alias'        => 'joomla25-basque',
-		'description'  => '<p>Language: Basque (eu-ES)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=604481">elurnet</a><br/>Contact: <a href="mailto:kontsultak@elurnet.net">kontsultak@elurnet.net</a></p>',
+		'description'  => '<p>Language: Basque (eu-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/eu-ES',
 		'vgroup_id'    => '3',
@@ -785,7 +785,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Belarusian',
 		'alias'        => 'joomla25-belarusian',
-		'description'  => '<p>Language: Belarusian (be-BY)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=27443">Dennis Hermatski</a><br />Contact: <a href="mailto:pandenitz@mail.ru">pandenitz@mail.ru</a></p>',
+		'description'  => '<p>Language: Belarusian (be-BY)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/be-BY',
 		'vgroup_id'    => '3',
@@ -795,7 +795,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Bengali (Bangladesh)',
 		'alias'        => 'joomla25-bengali',
-		'description'  => '<p>Language: Bengali (Bangladesh) (bn-BD)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=114153">Kamal Sikder</a><br />Contact: <a href="mailto:kamalsikder@yahoo.co.uk">kamalsikder@yahoo.co.uk</a></p>',
+		'description'  => '<p>Language: Bengali (Bangladesh) (bn-BD)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/bn-BD',
 		'vgroup_id'    => '3',
@@ -805,7 +805,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Bosnian',
 		'alias'        => 'joomla25-bosnian',
-		'description'  => '<p>Language: Bosnian (bs-BA)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=434037">Admir Agic</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=514368">Dantes Delic</a><br />Contact: <a href="mailto:admir.agic@joomla.ba">admir.agic@joomla.ba</a><br />Website: <a href="http://www.joomla.ba">www.joomla.ba</a></p>',
+		'description'  => '<p>Language: Bosnian (bs-BA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/bs-BA',
 		'vgroup_id'    => '3',
@@ -815,7 +815,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Bulgarian',
 		'alias'        => 'joomla25-bulgarian',
-		'description'  => '<p>Language: Bulgarian (bg-BG)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=54803">Yury Boev</a><br />Contact: <a href="mailto:yuriy_boev@mail.bg">yuriy_boev@mail.bg</a></p>',
+		'description'  => '<p>Language: Bulgarian (bg-BG)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/bg-BG',
 		'vgroup_id'    => '3',
@@ -825,7 +825,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Catalan',
 		'alias'        => 'joomla25-catalan',
-		'description'  => '<p>Language: Catalan (ca-ES)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=117349">Joan Libre</a><br />Contact: <a href="mailto:el.libre@gmail.com">el.libre@gmail.com</a></p>',
+		'description'  => '<p>Language: Catalan (ca-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ca-ES',
 		'vgroup_id'    => '3',
@@ -835,7 +835,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Central Kurdish (Soranî)',
 		'alias'        => 'joomla25-kurdish-sorani',
-		'description'  => '<p>Language: Kurdish (Soranî) (ckb-IQ)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=490340">Chalak S. Kareem</a><br />Contact: <a href="mailto:joomla@kurdd.com">joomla@kurdd.com</a></p>',
+		'description'  => '<p>Language: Kurdish (Soranî) (ckb-IQ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ckb-IQ',
 		'vgroup_id'    => '3',
@@ -845,7 +845,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Chinese (Simplified)',
 		'alias'        => 'joomla25-chinese-simplified',
-		'description'  => '<p>Language: Chinese (Simplified) (zh-CN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=29778">Jonathan Cheung</a><br /> Contact: <a href="mailto:osulcn@gmail.com">osulcn@gmail.com</a><br />Website: <a href="http://www.joomla.cn">www.joomla.cn</a></p>',
+		'description'  => '<p>Language: Chinese (Simplified) (zh-CN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/zh-CN',
 		'vgroup_id'    => '3',
@@ -855,7 +855,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Chinese (Traditional)',
 		'alias'        => 'joomla25-chinese-traditional',
-		'description'  => '<p>Language: Chinese (Traditional) (zh-TW)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1604">Eddy Chang</a><br />Contact: <a href="mailto:taiwanmambo@gmail.co">taiwanmambo@gmail.co</a></p>',
+		'description'  => '<p>Language: Chinese (Traditional) (zh-TW)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/zh-TW',
 		'vgroup_id'    => '3',
@@ -865,7 +865,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Croatian',
 		'alias'        => 'joomla25-croatian',
-		'description'  => '<p>Language: Croatian (hr-HR)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=43345">Bernard Toplak</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=109714">Wooer</a><br />Contact: <a href="mailto:prijevod@joomla.hr">prijevod@joomla.hr</a><br />Website: <a href="http://www.joomla.hr">www.joomla.hr</a> | Forum: <a href="http://forum.joomla.hr">forum.joomla.hr</a></p>',
+		'description'  => '<p>Language: Croatian (hr-HR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/hr-HR',
 		'vgroup_id'    => '3',
@@ -875,7 +875,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Czech',
 		'alias'        => 'joomla25-czech',
-		'description'  => '<p>Language: Czech (cs-CZ)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=702152">HonzaKr</a><br />Contact: <a href="mailto:jk@krob.cz">jk@krob.cz</a></p>',
+		'description'  => '<p>Language: Czech (cs-CZ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/cs-CZ',
 		'vgroup_id'    => '3',
@@ -885,7 +885,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Danish',
 		'alias'        => 'joomla25-danish',
-		'description'  => '<p>Language: Danish (da-DK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=94264">Ronny Buelund</a><br />Contact: <a href="mailto:mail@danskjoomla.dk">mail@danskjoomla.dk</a><br />Website: <a href="http://danskjoomla.dk">danskjoomla.dk</a></p>',
+		'description'  => '<p>Language: Danish (da-DK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/da-DK',
 		'vgroup_id'    => '3',
@@ -895,7 +895,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Dutch',
 		'alias'        => 'joomla25-dutch',
-		'description'  => '<p>Language: Dutch (nl-NL)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=159718">Marijke Stuivenberg</a><br />Contact: <a href="mailto:taal@joomlacommunity.eu">taal@joomlacommunity.eu</a><br />Website: <a href="http://www.joomlacommunity.eu/">www.joomlacommunity.eu</a></p>',
+		'description'  => '<p>Language: Dutch (nl-NL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/nl-NL',
 		'vgroup_id'    => '3',
@@ -905,7 +905,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - English (Australia)',
 		'alias'        => 'joomla25-english-australia',
-		'description'  => '<p>Language: English (Australia) (en-AU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=368245">Leonard Fitzgerald</a><br />Contact: <a href="mailto:admin@aussiesrus.com.au">admin@aussiesrus.com.au</a></p><p><span class="label label-important">Important!</span> This variant of en-GB is provided to help some search engines recognize the site\'s country (Bing for example). Otherwise, its contents are exactly the same as the default en-GB files.</p>',
+		'description'  => '<p>Language: English (Australia) (en-AU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/en-AU',
 		'vgroup_id'    => '3',
@@ -915,7 +915,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - English (USA)',
 		'alias'        => 'joomla25-english-us',
-		'description'  => '<p>Language: English (USA) (en-US)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=368245">Leonard Fitzgerald</a><br />Contact: <a href="mailto:admin@aussiesrus.com.au">admin@aussiesrus.com.au</a></p>',
+		'description'  => '<p>Language: English (USA) (en-US)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/en-US',
 		'vgroup_id'    => '3',
@@ -925,7 +925,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Esperanto',
 		'alias'        => 'joomla25-esperanto',
-		'description'  => '<p>Language: Esperanto (eo-XX)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=162593">Stella Lindblom</a><br />Contact: <a href="mailto:tradukoj@esperantosverige.se">tradukoj@esperantosverige.se</a></p>',
+		'description'  => '<p>Language: Esperanto (eo-XX)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/eo-XX',
 		'vgroup_id'    => '3',
@@ -935,7 +935,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Estonian',
 		'alias'        => 'joomla25-estonian',
-		'description'  => '<p>Language: Estonian (et-EE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1040">Rivo Zängov</a><br />Contact: <a href="mailto:eraser@eraser.ee">eraser@eraser.ee</a><br />Website: <a href="http://www.eraser.ee">www.eraser.ee</a></p>',
+		'description'  => '<p>Language: Estonian (et-EE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/et-EE',
 		'vgroup_id'    => '3',
@@ -945,7 +945,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Finnish',
 		'alias'        => 'joomla25-finnish',
-		'description'  => '<p>Language: Finnish (fi-FI)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=45207">Sami Haaranen</a><br />Contact: <a href="mailto:mortti@joomla.fi">mortti@joomla.fi</a><br />Website: <a href="http://www.joomla.fi">www.joomla.fi</a></p>',
+		'description'  => '<p>Language: Finnish (fi-FI)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/fi-FI',
 		'vgroup_id'    => '3',
@@ -955,7 +955,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Flemish',
 		'alias'        => 'joomla25-flemish',
-		'description'  => '<p>Language: Flemish (nl-BE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=458323">Frank Joris</a><br />Contact: <a href="mailto:frank.joris@skynet.be">frank.joris@skynet.be</a><br />Website: <a href="http://pangea.suburbs.be">pangea.suburbs.be</a></p>',
+		'description'  => '<p>Language: Flemish (nl-BE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/nl-BE',
 		'vgroup_id'    => '3',
@@ -965,7 +965,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - French',
 		'alias'        => 'joomla25-french',
-		'description'  => '<p>Language: French (fr-FR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=5894">Mihàly Marti</a><br />Contact: <a href="mailto:traduction@joomla.fr">traduction@joomla.fr</a><br />Website: <a href="http://www.joomla.fr/">www.joomla.fr</a></p>',
+		'description'  => '<p>Language: French (fr-FR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/fr-FR',
 		'vgroup_id'    => '3',
@@ -975,7 +975,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Galician',
 		'alias'        => 'joomla25-galician',
-		'description'  => '<p>Language: Galician (gl-ES)<br /> Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=202374">damufo</a><br />Contact: <a href="mailto:damufo@gmail.com">damufo@gmail.com</a></p>',
+		'description'  => '<p>Language: Galician (gl-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/gl-ES',
 		'vgroup_id'    => '3',
@@ -985,7 +985,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Georgian',
 		'alias'        => 'joomla25-georgian',
-		'description'  => '<p>Language: Georgian (ka-GE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=492675">Manana Gedevanishvili</a><br />Contact: <a href="mailto:mananagedevanishvili@yahoo.com">mananagedevanishvili@yahoo.com</a></p>',
+		'description'  => '<p>Language: Georgian (ka-GE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ka-GE',
 		'vgroup_id'    => '3',
@@ -995,7 +995,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - German',
 		'alias'        => 'joomla25-german',
-		'description'  => '<p>Language: German (de-DE/de-AT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=60422">Jan Erik Zassenhaus</a><br />Contact: <a href="mailto:Jan.Zassenhaus@jgerman.de">Jan.Zassenhaus@jgerman.de</a><br />Website: <a href="http://www.jgerman.de">www.jgerman.de</a></p>',
+		'description'  => '<p>Language: German (de-DE/de-AT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/de-DE',
 		'vgroup_id'    => '3',
@@ -1005,7 +1005,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Greek',
 		'alias'        => 'joomla25-greek',
-		'description'  => '<p>Language: Greek (el-GR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=544">Aris Ntatsis</a><br />Contact: <a href="mailto:joomla@myjoomla.gr">joomla@myjoomla.gr</a><br />Website: <a href="http://www.joomla.gr">www.joomla.gr</a></p>',
+		'description'  => '<p>Language: Greek (el-GR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/el-GR',
 		'vgroup_id'    => '3',
@@ -1015,7 +1015,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Hebrew',
 		'alias'        => 'joomla25-hebrew',
-		'description'  => '<p>Language: Hebrew (he-IL)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147303">Ofer Cohen</a><br />Contact: <a href="mailto:info@joomla.org.il">info@joomla.org.il</a><br />Website: <a href="http://www.joomla.org.il">www.joomla.org.il</a></p>',
+		'description'  => '<p>Language: Hebrew (he-IL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/he-IL',
 		'vgroup_id'    => '3',
@@ -1025,7 +1025,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Hindi (India)',
 		'alias'        => 'joomla25-hindi',
-		'description'  => '<p>Language: Hindi (India) (hi-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=367808">Sanjeev Naroliya</a><br />Contact: <a href="mailto:sanjeev.naroliya@gmail.com">sanjeev.naroliya@gmail.com</a></p>',
+		'description'  => '<p>Language: Hindi (India) (hi-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/hi-IN',
 		'vgroup_id'    => '3',
@@ -1035,7 +1035,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Hungarian',
 		'alias'        => 'joomla25-hungarian',
-		'description'  => '<p>Language: Hungarian (hu-HU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=41482">Tibor Tóth</a><br />Contact: <a href="mailto:totht@joomla.org.hu">totht@joomla.org.hu</a><br />Website: <a href="http://www.joomla.org.hu">www.joomla.org.hu</a></p>',
+		'description'  => '<p>Language: Hungarian (hu-HU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/hu-HU',
 		'vgroup_id'    => '3',
@@ -1045,7 +1045,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Indonesian (Bahasa Indonesia)',
 		'alias'        => 'joomla25-indonesian',
-		'description'  => '<p>Language: Indonesian (Bahasa Indonesia) (id-ID)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=635">Andy Sikumbang</a><br />Contact: <a href="mailto:sikumbang@gmail.com">sikumbang@gmail.com</a></p>',
+		'description'  => '<p>Language: Indonesian (Bahasa Indonesia) (id-ID)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/id-ID',
 		'vgroup_id'    => '3',
@@ -1055,7 +1055,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Italian',
 		'alias'        => 'joomla25-italian',
-		'description'  => '<p>Language: Italian (it-IT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1426">Stefania Gaianigo</a><br />Contact: <a href="mailto:info@joomla.it">info@joomla.it</a><br />Website: <a href="http://www.joomla.it">www.joomla.it</a></p>',
+		'description'  => '<p>Language: Italian (it-IT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/it-IT',
 		'vgroup_id'    => '3',
@@ -1065,7 +1065,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Japanese',
 		'alias'        => 'joomla25-japanese',
-		'description'  => '<p>Language: Japanese (ja-JP)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=2401">Nori</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=3018">richell</a><br />Website: <a href="http://www.joomla.jp">www.joomla.jp</a></p>',
+		'description'  => '<p>Language: Japanese (ja-JP)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ja-JP',
 		'vgroup_id'    => '3',
@@ -1075,7 +1075,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Khmer (Cambodia)',
 		'alias'        => 'joomla25-khmer',
-		'description'  => '<p>Language: Khmer (Cambodia) (km-KH)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=330483">Heng Sovann</a><br />Contact: <a href="mailto:hengsovann@gmail.com">hengsovann@gmail.com</a></p>',
+		'description'  => '<p>Language: Khmer (Cambodia) (km-KH)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/km-KH',
 		'vgroup_id'    => '3',
@@ -1085,7 +1085,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Korean',
 		'alias'        => 'joomla25-korean',
-		'description'  => '<p>Language: Korean (ko-KR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=631113">Mingu Kang</a><br />Contact: <a href="mailto:kangc@kilmeny.net">kangc@kilmeny.net</a></p>',
+		'description'  => '<p>Language: Korean (ko-KR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ko-KR',
 		'vgroup_id'    => '3',
@@ -1095,7 +1095,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Laotian',
 		'alias'        => 'joomla25-laotian',
-		'description'  => '<p>Language: Laotian (lo-LA)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=264833">vskphanthanousy</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=401443">Chittavong</a><br />Contact: <a href="mailto:info@joomlalaolao.com">info@joomlalaolao.com</a><br />Website: <a href="http://www.joomlalaolao.com">www.joomlalaolao.com</a></p>',
+		'description'  => '<p>Language: Laotian (lo-LA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/lo-LA',
 		'vgroup_id'    => '3',
@@ -1105,7 +1105,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Latvian',
 		'alias'        => 'joomla25-latvian',
-		'description'  => '<p>Language: Latvian (lv-LV)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=8175">Lemings</a><br />Contact: <a href="mailto:lemings@inbox.lv">lemings@inbox.lv</a></p>',
+		'description'  => '<p>Language: Latvian (lv-LV)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/lv-LV',
 		'vgroup_id'    => '3',
@@ -1115,7 +1115,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Lithuanian',
 		'alias'        => 'joomla25-lithuanian',
-		'description'  => '<p>Language: Lithuanian (lt-LT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=419732">Martynas</a><br />Contact: <a href="mailto:martynas@joomla123.lt">martynas@joomla123.lt</a></p>',
+		'description'  => '<p>Language: Lithuanian (lt-LT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/lt-LT',
 		'vgroup_id'    => '3',
@@ -1125,7 +1125,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Macedonian',
 		'alias'        => 'joomla25-macedonian',
-		'description'  => '<p>Language: Macedonian (mk-MK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=149928">lija Iliev</a><br />Contact: <a href="mailto:info@joomla.mk">info@joomla.mk</a><br />Website: <a href="http://joomla.mk">joomla.mk</a></p>',
+		'description'  => '<p>Language: Macedonian (mk-MK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/mk-MK',
 		'vgroup_id'    => '3',
@@ -1135,7 +1135,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Malayalam',
 		'alias'        => 'joomla25-malayalam',
-		'description'  => '<p>Language: Malayalam (India) (ml-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=366210">Sujith</a><br />Contact: <a href="mailto:sujith@sujith.co.in">sujith@sujith.co.in</a><br />Website: <a href="http://techlineinfo.com">techlineinfo.com</a></p>',
+		'description'  => '<p>Language: Malayalam (India) (ml-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ml-IN',
 		'vgroup_id'    => '3',
@@ -1145,7 +1145,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Mongolian',
 		'alias'        => 'joomla25-mongolian',
-		'description'  => '<p>Language: Mongolian (mn-MN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=109009">Altansukh</a><br />Contact: <a href="mailto:altansukh@altansukh.com">altansukh@altansukh.com</a><br />Website: <a href="http://www.n20.mn">www.n20.mn</a></p>',
+		'description'  => '<p>Language: Mongolian (mn-MN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/mn-MN',
 		'vgroup_id'    => '3',
@@ -1155,7 +1155,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Norwegian (Bokmål)',
 		'alias'        => 'joomla25-norwegian-bokmal',
-		'description'  => '<p>Language: Norwegian (Bokmål) (nb-NO)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=5511">Rune Rasmussen</a><br />Contact: <a href="mailto:oversettelser@joomlainorge.no">oversettelser@joomlainorge.no</a><br />Website: <a href="http://www.joomlainorge.no/">www.joomlainorge.no</a></p>',
+		'description'  => '<p>Language: Norwegian (Bokmål) (nb-NO)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/nb-NO',
 		'vgroup_id'    => '3',
@@ -1165,7 +1165,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Norwegian (Nynorsk)',
 		'alias'        => 'joomla25-norwegian-nynorsk',
-		'description'  => '<p>Language: Norwegian (Nynorsk) (nn-NO)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=244021">toyni</a><br />Contact: <a href="mailto:oversettelser@joomlainorge.no">oversettelser@joomlainorge.no</a><br />Website: <a href="http://www.joomlainorge.no/">www.joomlainorge.no</a></p>',
+		'description'  => '<p>Language: Norwegian (Nynorsk) (nn-NO)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/nn-NO',
 		'vgroup_id'    => '3',
@@ -1175,7 +1175,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Persian (Farsi)',
 		'alias'        => 'joomla25-persian-farsi',
-		'description'  => '<p>Language: Persian (Farsi) (fa-IR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=1958">Mohsen Firoozmandan</a><br />Contact: <a href="mailto:info@joomlafarsi.com">info@joomlafarsi.com</a><br />Website: <a href="http://joomlafarsi.com">www.joomlafarsi.com</a></p><p><span class="label label-info">Note</span> Jalali date is included in this package</p>',
+		'description'  => '<p>Language: Persian (Farsi) (fa-IR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/fa-IR',
 		'vgroup_id'    => '3',
@@ -1185,7 +1185,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Polish',
 		'alias'        => 'joomla25-polish',
-		'description'  => '<p>Language: Polish (pl-PL)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=2152">zwiastun</a>, dylek<br />Contact: <a href="mailto:zwiastun@joomla.pl">zwiastun@joomla.pl</a><br />Website: <a href="http://www.joomla.pl">www.joomla.pl</a></p>',
+		'description'  => '<p>Language: Polish (pl-PL)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/pl-PL',
 		'vgroup_id'    => '3',
@@ -1195,7 +1195,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Portuguese (Brazil)',
 		'alias'        => 'joomla25-portuguese-brazil',
-		'description'  => '<p>Language: Portuguese (Brazil) (pt-BR)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=590">FaBMAK</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=360346">Ariadne Pinheiro</a><br />Contacts: <a href="mailto:joomla@joomla.com.br">joomla@joomla.com.br</a>, <a href="mailto:ariadne.pineiro@gmail.com">ariadne.pineiro@gmail.com</a><br />Website: <a href="http://www.joomla.com.br">www.joomla.com.br</a></p>',
+		'description'  => '<p>Language: Portuguese (Brazil) (pt-BR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/pt-BR',
 		'vgroup_id'    => '3',
@@ -1205,7 +1205,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Portuguese (Portugal)',
 		'alias'        => 'joomla25-portuguese-portugal',
-		'description'  => '<p>Language: Portuguese (Portugal) (pt-PT)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=6515">Paulo Izidoro</a><br />Contact: <a href="mailto:geral@joomlapt.com">geral@joomlapt.com</a><br />Website: <a href="http://www.joomlapt.com">www.joomlapt.com</a></p>',
+		'description'  => '<p>Language: Portuguese (Portugal) (pt-PT)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/pt-PT',
 		'vgroup_id'    => '3',
@@ -1215,7 +1215,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Romanian',
 		'alias'        => 'joomla25-romanian',
-		'description'  => '<p>Language: Romanian (ro-RO)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=254">Cosmin Lebu</a><br />Contact: <a href="mailto:contact@joomla.ro">contact@joomla.ro</a><br />Website: <a href="http://www.joomla.ro">www.joomla.ro</a></p>',
+		'description'  => '<p>Language: Romanian (ro-RO)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ro-RO',
 		'vgroup_id'    => '3',
@@ -1225,7 +1225,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Russian',
 		'alias'        => 'joomla25-russian',
-		'description'  => '<p>Language: Russian (ru-RU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=250">Sergey Litvinov</a><br />Contact: <a href="mailto:serge.litvinov@gmail.com">serge.litvinov@gmail.com</a><br />Website: <a href="http://www.joomlaportal.ru">www.joomlaportal.ru</a></p>',
+		'description'  => '<p>Language: Russian (ru-RU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ru-RU',
 		'vgroup_id'    => '3',
@@ -1235,7 +1235,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Scottish Gaelic',
 		'alias'        => 'joomla25-scottish-gaelic',
-		'description'  => '<p>Language: Scottish Gaelic (gd-GB)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=579806">Michael Bauer</a><br />Contact: <a href="mailto:fios@akerbeltz.org">fios@akerbeltz.org</a></p><p><span class="label label-info">Note</span> The package available here is a site package.  As some plugin language files are required in the front end, it also installs a limited administrator package.</p>',
+		'description'  => '<p>Language: Scottish Gaelic (gd-GB)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/gd-GB',
 		'vgroup_id'    => '3',
@@ -1245,7 +1245,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Serbian (Cyrillic)',
 		'alias'        => 'joomla25-serbian-cyrillic',
-		'description'  => '<p>Language: Serbian (Cyrillic) (sr-RS)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147895">cicans</a><br />Contact: <a href="mailto:svetlana.zec@gmail.com">svetlana.zec@gmail.com</a></p>',
+		'description'  => '<p>Language: Serbian (Cyrillic) (sr-RS)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sr-RS',
 		'vgroup_id'    => '3',
@@ -1255,7 +1255,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Serbian (Latin)',
 		'alias'        => 'joomla25-serbian-latin',
-		'description'  => '<p>Language: Serbian (Latin) (sr-YU)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=147895">cicans</a><br />Contact: <a href="mailto:svetlana.zec@gmail.com">svetlana.zec@gmail.com</a></p>',
+		'description'  => '<p>Language: Serbian (Latin) (sr-YU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sr-YU',
 		'vgroup_id'    => '3',
@@ -1265,7 +1265,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Slovak',
 		'alias'        => 'joomla25-slovak',
-		'description'  => '<p>Language: Slovak (sk-SK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=341717">Peter Michnica</a><br />Contact: <a href="mailto:drobec@seznam.cz">drobec@seznam.cz</a></p>',
+		'description'  => '<p>Language: Slovak (sk-SK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sk-SK',
 		'vgroup_id'    => '3',
@@ -1275,7 +1275,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Spanish',
 		'alias'        => 'joomla25-spanish',
-		'description'  => '<p>Language: Spanish (es-ES)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=813">Gustavo Raúl Aragón</a><br />Contact: <a href="mailto:info@comunidadjoomla.org">info@comunidadjoomla.org</a><br />Website: <a href="http://comunidadjoomla.org">comunidadjoomla.org</a> | Forum: <a href="http://foro.comunidadjoomla.org">foro.comunidadjoomla.org</a> | Twitter: <a href="https://twitter.com/comunidadjoomla">twitter.com/comunidadjoomla</a> | Facebook: <a href="https://www.facebook.com/comunidadjoomla.org">www.facebook.com/comunidadjoomla.org</a></p>',
+		'description'  => '<p>Language: Spanish (es-ES)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/es-ES',
 		'vgroup_id'    => '3',
@@ -1285,7 +1285,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Swahili',
 		'alias'        => 'joomla25-swahili',
-		'description'  => '<p>Language: Swahili (sw-KE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=683687">Hassan Abdalla</a><br />Contact: <a href="mailto:hassan@att-center.com">hassan@att-center.com</a></p>',
+		'description'  => '<p>Language: Swahili (sw-KE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sw-KE',
 		'vgroup_id'    => '3',
@@ -1295,7 +1295,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Swedish',
 		'alias'        => 'joomla25-swedish',
-		'description'  => '<p>Language: Swedish (sv-SE)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=61631">Stefan Gagner</a><br />Contact: <a href="mailto:info@svenskjoomla.se">info@svenskjoomla.se</a><br />Website: <a href="http://www.svenskjoomla.se">www.svenskjoomla.se</a></p>',
+		'description'  => '<p>Language: Swedish (sv-SE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sv-SE',
 		'vgroup_id'    => '3',
@@ -1305,7 +1305,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Syriac (East)',
 		'alias'        => 'joomla25-syriac-east',
-		'description'  => '<p>Language: Syriac (East) (sy-IQ)<br />Coordinators: Dinka, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=120314">Ninwaya</a><br />Contact: <a href="mailto:pauls@nohadra.com">pauls@nohadra.com</a></p>',
+		'description'  => '<p>Language: Syriac (East) (sy-IQ)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/sy-IQ',
 		'vgroup_id'    => '3',
@@ -1315,7 +1315,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Tamil (India)',
 		'alias'        => 'joomla25-tamil-india',
-		'description'  => '<p>Language: Tamil (India) (ta-IN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=224484">Ilagnayeru \'MIG\' Manickam</a><br />Contact: <a href="mailto:manickam_mig@yahoo.com">manickam_mig@yahoo.com</a></p>',
+		'description'  => '<p>Language: Tamil (India) (ta-IN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ta-IN',
 		'vgroup_id'    => '3',
@@ -1325,7 +1325,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Thai',
 		'alias'        => 'joomla25-thai',
-		'description'  => '<p>Language: Thai (th-TH)<br />Coordinators: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=67">Akarawuth Tamrareang</a>, <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=157">Supachai Teasakul</a><br />Contact: <a href="mailto:tt@joomlacorner.com">tt@joomlacorner.com</a><br />Website: <a href="http://www.joomlacorner.com">www.joomlacorner.com</a></p>',
+		'description'  => '<p>Language: Thai (th-TH)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/th-TH',
 		'vgroup_id'    => '3',
@@ -1335,7 +1335,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Turkish',
 		'alias'        => 'joomla25-turkish',
-		'description'  => '<p>Language: Turkish (tr-TR)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=100326">Ümit Kenan Gönüllü</a><br />Contact: <a href="mailto:kenan@ukenan.com">kenan@ukenan.com</a></p>',
+		'description'  => '<p>Language: Turkish (tr-TR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/tr-TR',
 		'vgroup_id'    => '3',
@@ -1345,7 +1345,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Ukrainian',
 		'alias'        => 'joomla25-ukrainian',
-		'description'  => '<p>Language: Ukrainian (uk-UA)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=30343">Denys Nosov</a><br />Contact: <a href="mailto:denys@joomla-ua.org">denys@joomla-ua.org</a><br />Website: <a href="http://www.joomla-ua.org">www.joomla-ua.org</a></p>',
+		'description'  => '<p>Language: Ukrainian (uk-UA)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/uk-UA',
 		'vgroup_id'    => '3',
@@ -1355,7 +1355,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Urdu (Pakistan)',
 		'alias'        => 'joomla25-urdu-pakistan',
-		'description'  => '<p>Language: Urdu (Pakistan) (ur-PK)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=88724">basim74_36</a><br />Contact: <a href="mailto:basim74_36@hotmail.com">basim74_36@hotmail.com</a></p>',
+		'description'  => '<p>Language: Urdu (Pakistan) (ur-PK)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/ur-PK',
 		'vgroup_id'    => '3',
@@ -1365,9 +1365,9 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Uyghur',
 		'alias'        => 'joomla25-uyghur',
-		'description'  => '<p>Language: Uyghur (ug-CN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=629034">Akber Tursun</a><br />Contact: <a href="mailto:ihbal.net@gmail.com">ihbal.net@gmail.com</a><br />Website: <a href="http://www.joomlauy.org">www.joomlauy.org</a></p>',
+		'description'  => '<p>Language: Uyghur (ug-CN)</p>',
 		'type'         => 'normal',
-		'directory'    => 's3://joomladownloads/translations/joomla25/uk-UA',
+		'directory'    => 's3://joomladownloads/translations/joomla25/ug-CN',
 		'vgroup_id'    => '3',
 		'is_supported' => '0',
 	],
@@ -1375,7 +1375,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Vietnamese',
 		'alias'        => 'joomla25-vietnamese',
-		'description'  => '<p>Language: Vietnamese (vi-VN)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=626204">Nguyen Huu Hien</a><br />Contact: <a href="mailto:hiennh@joomlashine.com">hiennh@joomlashine.com</a></p>',
+		'description'  => '<p>Language: Vietnamese (vi-VN)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/vi-VN',
 		'vgroup_id'    => '3',
@@ -1385,7 +1385,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - Welsh',
 		'alias'        => 'joomla25-welsh',
-		'description'  => '<p>Language: Welsh (cy-GB)<br />Coordinator: <a href="https://forum.joomla.org/memberlist.php?mode=viewprofile&amp;u=224274">Kieran Kelly</a><br />Contact: <a href="mailto:mail@cefnllys.com">mail@cefnllys.com</a></p>',
+		'description'  => '<p>Language: Welsh (cy-GB)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/cy-GB',
 		'vgroup_id'    => '3',
