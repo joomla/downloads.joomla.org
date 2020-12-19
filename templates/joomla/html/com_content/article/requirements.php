@@ -148,7 +148,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
             <tr>
                 <th scope="row">PHP</th>
                 <td>7.4</td>
-                <td>7.2</td>
+                <td>7.2.5</td>
                 <td class="hidden-phone">
                     <a href="https://www.php.net" target="_blank" rel="noopener noreferrer">https://www.php.net</a>
                 </td>
