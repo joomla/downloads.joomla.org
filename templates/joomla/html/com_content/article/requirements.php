@@ -192,7 +192,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
             <tr>
                 <th scope="row">Nginx</th>
                 <td>1.18 +</td>
-                <td>1.0</td>
+                <td>1.10</td>
                 <td class="hidden-phone">
                     <a href="https://www.nginx.com/resources/wiki/" target="_blank" rel="noopener noreferrer">https://www.nginx.com/resources/wiki/</a>
                 </td>
