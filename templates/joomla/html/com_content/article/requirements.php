@@ -200,7 +200,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
             <tr>
                 <th scope="row">Microsoft IIS<sup><a href="#footnote-iis">[6]</a></sup></th>
                 <td>10 +</td>
-                <td>7</td>
+                <td>8</td>
                 <td class="hidden-phone">
                     <a href="https://www.iis.net" target="_blank" rel="noopener noreferrer">https://www.iis.net</a>
                 </td>
