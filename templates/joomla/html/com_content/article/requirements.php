@@ -133,6 +133,80 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		<div class="alert alert-info"><?php echo JText::sprintf('TECHNICAL_REQUIREMENTS_SUPPORTED_BROWSERS', JHtml::_('link', 'https://docs.joomla.org/S:MyLanguage/Joomla_Browser_Support', 'https://docs.joomla.org/Joomla_Browser_Support', ['class' => 'alert-link'])); ?></div>
 
 		<h2><?php echo JText::_('TECHNICAL_REQUIREMENTS_HEADING_REQUIREMENTS_FOR_UNSUPPORTED_SOFTWARE'); ?></h2>
+        <h3><?php echo JText::_('TECHNICAL_REQUIREMENTS_HEADING_REQUIREMENTS_FOR_JOOMLA_4'); ?></h3>
+        <div class="alert alert-warning"><?php echo JText::_('TECHNICAL_REQUIREMENTS_ALERT_UNRELEASED_VERSION'); ?></div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SOFTWARE'); ?></th>
+                <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_RECOMMENDED'); ?></th>
+                <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_MINIMUM'); ?></th>
+                <th class="hidden-phone" scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_MORE_INFORMATION'); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">PHP</th>
+                <td>7.4</td>
+                <td>7.2</td>
+                <td class="hidden-phone">
+                    <a href="https://www.php.net" target="_blank" rel="noopener noreferrer">https://www.php.net</a>
+                </td>
+            </tr>
+            </tbody>
+            <tbody>
+            <tr>
+                <th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_DATABASES'); ?></th>
+            </tr>
+            <tr>
+                <th scope="row">MySQL</th>
+                <td>5.6 +</td>
+                <td>5.6</td>
+                <td class="hidden-phone">
+                    <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer">https://www.mysql.com</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">PostgreSQL</th>
+                <td>11.0 +</td>
+                <td>11.0</td>
+                <td class="hidden-phone">
+                    <div><a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer">https://www.postgresql.org/</a></div>
+                    <small><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_POSTGRESQL_REQUIREMENTS_FOOTNOTE'); ?></small>
+                </td>
+            </tr>
+            </tbody>
+            <tbody>
+            <tr>
+                <th scope="rowgroup" colspan="4"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SUPPORTED_WEB_SERVERS'); ?></th>
+            </tr>
+            <tr>
+                <th scope="row">Apache<sup><a href="#footnote-apache">[3]</a></sup></th>
+                <td>2.4 +</td>
+                <td>2.0</td>
+                <td class="hidden-phone">
+                    <div><a href="https://www.apache.org" target="_blank" rel="noopener noreferrer">https://www.apache.org</a></div>
+                    <small><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_APACHE_REQUIREMENTS_FOOTNOTE'); ?></small>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Nginx</th>
+                <td>1.18 +</td>
+                <td>1.0</td>
+                <td class="hidden-phone">
+                    <a href="https://www.nginx.com/resources/wiki/" target="_blank" rel="noopener noreferrer">https://www.nginx.com/resources/wiki/</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Microsoft IIS<sup><a href="#footnote-iis">[6]</a></sup></th>
+                <td>10 +</td>
+                <td>7</td>
+                <td class="hidden-phone">
+                    <a href="https://www.iis.net" target="_blank" rel="noopener noreferrer">https://www.iis.net</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
 		<h3><?php echo JText::_('TECHNICAL_REQUIREMENTS_HEADING_REQUIREMENTS_FOR_JOOMLA_25'); ?></h3>
 		<div class="alert alert-warning"><?php echo JText::sprintf('TECHNICAL_REQUIREMENTS_ALERT_SUPPORT_ENDED_ON', JHtml::_('date', '2014-12-31 00:00:00', JText::_('DATE_FORMAT_LC3'))); ?></div>
