@@ -183,7 +183,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
             <tr>
                 <th scope="row">Apache<sup><a href="#footnote-apache">[3]</a></sup></th>
                 <td>2.4 +</td>
-                <td>2.0</td>
+                <td>2.4</td>
                 <td class="hidden-phone">
                     <div><a href="https://www.apache.org" target="_blank" rel="noopener noreferrer">https://www.apache.org</a></div>
                     <small><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_APACHE_REQUIREMENTS_FOOTNOTE'); ?></small>
