@@ -127,6 +127,16 @@ class ImportDownloads extends JApplicationCli
 				'title'       => 'Joomla! Extensions',
 				'description' => '<p>This group contains all Joomla! Official Extensions</p>'
 			],
+			// ID: 6
+			[
+				'title'       => 'Joomla! 1.0 Translations',
+				'description' => '<p>This group contains all Joomla! 1.0 Translation Categories</p>'
+			],
+			// ID: 7
+			[
+				'title'       => 'Joomla! 4 Translations',
+				'description' => '<p>This group contains all Joomla! 4 Translation Categories</p>'
+			],
 		];
 
 		// Save our groups
