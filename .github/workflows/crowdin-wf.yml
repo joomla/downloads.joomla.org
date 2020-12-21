@@ -22,20 +22,23 @@ jobs:
     
     # Runs the Crowdin action command
     - name: crowdin action
-      uses: crowdin/github-action@1.0.15
+      uses: crowdin/github-action@1.0.16
       with:
-        # upload options
+        # Upload sources to Crowdin
         upload_sources: true
-        # upload translations options
+        # Upload translations to Crowdin, only use true at initial run
         upload_translations: true
-
-        # download translations options
+        # Make pull request of Crowdin translations
         download_translations: true
+        # Download translations with pushing to branch
         push_translations: true
+        # To download translations to the specified version branch
         localization_branch_name: 'l10n_crowdin_translations'
+        # Create pull request after pushing to branch
         create_pull_request: true
-        # global options
+        # Configuration file to use
         config: 'crowdin.yml'
+        # Use true for dryrun to test the run without actually processing anything
         dryrun_action: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
