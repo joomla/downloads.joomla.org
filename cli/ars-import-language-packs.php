@@ -144,6 +144,9 @@ class ImportLanguagePacks extends JApplicationCli
 			$langTag      = array_pop($explodedName);
 			$friendlyName = implode(' ', $explodedName);
 
+			// Create tmp dir for a language
+			\Joomla\CMS\Filesystem\Folder::create($tmpDir . '/' . $langTag);
+
 			if ($package->is_public === true && $package->status_id === 1 && $package->require_login === false)
 			{
 				$packageId = $package->frs_package_id;
@@ -176,7 +179,7 @@ class ImportLanguagePacks extends JApplicationCli
 							&& preg_match('/^' . $langTag . '_joomla_lang_full_[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}v[0-9]{1,2}.zip/', $file->file_name) > 0)
 						{
 							$url = 'http://joomlacode.org' . $file->download_url;
-							\Joomla\CMS\Filesystem\File::write($tmpDir . '/' . $file->file_name_safe, fopen($url, 'r'));
+							\Joomla\CMS\Filesystem\File::write($tmpDir . '/' . $langTag . '/' . $file->file_name_safe, fopen($url, 'r'));
 						}
 					}
 				}
