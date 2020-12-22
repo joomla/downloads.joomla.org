@@ -136,9 +136,9 @@ class ImportLanguagePacks extends JApplicationCli
 
 		foreach ($packages as $package)
 		{
-			$name_explode = explode('_', $package->package_name);
-			$lang_tag     = array_pop($name_explode);
-			$name         = implode(' ', $name_explode);
+			$explodedName = explode('_', $package->package_name);
+			$langTag      = array_pop($explodedName);
+			$friendlyName = implode(' ', $explodedName);
 
 			if ($package->is_public === true && $package->status_id === 1 && $package->require_login === false)
 			{
@@ -169,7 +169,7 @@ class ImportLanguagePacks extends JApplicationCli
 					foreach ($files as $file)
 					{
 						if ($file->deleted === false && substr($file->file_name, -3) === 'zip'
-							&& preg_match('/^' . $lang_tag . '_joomla_lang_full_[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}v[0-9]{1,2}.zip/', $file->file_name) > 0)
+							&& preg_match('/^' . $langTag . '_joomla_lang_full_[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}v[0-9]{1,2}.zip/', $file->file_name) > 0)
 						{
 							$this->out('URL: http://joomlacode.org' . $file->download_url);
 						}
