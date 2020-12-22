@@ -74,7 +74,7 @@ class GenerateRepository extends JApplicationCli
 			'fr-FR', 'gl-ES', 'ka-GE', 'de-DE', 'el-GR', 'he-IL', 'hi-IN', 'hu-HU', 'id-ID', 'it-IT', 'ja-JP', 'km-KH',
 			'ko-KR', 'lo-LA', 'lv-LV', 'lt-LT', 'mk-MK', 'ml-IN', 'mn-MN', 'nb-NO', 'nn-NO', 'fa-IR', 'pl-PL', 'pt-BR',
 			'pt-PT', 'ro-RO', 'ru-RU', 'gd-GB', 'sr-RS', 'sr-YU', 'sk-SK', 'es-ES', 'sw-KE', 'sv-SE', 'sy-IQ', 'ta-IN',
-			'th-TH', 'tr-TR', 'uk-UA', 'ur-PK', 'ug-CN', 'vi-VN', 'cy-GB'
+			'th-TH', 'tr-TR', 'uk-UA', 'ur-PK', 'ug-CN', 'vi-VN', 'cy-GB', 'gu-IN', 'is-IS', 'fr-CA', 'en-CA'
 		],
 		'joomla3'  => [
 			'af-ZA', 'sq-AL', 'ar-AA', 'be-BY', 'bs-BA', 'bg-BG', 'ca-ES', 'ckb-IQ', 'zh-CN', 'zh-TW', 'hr-HR', 'cs-CZ',
@@ -82,7 +82,9 @@ class GenerateRepository extends JApplicationCli
 			'el-GR', 'he-IL', 'hi-IN', 'hu-HU', 'id-ID', 'it-IT', 'ja-JP', 'ko-KR', 'lv-LV', 'mk-MK', 'mn-MN', 'ms-MY',
 			'srp-ME', 'nb-NO', 'fa-IR', 'pl-PL', 'pt-BR', 'pt-PT', 'ro-RO', 'ru-RU', 'sr-RS', 'sr-YU', 'si-LK', 'sk-SK',
 			'es-ES', 'sw-KE', 'sv-SE', 'sy-IQ', 'ta-IN', 'th-TH', 'tr-TR', 'uk-UA', 'ug-CN', 'vi-VN', 'cy-GB', 'hy-AM',
-			'eu-ES', 'prs-AF', 'dz-BT', 'ka-GE', 'ga-IE', 'km-KH', 'nn-NO', 'sl-SI', 'es-CO', 'tk-TM',
+			'eu-ES', 'prs-AF', 'dz-BT', 'ka-GE', 'ga-IE', 'km-KH', 'nn-NO', 'sl-SI', 'es-CO', 'tk-TM', 'gd-GB', 'bn-BD',
+			'az-AZ', 'eo-XX', 'lo-LA', 'lt-LT', 'ml-IN', 'ur-PK', 'gu-IN', 'de-CH', 'de-AT', 'de-LI', 'de-LU', 'en-NZ',
+			'kk-KZ'
 		],
 	];
 
