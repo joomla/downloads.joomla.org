@@ -9,7 +9,6 @@
 // MISSING DATA in S3/ARS AS FOLLOWS:
 // Joomla 2.5:
 // gu-IN, is-IS, ug-CN, fr-CA, en-CA
-// Esperanto_eo-XX_2.5.22_lang_pack
 
 // Joomla 3.x:
 // gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, ug-CN, gu-IN, srp-ME, en-CA, fr-CA, de-CH, de-AT, de-LI, de-LU, en-NZ, kk-KZ
@@ -151,13 +150,21 @@ class ImportLanguagePacks extends JApplicationCli
 
 		foreach ($packages as $package)
 		{
+			$packageName = $package->package_name;
+
 			// Package in Joomla 2.5 that is empty. Doesn't follow naming conventions. Skip it.
-			if ($package->package_name === 'Language_resources')
+			if ($packageName === 'Language_resources' && $projectId === 'jtranslation1_6')
 			{
 				continue;
 			}
 
-			$explodedName     = explode('_', $package->package_name);
+			// This package doesn't match our naming convention so hardcode a match to follow the rules
+			if ($packageName === 'Esperanto_eo-XX_2.5.22_lang_pack' && $projectId === 'jtranslation1_6')
+			{
+				$packageName = 'Esperanto_eo-XX';
+			}
+
+			$explodedName     = explode('_', $packageName);
 			$langTag          = array_pop($explodedName);
 			$langFriendlyName = implode(' ', $explodedName);
 
