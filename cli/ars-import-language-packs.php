@@ -107,23 +107,25 @@ class ImportLanguagePacks extends JApplicationCli
 	public function doExecute()
 	{
 		$this->out('<info>Processing 2.5 releases from JoomlaCode</info>');
-		$this->processGForgeReleases('jtranslation1_6', JFactory::getConfig()->get('tmp_path') . '/joomla25');
+		$this->processGForgeReleases('jtranslation1_6', JFactory::getConfig()->get('tmp_path') . '/joomla25', 'joomla25', 2);
 
 //		$this->out('<info>Processing 3.x releases from JoomlaCode</info>');
-//		$this->processGForgeReleases('jtranslation3_x', JFactory::getConfig()->get('tmp_path') . '/joomla3x');
+//		$this->processGForgeReleases('jtranslation3_x', JFactory::getConfig()->get('tmp_path') . '/joomla3x', 'joomla3', 1);
 	}
 
 	/**
 	 * Process an array of GForge release IDs.
 	 *
-	 * @param   string  $projectId  The name of the project in gforge to process.
-	 * @param   string  $tmpDir     The temporary directory to download.
+	 * @param   string   $projectId  The name of the project in gforge to process.
+	 * @param   string   $tmpDir     The temporary directory to download.
+	 * @param   string   $s3Dir      The s3 folder name for this version of Joomla.
+	 * @param   integer  $arsEnv     The ARS Environment ID for the version of Joomla
 	 *
 	 * @return  void
 	 *
 	 * @since   1.0
 	 */
-	private function processGForgeReleases(string $projectId, string $tmpDir)
+	private function processGForgeReleases(string $projectId, string $tmpDir, string $s3Dir, int $arsEnv)
 	{
 		// Ensure temp download directory exists
 		\Joomla\CMS\Filesystem\Folder::create($tmpDir);
@@ -140,11 +142,24 @@ class ImportLanguagePacks extends JApplicationCli
 
 		foreach ($packages as $package)
 		{
-			$explodedName = explode('_', $package->package_name);
-			$langTag      = array_pop($explodedName);
-			$friendlyName = implode(' ', $explodedName);
+			$explodedName     = explode('_', $package->package_name);
+			$langTag          = array_pop($explodedName);
+			$langFriendlyName = implode(' ', $explodedName);
 
-			// Create tmp dir for a language
+			$arsDirectory = 's3://joomladownloads/translations/' . $s3Dir . '/' . $langTag;
+
+			/** @var \Akeeba\ReleaseSystem\Site\Model\Categories $itemsModel */
+			$categoriesModel = $this->container->factory->model('Categories');
+
+			// Verify we have an ARS Category for this directory
+			if (!$categoriesModel->load(['directory' => $arsDirectory]))
+			{
+				$this->out(sprintf('<error>No ARS Category found for potential s3 directory "%s". Continuing to next package</error>', $arsDirectory));
+
+				continue;
+			}
+
+			// Create tmp dir for a language now we are confident we have a valid s3 Location to upload data to
 			\Joomla\CMS\Filesystem\Folder::create($tmpDir . '/' . $langTag);
 
 			if ($package->is_public === true && $package->status_id === 1 && $package->require_login === false)
@@ -178,8 +193,98 @@ class ImportLanguagePacks extends JApplicationCli
 						if ($file->deleted === false && substr($file->file_name, -3) === 'zip'
 							&& preg_match('/^' . $langTag . '_joomla_lang_full_[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}v[0-9]{1,2}.zip/', $file->file_name) > 0)
 						{
-							$url = 'http://joomlacode.org' . $file->download_url;
-							\Joomla\CMS\Filesystem\File::write($tmpDir . '/' . $langTag . '/' . $file->file_name_safe, fopen($url, 'r'));
+							$fileNameInfo = explode('_', $file->file_name);
+							$url          = 'http://joomlacode.org' . $file->download_url;
+							$fileOnDisk   = $tmpDir . '/' . $langTag . '/' . $file->file_name_safe;
+
+							\Joomla\CMS\Filesystem\File::write($fileOnDisk, fopen($url, 'r'));
+
+							// Format: 2.5.28v3
+							$languagePackVersion = substr(array_pop($fileNameInfo), 0, -4);
+
+							// Array. Key 0: joomla version, Key 1: Language Pack Version
+							$versionInformation = explode('v', $languagePackVersion);
+
+							// This is actually the same file name as $file->file_name - but we're trying to be extra
+							// sure we have the right naming conventions
+							$zipName = $langTag . '_joomla_lang_full_' . $versionInformation[0] . 'v' . $versionInformation[1] . '.zip';
+
+							if (!$this->uploadZipToS3($categoriesModel, $zipName, $fileOnDisk))
+							{
+								// No need to set an error message here as it will be handled inside the function - just bail instead
+								continue;
+							}
+
+							/** @var \Akeeba\ReleaseSystem\Site\Model\Items $itemsModel */
+							$itemsModel = $this->container->factory->model('Items');
+
+							/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
+							$releasesModel   = $this->container->factory->model('Releases');
+							$completeVersion = $versionInformation[0] . '.' . $versionInformation[1];
+							$dateNow         = new \Joomla\CMS\Date\Date;
+
+							$arsReleaseData = [
+								'category_id' => $categoriesModel->id,
+								'version'     => $completeVersion,
+								'alias'       => str_replace('.', '-', $completeVersion),
+								'maturity'    => 'stable',
+								'description' => '<p>This is the ' . $langFriendlyName . ' Language Pack for Joomla! ' . $versionInformation[0] . '</p>',
+								'created'     => $dateNow->toSql(),
+								'access'      => '1',
+							];
+
+							// Build Item Data (omitting the release ID which will be added after creation)
+							$arsItemData = [
+								'title'        => 'Joomla! ' . $versionInformation[0] . ' ' . $langFriendlyName . ' ' . $langTag . ' Language Pack',
+								'description'  => '<p>This is the full ' . $langFriendlyName . ' Language Pack for Joomla! ' . $versionInformation[0] . '</p>',
+								'type'         => 'file',
+								'filename'     => $zipName,
+								'environments' => [(string) $arsEnv],
+								'created'      => $dateNow->toSql(),
+								'access'       => '1',
+							];
+
+							// Skip loading if it exists
+							if ($releasesModel->load(['category_id' => $arsReleaseData['category_id'], 'version' => $arsReleaseData['version']]))
+							{
+								$this->setError(Text::_('COM_LANGUAGEPACK_ARS_RELEASE_ALREADY_EXISTS'));
+
+								return false;
+							}
+
+							// Fail saving the item if it already exists in ARS
+							if ($itemsModel->load(['title' => $arsItemData['title']]))
+							{
+								$this->setError(Text::_('COM_LANGUAGEPACK_ARS_RELEASE_ITEM_ALREADY_EXISTS'));
+
+								return false;
+							}
+
+							try
+							{
+								$releaseData = $releasesModel->save($arsReleaseData);
+							}
+							catch (Exception $e)
+							{
+								$this->setError($e->getMessage());
+
+								return false;
+							}
+
+							// Add the release ID to the item and save
+							$arsItemData['release_id'] = $releaseData->getId();
+
+							try
+							{
+								$itemsModel->save($arsItemData);
+							}
+							catch (Exception $e)
+							{
+								// TODO: Rollback the item creation?
+								$this->setError($e->getMessage());
+
+								return false;
+							}
 						}
 					}
 				}
@@ -188,6 +293,49 @@ class ImportLanguagePacks extends JApplicationCli
 
 		// Clean temp download directory
 		\Joomla\CMS\Filesystem\Folder::delete($tmpDir);
+	}
+
+	/**
+	 * Method to generate the translation zip and push it to S3.
+	 *
+	 * @param   \Akeeba\ReleaseSystem\Site\Model\Categories  $categoriesModel  The ARS Category Model for the release
+	 * @param   string                                       $zipName          The name of the file we want to place in
+	 *                                                                         S3
+	 * @param   string                                       $fileLocation     The name of the file on the filesystem
+	 *
+	 * @return  boolean  True on success.
+	 *
+	 * @since   1.0
+	 */
+	private function uploadZipToS3(\Akeeba\ReleaseSystem\Site\Model\Categories $categoriesModel, string $zipName,
+	                                 string $fileLocation)
+	{
+		$prefix = 's3://';
+
+		// Strip the s3 prefix from the upload key - just how the AWS API works vs what's stored in ARS
+		if (strpos($categoriesModel->directory, $prefix) !== 0)
+		{
+			$this->out(
+				'<error>Category ' . $categoriesModel->title . ' does not appear to have an S3 backend</error>'
+			);
+
+			return false;
+		}
+
+		$s3UploadPath = substr($categoriesModel->directory, strlen($prefix));
+		$s3           = \Akeeba\ReleaseSystem\Admin\Helper\AmazonS3::getInstance();
+		$success      = $s3->putObject($fileLocation, $s3UploadPath . '/' . $zipName);
+
+		if (!$success)
+		{
+			$this->out(
+				sprintf('<error>Error uploading %s to s3 storage: %s</error>', $fileLocation, $s3->getError())
+			);
+
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
