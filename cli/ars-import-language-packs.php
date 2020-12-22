@@ -192,8 +192,9 @@ class ImportLanguagePacks extends JApplicationCli
 
 				foreach ($releases as $release)
 				{
-					$releaseId = $release->frs_release_id;
-					$files = $this->gforge->getFilesystemsForRelease($releaseId);
+					$createdDate = new \Joomla\CMS\Date\Date($release->release_date);
+					$releaseId   = $release->frs_release_id;
+					$files       = $this->gforge->getFilesystemsForRelease($releaseId);
 
 					// Check that some files were found
 					if ($files === false)
@@ -236,7 +237,6 @@ class ImportLanguagePacks extends JApplicationCli
 							/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
 							$releasesModel   = $this->container->factory->model('Releases');
 							$completeVersion = $versionInformation[0] . '.' . $versionInformation[1];
-							$dateNow         = new \Joomla\CMS\Date\Date;
 
 							$arsReleaseData = [
 								'category_id' => $categoriesModel->id,
@@ -244,7 +244,7 @@ class ImportLanguagePacks extends JApplicationCli
 								'alias'       => str_replace('.', '-', $completeVersion),
 								'maturity'    => 'stable',
 								'description' => '<p>This is the ' . $langFriendlyName . ' Language Pack for Joomla! ' . $versionInformation[0] . '</p>',
-								'created'     => $dateNow->toSql(),
+								'created'     => $createdDate->toSql(),
 								'access'      => '1',
 							];
 
@@ -255,7 +255,7 @@ class ImportLanguagePacks extends JApplicationCli
 								'type'         => 'file',
 								'filename'     => $zipName,
 								'environments' => [(string) $arsEnv],
-								'created'      => $dateNow->toSql(),
+								'created'      => $createdDate->toSql(),
 								'access'       => '1',
 								'hits'         => $file->download_count,
 							];
@@ -263,17 +263,17 @@ class ImportLanguagePacks extends JApplicationCli
 							// Skip loading if it exists
 							if ($releasesModel->load(['category_id' => $arsReleaseData['category_id'], 'version' => $arsReleaseData['version']]))
 							{
-								$this->setError(Text::_('COM_LANGUAGEPACK_ARS_RELEASE_ALREADY_EXISTS'));
+								$this->out(sprintf('<error>ARS Release already exists for version "%s" in category "%s". Continuing to next file</error>', $arsReleaseData['version'], $arsReleaseData['category_id']));
 
-								return false;
+								continue;
 							}
 
 							// Fail saving the item if it already exists in ARS
 							if ($itemsModel->load(['title' => $arsItemData['title']]))
 							{
-								$this->setError(Text::_('COM_LANGUAGEPACK_ARS_RELEASE_ITEM_ALREADY_EXISTS'));
+								$this->out(sprintf('<error>ARS Item already exists for "%s". Continuing to next file</error>', $arsItemData['title']));
 
-								return false;
+								continue;
 							}
 
 							try
@@ -282,9 +282,9 @@ class ImportLanguagePacks extends JApplicationCli
 							}
 							catch (Exception $e)
 							{
-								$this->setError($e->getMessage());
+								$this->out(sprintf('<error>Error saving ARS release for version "%s" in category "%s". Continuing to next file: %s</error>', $arsReleaseData['version'], $arsReleaseData['category_id'], $e->getMessage()));
 
-								return false;
+								continue;
 							}
 
 							// Add the release ID to the item and save
@@ -297,9 +297,9 @@ class ImportLanguagePacks extends JApplicationCli
 							catch (Exception $e)
 							{
 								// TODO: Rollback the item creation?
-								$this->setError($e->getMessage());
+								$this->out(sprintf('<error>Error saving ARS Item for "%s". Continuing to next file: %s</error>', $arsItemData['title'], $e->getMessage()));
 
-								return false;
+								continue;
 							}
 						}
 					}
