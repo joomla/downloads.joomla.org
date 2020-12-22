@@ -11,3 +11,9 @@ The site is primarily powered by [Akeeba Release System](https://github.com/akee
 - The frontend router has been modified to allow an item to be routed via its filename or alias (primarily used for download stream URLs)
 - The frontend router has been modified to throw a 404 versus falling back to ARS' native repository view
 - The `plgContentArslatest` class has been modified to support two additional shortcodes: `release_announcements` and `vgroup_downloads`
+
+
+## Translations
+You can help translate the needed parts for this website on Crowdin - https://joomla.crowdin.com/joomla-official-websites  
+Crowdin sync status: ![Crowdin Action](https://github.com/joomla/downloads.joomla.org/workflows/Crowdin%20Action/badge.svg)  
+Crowdin localication status: [![Crowdin](https://badges.crowdin.net/e/9d2c7ef410adb090cd5be80fb3644064/localized.svg)](https://joomla.crowdin.com/joomla-official-websites)
