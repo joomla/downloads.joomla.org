@@ -6,6 +6,15 @@
  * @license    http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License Version 2 or Later
  */
 
+// MISSING DATA in S3/ARS AS FOLLOWS:
+// Joomla 2.5:
+// gu-IN, is-IS, ug-CN, fr-CA, en-CA
+// Esperanto_eo-XX_2.5.22_lang_pack
+
+// Joomla 3.x:
+// gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, ug-CN, gu-IN, srp-ME, en-CA, fr-CA, de-CH, de-AT, de-LI, de-LU, en-NZ, kk-KZ
+// zzobsoletepacks
+
 // Set flag that this is a parent file.
 const _JEXEC = 1;
 
@@ -142,6 +151,12 @@ class ImportLanguagePacks extends JApplicationCli
 
 		foreach ($packages as $package)
 		{
+			// Package in Joomla 2.5 that is empty. Doesn't follow naming conventions. Skip it.
+			if ($package->package_name === 'Language_resources')
+			{
+				continue;
+			}
+
 			$explodedName     = explode('_', $package->package_name);
 			$langTag          = array_pop($explodedName);
 			$langFriendlyName = implode(' ', $explodedName);
@@ -242,6 +257,7 @@ class ImportLanguagePacks extends JApplicationCli
 								'environments' => [(string) $arsEnv],
 								'created'      => $dateNow->toSql(),
 								'access'       => '1',
+								'hits'         => $file->download_count,
 							];
 
 							// Skip loading if it exists
