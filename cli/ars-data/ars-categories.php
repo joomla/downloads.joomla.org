@@ -911,6 +911,15 @@ $categories = [
 		'vgroup_id'    => '3',
 		'is_supported' => '0',
 	],
+	[
+		'title'        => 'Joomla! 2.5 - English (Canada)',
+		'alias'        => 'joomla25-english-canada',
+		'description'  => '<p>Language: English (Canada) (en-CA)</p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/translations/joomla25/en-CA',
+		'vgroup_id'    => '3',
+		'is_supported' => '0',
+	],
 	// ID: 91
 	[
 		'title'        => 'Joomla! 2.5 - English (USA)',
@@ -971,6 +980,15 @@ $categories = [
 		'vgroup_id'    => '3',
 		'is_supported' => '0',
 	],
+	[
+		'title'        => 'Joomla! 2.5 - French (Canada)',
+		'alias'        => 'joomla25-french-canada',
+		'description'  => '<p>Language: French (Canada) (fr-CA)</p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/translations/joomla25/fr-CA',
+		'vgroup_id'    => '3',
+		'is_supported' => '0',
+	],
 	// ID: 97
 	[
 		'title'        => 'Joomla! 2.5 - Galician',
@@ -995,7 +1013,7 @@ $categories = [
 	[
 		'title'        => 'Joomla! 2.5 - German',
 		'alias'        => 'joomla25-german',
-		'description'  => '<p>Language: German (de-DE/de-AT)</p>',
+		'description'  => '<p>Language: German (de-DE)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/de-DE',
 		'vgroup_id'    => '3',
@@ -1008,6 +1026,15 @@ $categories = [
 		'description'  => '<p>Language: Greek (el-GR)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/el-GR',
+		'vgroup_id'    => '3',
+		'is_supported' => '0',
+	],
+	[
+		'title'        => 'Joomla! 2.5 - Gujarati',
+		'alias'        => 'joomla25-gujarati',
+		'description'  => '<p>Language: Gujarati (gu-IN)</p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/translations/joomla25/gu-IN',
 		'vgroup_id'    => '3',
 		'is_supported' => '0',
 	],
@@ -1038,6 +1065,15 @@ $categories = [
 		'description'  => '<p>Language: Hungarian (hu-HU)</p>',
 		'type'         => 'normal',
 		'directory'    => 's3://joomladownloads/translations/joomla25/hu-HU',
+		'vgroup_id'    => '3',
+		'is_supported' => '0',
+	],
+	[
+		'title'        => 'Joomla! 2.5 - Icelandic',
+		'alias'        => 'joomla25-icelandic',
+		'description'  => '<p>Language: Icelandic (is-IS)</p>',
+		'type'         => 'normal',
+		'directory'    => 's3://joomladownloads/translations/joomla25/is-IS',
 		'vgroup_id'    => '3',
 		'is_supported' => '0',
 	],
