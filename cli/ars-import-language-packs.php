@@ -108,6 +108,9 @@ class ImportLanguagePacks extends JApplicationCli
 	{
 		$this->out('<info>Processing 2.5 releases from JoomlaCode</info>');
 		$this->processGForgeReleases('jtranslation1_6');
+
+//		$this->out('<info>Processing 3.x releases from JoomlaCode</info>');
+//		$this->processGForgeReleases('jtranslation3_x');
 	}
 
 	/**
@@ -139,22 +142,27 @@ class ImportLanguagePacks extends JApplicationCli
 
 			if ($package->is_public === true && $package->status_id === 1 && $package->require_login === false)
 			{
-				$releases = $this->gforge->getReleasesFromPackage($package->frs_package_id);
+				$packageId = $package->frs_package_id;
+				$releases = $this->gforge->getReleasesFromPackage($packageId);
 
 				// Check that some releases were found
 				if ($releases === false)
 				{
+					$this->out(sprintf('<error>No releases found for package "%s" in project "%s". Continuing to next package</error>', $packageId, $projectId));
+
 					continue;
 				}
 
-				$biggest_jversion = '';
 				foreach ($releases as $release)
 				{
-					$files = $this->gforge->getFilesystemsForRelease($release->frs_release_id);
+					$releaseId = $release->frs_release_id;
+					$files = $this->gforge->getFilesystemsForRelease($releaseId);
 
 					// Check that some files were found
 					if ($files === false)
 					{
+						$this->out(sprintf('<error>No files found for release "%s" in package "%s" (project "%s)". Continuing to next release</error>', $releaseId, $packageId, $projectId));
+
 						continue;
 					}
 
