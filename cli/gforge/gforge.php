@@ -523,6 +523,18 @@ class GForge
 		}
 	}
 
+	public function getReleasesFromPackage(int $packageId, int $releasedBy = -1)
+	{
+		try
+		{
+			return $this->client->getFrsReleases($this->sessionhash, $packageId, $releasedBy);
+		}
+		catch (SoapFault $e)
+		{
+			throw new RuntimeException('Unable to get releases: ' . $e->faultstring);
+		}
+	}
+
 	public function getPackage($itemId)
 	{
 		try
