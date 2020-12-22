@@ -547,6 +547,18 @@ class GForge
 		}
 	}
 
+	public function getPackagesFromProject($projectId)
+	{
+		try
+		{
+			return $this->client->getFrsPackages($this->sessionhash, $projectId);
+		}
+		catch (SoapFault $e)
+		{
+			throw new RuntimeException('Unable to get packages for project ID ' . $projectId . ': ' . $e->faultstring);
+		}
+	}
+
 	public function updatePackage($itemId, $packageName = null, $statusId = null, $isPublic = null, $requireLogin = null)
 	{
 		try
