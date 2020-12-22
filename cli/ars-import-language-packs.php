@@ -107,23 +107,27 @@ class ImportLanguagePacks extends JApplicationCli
 	public function doExecute()
 	{
 		$this->out('<info>Processing 2.5 releases from JoomlaCode</info>');
-		$this->processGForgeReleases('jtranslation1_6');
+		$this->processGForgeReleases('jtranslation1_6', JFactory::getConfig()->get('tmp_path') . '/joomla25');
 
 //		$this->out('<info>Processing 3.x releases from JoomlaCode</info>');
-//		$this->processGForgeReleases('jtranslation3_x');
+//		$this->processGForgeReleases('jtranslation3_x', JFactory::getConfig()->get('tmp_path') . '/joomla3x');
 	}
 
 	/**
 	 * Process an array of GForge release IDs.
 	 *
 	 * @param   string  $projectId  The name of the project in gforge to process.
+	 * @param   string  $tmpDir     The temporary directory to download.
 	 *
 	 * @return  void
 	 *
 	 * @since   1.0
 	 */
-	private function processGForgeReleases(string $projectId)
+	private function processGForgeReleases(string $projectId, string $tmpDir)
 	{
+		// Ensure temp download directory exists
+		\Joomla\CMS\Filesystem\Folder::create($tmpDir);
+
 		$project = $this->gforge->getProject($projectId);
 		$packages = $this->gforge->getPackagesFromProject($project->project_id);
 
@@ -171,12 +175,16 @@ class ImportLanguagePacks extends JApplicationCli
 						if ($file->deleted === false && substr($file->file_name, -3) === 'zip'
 							&& preg_match('/^' . $langTag . '_joomla_lang_full_[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}v[0-9]{1,2}.zip/', $file->file_name) > 0)
 						{
-							$this->out('URL: http://joomlacode.org' . $file->download_url);
+							$url = 'http://joomlacode.org' . $file->download_url;
+							\Joomla\CMS\Filesystem\File::write($tmpDir . '/' . $file->file_name_safe, fopen($url, 'r'));
 						}
 					}
 				}
 			}
 		}
+
+		// Clean temp download directory
+		\Joomla\CMS\Filesystem\Folder::delete($tmpDir);
 	}
 
 	/**
