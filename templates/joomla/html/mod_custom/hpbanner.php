@@ -20,18 +20,14 @@ JFactory::getLanguage()->load('page_home', JPATH_SITE);
 	<a id="latest" class="btn btn-success" title="<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?>" href="<?php echo JHtml::_('content.prepare', '{arslatest item_link \'Joomla*Stable-Full_Package.zip\' Joomla! 3}'); ?>">
 		<span class="title">
 			<i class="icon-download">  </i>
-			<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?>
-			<?php echo JHtml::_('content.prepare', '{arslatest release Joomla! 3}'); ?>
+			<?php echo JText::_('HP_BANNER_DOWNLOAD') . ' ' . JHtml::_('content.prepare', '{arslatest release Joomla! 3}'); ?>
 		</span>
 		<br />
 		English (UK), 
-		<?php echo JHtml::_('content.prepare', '{arslatest release Joomla! 3}'); ?>
-		<?php echo JText::_('HP_BANNER_PACKAGE'); ?>, ZIP
+		<?php echo JHtml::_('content.prepare', '{arslatest release Joomla! 3}') . ' ' . JText::_('HP_BANNER_PACKAGE'); ?>, ZIP
 	</a>
 	<p>
-	<?php echo JText::_('HP_BANNER_DESCPART1'); ?>
-	<?php echo JHtml::_('content.prepare', '{arslatest release Joomla! 3}'); ?>
-	<?php echo JText::_('HP_BANNER_DESCPART2'); ?>
+	<?php echo JText::_('HP_BANNER_DESCPART1') . ' ' . JHtml::_('content.prepare', '{arslatest release Joomla! 3}') . ' ' . JText::_('HP_BANNER_DESCPART2'); ?>
 	<a title="<?php echo JText::_('HP_BANNER_LINKTITLE1'); ?>" href="https://www.joomla.org/core-features.html" target="_blank">
 		<?php echo JText::_('HP_BANNER_DESCPART3'); ?>
 	</a>
