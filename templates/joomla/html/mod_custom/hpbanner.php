@@ -17,7 +17,7 @@ JFactory::getLanguage()->load('page_home', JPATH_SITE);
 	<h2><?php echo JText::_('HP_BANNER_HEADER'); ?></h2>
 <div class="row-fluid top">
 <div class="span6">
-	<a id="latest" class="btn btn-success" title="Download Joomla" href="<?php echo JHtml::_('content.prepare', '{arslatest item_link \'Joomla*Stable-Full_Package.zip\' Joomla! 3}'); ?>">
+	<a id="latest" class="btn btn-success" title="<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?>" href="<?php echo JHtml::_('content.prepare', '{arslatest item_link \'Joomla*Stable-Full_Package.zip\' Joomla! 3}'); ?>">
 		<span class="title">
 			<i class="icon-download">  </i>
 			<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?>
@@ -32,11 +32,11 @@ JFactory::getLanguage()->load('page_home', JPATH_SITE);
 	<?php echo JText::_('HP_BANNER_DESCPART1'); ?>
 	<?php echo JHtml::_('content.prepare', '{arslatest release Joomla! 3}'); ?>
 	<?php echo JText::_('HP_BANNER_DESCPART2'); ?>
-	<a title="Joomla Core Features" href="https://www.joomla.org/core-features.html" target="_blank">
+	<a title="<?php echo JText::_('HP_BANNER_LINKTITLE1'); ?>" href="https://www.joomla.org/core-features.html" target="_blank">
 		<?php echo JText::_('HP_BANNER_DESCPART3'); ?>
 	</a>
 	<?php echo JText::_('HP_BANNER_DESCPART4'); ?>
-	<a title="Joomla release announcement" href="<?php echo JHtml::_('content.prepare', '{arslatest release_announcements Joomla! 3}'); ?>" target="_blank">
+	<a title="<?php echo JText::_('HP_BANNER_LINKTITLE2'); ?>" href="<?php echo JHtml::_('content.prepare', '{arslatest release_announcements Joomla! 3}'); ?>" target="_blank">
 	<?php echo JText::_('HP_BANNER_DESCPART5'); ?></a> 
 	<?php echo JText::_('HP_BANNER_DESCPART6'); ?></p>
 </div>
