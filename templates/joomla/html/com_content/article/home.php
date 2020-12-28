@@ -26,68 +26,66 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 	<?php echo $this->item->event->beforeDisplayContent; ?>
 	
 	<div itemprop="articleBody">
-			<h2 class="center hp">Extend your Joomla! Installation!</h2>
+			<h2 class="center hp"><?php echo JText::_('HP_CONTENT_HEADER_EXTEND'); ?></h2>
 		<div class="row-fluid center marge">
-			<div class="span6"><img src="/images/homepage/joomla-languages.png" alt="Joomla in your language">
-				<h3>Joomla! in your language</h3>
-				<p>Over 70 accredited Joomla! language packages on this site!<br>Incorporate the languages you need.</p>
-					<a class="btn btn-primary" title="Language packages for Joomla!" href="https://community.joomla.org/translations.html" target="_blank" rel="noopener noreferrer">
-					Download Language Packages</a>
+			<div class="span6"><img src="/images/homepage/joomla-languages.png" alt="<?php echo JText::_('HP_CONTENT_LANGUAGE_HEADER'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_LANGUAGE_HEADER'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_LANGUAGE_TEXT'); ?></p>
+					<a class="btn btn-primary" title="<?php echo JText::_('HP_CONTENT_LANGUAGE_PACKAGES'); ?>" href="https://downloads.joomla.org/language-packs" rel="noopener noreferrer">
+					<?php echo JText::_('HP_CONTENT_LANGUAGE_DOWNLOAD'); ?></a>
 			</div>
 
 			<div class="span6"><img src="/images/homepage/joomla-extensions.png" alt="Joomla Extensions">
-			<h3>Over 8,000 Joomla! Extensions</h3>
-				<p>Empower your website!<br>The JED presents thousand of ways to enhance your Joomla! site.</p>
-				<a class="btn btn-primary" title="Joomla! Extensions Directory" href="https://extensions.joomla.org" target="_blank" rel="noopener noreferrer">
-				Joomla! Extensions Directory</a>
+			<h3><?php echo JText::_('HP_CONTENT_EXTENSIONS_HEADER'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_EXTENSIONS_TEXT'); ?></p>
+				<a class="btn btn-primary" title="<?php echo JText::_('HP_CONTENT_EXTENSIONS_SITE'); ?>" href="https://extensions.joomla.org" target="_blank" rel="noopener noreferrer">
+				<?php echo JText::_('HP_CONTENT_EXTENSIONS_SITE'); ?></a>
 			</div>
 		</div>
 
-			<h2 class="center hp">Try Joomla! 3, now!</h2>
+			<h2 class="center hp"><?php echo JText::_('HP_CONTENT_HEADER_TRY'); ?></h2>
 		<div class="row-fluid center marge try">
 			<div class="span6">
-				<a class="btn btn-blue" title="Joomla 3" href="https://www.joomla.org/3" target="_blank" rel="noopener noreferrer">
-				<span class="title">Joomla! 3</span><br>Discover the lastest features on joomla.org/3</a>
+				<a class="btn btn-blue" title="<?php echo JText::_('HP_CONTENT_DISCOVER_BTITLE'); ?>" href="https://www.joomla.org/3" target="_blank" rel="noopener noreferrer">
+				<span class="title"><?php echo JText::_('HP_CONTENT_DISCOVER_BTITLE'); ?></span><br><?php echo JText::_('HP_CONTENT_DISCOVER_BTEXT'); ?></a>
 			</div>
-			<div class="span6"><a class="btn btn-blue" title="Free website on launch.joomla.org" href="https://launch.joomla.org" target="_blank" rel="noopener noreferrer">
-				<span class="title">launch.joomla.org</span><br>A completely free website on launch.joomla.org</a>
+			<div class="span6"><a class="btn btn-blue" title="<?php echo JText::_('HP_CONTENT_LAUNCH_BTITLE'); ?>" href="https://launch.joomla.org" target="_blank" rel="noopener noreferrer">
+				<span class="title"><?php echo JText::_('HP_CONTENT_LAUNCH_BTITLE'); ?></span><br><?php echo JText::_('HP_CONTENT_LAUNCH_BTEXT'); ?></a>
 			</div>
 		</div>
-
-
-			<h2 class="hp center">Find Support!</h2>
+			<h2 class="hp center"><?php echo JText::_('HP_CONTENT_HEADER_SUPPORT'); ?></h2>
 		<div class="row-fluid center support">
-			<div class="span4"><img src="/images/homepage/joomla-forum.png" alt="Joomla Forum">
-				<h3>Official Forum</h3>
-				<p>Need help? <br>Ask your support question on the Joomla! Forum.</p>
-				<a class="btn" title="Joomla Forums" href="http://forum.joomla.org" target="_blank" rel="noopener noreferrer">Find help on the Forum</a>
+			<div class="span4"><img src="/images/homepage/joomla-forum.png" alt="<?php echo JText::_('HP_CONTENT_FORUM_LINKIMG'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_FORUM_TITLE'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_FORUM_TEXT'); ?></p>
+				<a class="btn" title="<?php echo JText::_('HP_CONTENT_FORUM_LINKIMG'); ?>" href="http://forum.joomla.org" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_FORUM_BUTTON'); ?></a>
+            </div>
+			<div class="span4"><img src="/images/homepage/joomla-documentation.png" alt="<?php echo JText::_('HP_CONTENT_DOCUMENTATION_LINKIMG'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_DOCUMENTATION_TITLE'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_DOCUMENTATION_TEXT'); ?></p>
+				<a class="btn" title="<?php echo JText::_('HP_CONTENT_DOCUMENTATION_LINKIMG'); ?>" href="https://docs.joomla.org/S:MyLanguage/Main_Page" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_DOCUMENTATION_BUTTON'); ?></a>
+            </div>
+			<div class="span4"><img src="/images/homepage/joomla-issue-tracker.png" alt="<?php echo JText::_('HP_CONTENT_TRACKER_LINKIMG'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_TRACKER_TITLE'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_TRACKER_TEXT'); ?></p>
+				<a class="btn" title="<?php echo JText::_('HP_CONTENT_TRACKER_LINKIMG'); ?>" href="https://issues.joomla.org" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_TRACKER_BUTTON'); ?></a>
 			</div>
-			<div class="span4"><img src="/images/homepage/joomla-documentation.png" alt="Joomla Documentation">
-				<h3>Official Documentation</h3>
-				<p>An online manual for users, developers or anyone interested in learning more about Joomla.</p>
-				<a class="btn" title="Joomla Documentation" href="https://docs.joomla.org/S:MyLanguage/Main_Page" target="_blank" rel="noopener noreferrer">Browse our Documentation</a>
-			</div>
-			<div class="span4"><img src="/images/homepage/joomla-issue-tracker.png" alt="Joomla Issue Tracker">
-				<h3>Issue Tracker</h3>
-				<p>Test patches, find and fix bugs<br> and help clarify issue report.</p>
-				<a class="btn" title="Joomla Issue Tracker" href="https://issues.joomla.org" target="_blank" rel="noopener noreferrer">Issue Tracker</a>
-			</div>
-		</div>
+        </div>       
 		<div class="row-fluid center marge support">
-			<div class="span4"><img src="/images/homepage/joomla-migration.png" alt="Joomla Migration">
-				<h3>Why and how migrate?</h3>
-				<p>Resources are available to help with your migration<br> on our Official Documentation</p>
-				<a class="btn" title="Why and How migrate your Joomla Website" href="https://docs.joomla.org/S:MyLanguage/Why_Migrate" target="_blank" rel="noopener noreferrer">Start now your migration</a>
-			</div>
-			<div class="span4"><img src="/images/homepage/joomla-25-upgrade.png" alt="Joomla 2.5 to 3">
-				<h3>Migrate from 2.5 to 3.x</h3>
-				<p>Plan your mini-migration<br>See the <a title="Joomla 2.5 to 3.x Step by Step Migration" href="https://docs.joomla.org/S:MyLanguage/Joomla_2.5_to_3.x_Step_by_Step_Migration" target="_blank" rel="noopener noreferrer">step by step tutorial</a></p>
-				<a class="btn" title="Download Joomla 2.5" href="/cms/joomla25/2-5-28">Download 2.5.28</a>
-			</div>
-			<div class="span4"><img src="/images/homepage/joomla-15-upgrade.png" alt="Joomla 1.5 to 3">
-				<h3>Migrate from 1.5 to 3.x</h3>
-				<p>Plan your major migration<br>See the <a title="Joomla 1.5 to 3.x Step by Step Migration" href="https://docs.joomla.org/S:MyLanguage/Joomla_1.5_to_3.x_Step_by_Step_Migration" target="_blank" rel="noopener noreferrer">step by step tutorial</a></p>
-				<a class="btn" title="Download Joomla 1.5" href="/cms/joomla15/1-5-26">Download 1.5.26</a></div>
+			<div class="span4"><img src="/images/homepage/joomla-migration.png" alt="<?php echo JText::_('HP_CONTENT_MIGRATE_LINKIMG'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_MIGRATE_TITLE'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_MIGRATE_TEXT'); ?></p>
+				<a class="btn" title="<?php echo JText::_('HP_CONTENT_MIGRATE_LINKIMG'); ?>" href="https://docs.joomla.org/S:MyLanguage/Why_Migrate" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE_BUTTON'); ?></a>
+            </div>
+			<div class="span4"><img src="/images/homepage/joomla-25-upgrade.png" alt="<?php echo JText::_('HP_CONTENT_MIGRATE25_TITLE'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_MIGRATE25_TITLE'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_MIGRATE25_TEXT1'); ?><br><a title="<?php echo JText::_('HP_CONTENT_MIGRATE25_LINK'); ?>" href="https://docs.joomla.org/S:MyLanguage/Joomla_2.5_to_3.x_Step_by_Step_Migration" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE25_TEXT2'); ?></a></p>
+				<a class="btn" title="<?php echo JText::_('HP_CONTENT_MIGRATE25_BUTTON'); ?>" href="/cms/joomla25/2-5-28"><?php echo JText::_('HP_CONTENT_MIGRATE25_BUTTON'); ?></a>
+            </div>
+			<div class="span4"><img src="/images/homepage/joomla-15-upgrade.png" alt="<?php echo JText::_('HP_CONTENT_MIGRATE15_TITLE'); ?>">
+				<h3><?php echo JText::_('HP_CONTENT_MIGRATE15_TITLE'); ?></h3>
+				<p><?php echo JText::_('HP_CONTENT_MIGRATE15_TEXT1'); ?><br><a title="<?php echo JText::_('HP_CONTENT_MIGRATE15_LINK'); ?>" href="https://docs.joomla.org/S:MyLanguage/Joomla_1.5_to_3.x_Step_by_Step_Migration" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE15_TEXT2'); ?></a></p>
+				<a class="btn" title="<?php echo JText::_('HP_CONTENT_MIGRATE15_BUTTON'); ?>" href="/cms/joomla15/1-5-26"><?php echo JText::_('HP_CONTENT_MIGRATE15_BUTTON'); ?></a></div>
 			</div>
 		</div>
 	</div>
