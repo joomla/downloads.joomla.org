@@ -18,3 +18,7 @@ files:
   - source: /en-GB/en-GB.page_technical_requirements.ini
     dest: 'Joomla! Downloads/en-GB.page_technical_requirements.ini'
     translation: /%locale%/%locale%.page_technical_requirements.ini
+    
+  - source: /en-GB/en-GB.site_menuitems.ini
+    dest: 'Joomla! Downloads/en-GB.site_menuitems.ini'
+    translation: /%locale%/%locale%.site_menuitems.ini
