@@ -134,7 +134,7 @@ class AmazonS3 extends \JObject
 		// If SSL is not enabled you must not provide the CA root file.
 		if (self::$useSSL && !defined('AKEEBA_CACERT_PEM'))
 		{
-			define('AKEEBA_CACERT_PEM', JPATH_LIBRARIES . '/fof30/Download/Adapter/cacert.pem');
+			define('AKEEBA_CACERT_PEM', JPATH_LIBRARIES . '/src/Http/Transport/cacert.pem');
 		}
 
 		// Create the S3 client instance
