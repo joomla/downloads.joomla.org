@@ -140,7 +140,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
             <tr>
                 <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_SOFTWARE'); ?></th>
                 <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_RECOMMENDED'); ?></th>
-                <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_MINIMUM'); ?></th>
+                <th scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_MINIMUM'); ?><sup><a href="#footnote-minimum">[7]</a></th>
                 <th class="hidden-phone" scope="col"><?php echo JText::_('TECHNICAL_REQUIREMENTS_SUPPORT_TABLE_HEADING_MORE_INFORMATION'); ?></th>
             </tr>
             </thead>
