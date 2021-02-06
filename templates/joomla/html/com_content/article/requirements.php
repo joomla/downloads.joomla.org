@@ -413,6 +413,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			<li><?php echo JText::_('TECHNICAL_REQUIREMENTS_FOOTNOTE_6_LIST_ITEM_4_FASTCGI'); ?></li>
 		</ul>
 		<p><?php echo JText::_('TECHNICAL_REQUIREMENTS_FOOTNOTE_6_IIS_SUPPORT_OUTRO'); ?></p>
+		<p id="footnote-minimum"><?php echo JText::_('TECHNICAL_REQUIREMENTS_FOOTNOTE_7_MINIMUM_SUPPORT'); ?></p>
 
 		<h2><?php echo JText::_('TECHNICAL_REQUIREMENTS_HEADING_CONFIGURATION_OPTIONS'); ?></h2>
 
