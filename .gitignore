@@ -83,7 +83,6 @@
 /index.php
 /phpunit.xml.dist
 /phpunit.xml
-/robots.txt
 /robots.txt.dist
 /travisci-phpunit.xml
 /web.config.txt
