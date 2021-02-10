@@ -17,29 +17,22 @@ Allow: /*.css*
 Allow: /*.png*
 Allow: /*.jpg*
 Allow: /*.gif*
-
 Disallow: /administrator/
 Disallow: /bin/
 Disallow: /cache/
 Disallow: /cli/
-
 Disallow: /includes/
 Disallow: /installation/
 Disallow: /language/
 Disallow: /layouts/
 Disallow: /libraries/
 Disallow: /logs/
-
-
 Disallow: /tmp/
-
 # Do not index login pages
 Disallow: /login
 Disallow: /*/login
-
 # Do not index testing update XMLs
 Disallow: /updates
-
 # Do not index package files in ARS
 Disallow: /*/*-zip?format=zip
 Disallow: /*/*-tar-gz?format=gz
