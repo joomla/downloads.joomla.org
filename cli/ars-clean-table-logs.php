@@ -6,7 +6,8 @@ $config = new JConfig;
 
 $db = new mysqli($config->host, $config->user, $config->password, $config->db);
 
-if (!$db->query("TRUNACTE " . $config->dbprefix . "ars_log;")) {
+if (!$db->query("TRUNACTE " . $config->dbprefix . "ars_log")) {
   printf("Error: %s\n", $db->error);
 }
 
+$db->close();
