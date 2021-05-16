@@ -1,5 +1,5 @@
 {
-    "swagger": "2.0",
+    "openapi": "3.0.0",
     "info": {
         "title": "Joomla! Downloads API",
         "contact": {
@@ -8,8 +8,6 @@
         },
         "version": "0.3.0"
     },
-    "host": "downloads.joomla.org",
-    "basePath": "/api",
     "tags": [
         {
             "name": "counts",
@@ -28,35 +26,34 @@
             "description": "API endpoints for retrieving the list of releases"
         }
     ],
-    "schemes": [
-        "https"
-    ],
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
-    ],
     "paths": {
         "/v1/downloads/cms": {
             "get": {
                 "summary": "Get the download counts for each major version of the CMS",
                 "tags": [
-                    "counts"
+                        "counts"
                 ],
                 "description": "Get the total number of downloads of Joomla! and a breakdown for each major version",
                 "operationId": "breakdownMajor",
                 "responses": {
                     "200": {
                         "description": "Success",
-                        "schema": {
-                            "$ref": "#/definitions/DownloadBreakdownResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DownloadBreakdownResponse"
+                                }
+                            }
                         }
                     },
                     "500": {
                         "description": "Internal Service Error",
-                        "schema": {
-                            "$ref": "#/definitions/ErrorResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
                         }
                     }
                 }
@@ -66,7 +63,7 @@
             "get": {
                 "summary": "Gets the download counts for each minor version of the CMS",
                 "tags": [
-                    "counts"
+                        "counts"
                 ],
                 "description": "Gets a total number of download counts of a major version of Joomla! CMS and then a breakdown for each minor version",
                 "operationId": "breakdownMinor",
@@ -76,20 +73,30 @@
                         "in": "path",
                         "description": "The version branch to fetch the download counts for",
                         "required": true,
-                        "type": "integer"
+                        "schema": {
+                            "type": "integer"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "Success",
-                        "schema": {
-                            "$ref": "#/definitions/DownloadBranchResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DownloadBranchResponse"
+                                }
+                            }
                         }
                     },
                     "500": {
                         "description": "Internal Service Error",
-                        "schema": {
-                            "$ref": "#/definitions/ErrorResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
                         }
                     }
                 }
@@ -99,20 +106,28 @@
             "get": {
                 "summary": "Get the latest version numbers for each major version of the CMS",
                 "tags": [
-                    "latest"
+                        "latest"
                 ],
                 "operationId": "latestCms",
                 "responses": {
                     "200": {
                         "description": "Success",
-                        "schema": {
-                            "$ref": "#/definitions/LatestCmsResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LatestCmsResponse"
+                                }
+                            }
                         }
                     },
                     "500": {
                         "description": "Internal Service Error",
-                        "schema": {
-                            "$ref": "#/definitions/ErrorResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
                         }
                     }
                 }
@@ -122,7 +137,7 @@
             "get": {
                 "summary": "Gets the hash signatures for a release of the CMS",
                 "tags": [
-                    "signatures"
+                        "signatures"
                 ],
                 "description": "Gets the hash signatures for all files included in a release of the CMS",
                 "operationId": "signaturesCms",
@@ -132,20 +147,30 @@
                         "in": "path",
                         "description": "The version number to fetch the signatures for",
                         "required": true,
-                        "type": "string"
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "Success",
-                        "schema": {
-                            "$ref": "#/definitions/FileSignatureResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FileSignatureResponse"
+                                }
+                            }
                         }
                     },
                     "500": {
                         "description": "Internal Service Error",
-                        "schema": {
-                            "$ref": "#/definitions/ErrorResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
                         }
                     }
                 }
@@ -155,242 +180,257 @@
             "get": {
                 "summary": "Gets the list of CMS releases",
                 "tags": [
-                    "releases"
+                        "releases"
                 ],
                 "description": "Get the complete list of releases for the Joomla! CMS",
                 "operationId": "releasesCms",
                 "responses": {
                     "200": {
                         "description": "Success",
-                        "schema": {
-                            "$ref": "#/definitions/releaseListResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/releaseListResponse"
+                                }
+                            }
                         }
                     },
                     "500": {
                         "description": "Internal Service Error",
-                        "schema": {
-                            "$ref": "#/definitions/ErrorResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     },
-    "definitions": {
-        "DownloadBranchResponse": {
-            "description": "The Response contains the total number of downloads of all releases in this branch and then a breakdown for each version.",
-            "required": [
-                "total",
-                "versions"
-            ],
-            "properties": {
-                "total": {
-                    "type": "integer"
-                },
-                "versions": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/VersionCount"
+    "servers": [
+        {
+            "url": "https://downloads.joomla.org/api"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "DownloadBranchResponse": {
+                "description": "The Response contains the total number of downloads of all releases in this branch and then a breakdown for each version.",
+                "required": [
+                        "total",
+                        "versions"
+                ],
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VersionCount"
+                        }
                     }
                 }
-            }
-        },
-        "DownloadBreakdownResponse": {
-            "description": "The Response contains the total number of downloads of all versions and then a breakdown for each version branch.",
-            "required": [
-                "total",
-                "branches"
-            ],
-            "properties": {
-                "total": {
-                    "type": "integer"
-                },
-                "branches": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/VersionCount"
+            },
+            "DownloadBreakdownResponse": {
+                "description": "The Response contains the total number of downloads of all versions and then a breakdown for each version branch.",
+                "required": [
+                        "total",
+                        "branches"
+                ],
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "branches": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VersionCount"
+                        }
                     }
                 }
-            }
-        },
-        "FileSignatureResponse": {
-            "description": "The Response contains the file signatures for all files in a release.",
-            "required": [
-                "files"
-            ],
-            "properties": {
-                "files": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FilesSignature"
+            },
+            "FileSignatureResponse": {
+                "description": "The Response contains the file signatures for all files in a release.",
+                "required": [
+                        "files"
+                ],
+                "properties": {
+                    "files": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FilesSignature"
+                        }
                     }
                 }
-            }
-        },
-        "releaseListResponse": {
-            "description": "The Response contains the total number of releases and a list of release version numbers and release dates.",
-            "required": [
-                "total",
-                "releases"
-            ],
-            "properties": {
-                "total": {
-                    "type": "integer"
-                },
-                "releases": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Release"
+            },
+            "releaseListResponse": {
+                "description": "The Response contains the total number of releases and a list of release version numbers and release dates.",
+                "required": [
+                        "total",
+                        "releases"
+                ],
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "releases": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Release"
+                        }
                     }
                 }
-            }
-        },
-        "FilesSignature": {
-            "description": "The file signature object represents a release file and its file signatures.",
-            "required": [
-                "filename",
-                "md5",
-                "sha1",
-                "sha256",
-                "sha384",
-                "sha512"
-            ],
-            "properties": {
-                "filename": {
-                    "type": "string",
-                    "description": "The filename being described"
-                },
-                "md5": {
-                    "type": "string",
-                    "description": "The MD5 signature for this file"
-                },
-                "sha1": {
-                    "type": "string",
-                    "description": "The SHA1 signature for this file"
-                },
-                "sha256": {
-                    "type": "string",
-                    "description": "The SHA256 signature for this file"
-                },
-                "sha384": {
-                    "type": "string",
-                    "description": "The SHA384 signature for this file"
-                },
-                "sha512": {
-                    "type": "string",
-                    "description": "The SHA512 signature for this file"
-                }
-            }
-        },
-        "LatestCmsResponse": {
-            "description": "The Response contains the newest version number for each major CMS version.",
-            "required": [
-                "branches"
-            ],
-            "properties": {
-                "branches": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/LatestVersion"
+            },
+            "FilesSignature": {
+                "description": "The file signature object represents a release file and its file signatures.",
+                "required": [
+                        "filename",
+                        "md5",
+                        "sha1",
+                        "sha256",
+                        "sha384",
+                        "sha512"
+                ],
+                "properties": {
+                    "filename": {
+                        "type": "string",
+                        "description": "The filename being described"
+                    },
+                    "md5": {
+                        "type": "string",
+                        "description": "The MD5 signature for this file"
+                    },
+                    "sha1": {
+                        "type": "string",
+                        "description": "The SHA1 signature for this file"
+                    },
+                    "sha256": {
+                        "type": "string",
+                        "description": "The SHA256 signature for this file"
+                    },
+                    "sha384": {
+                        "type": "string",
+                        "description": "The SHA384 signature for this file"
+                    },
+                    "sha512": {
+                        "type": "string",
+                        "description": "The SHA512 signature for this file"
                     }
                 }
-            }
-        },
-        "LatestVersion": {
-            "description": "The latest version object represents a release branch and its latest version.",
-            "required": [
-                "branch",
-                "version"
-            ],
-            "properties": {
-                "branch": {
-                    "type": "string",
-                    "description": "The version branch"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "The latest version number for the branch"
+            },
+            "LatestCmsResponse": {
+                "description": "The Response contains the newest version number for each major CMS version.",
+                "required": [
+                        "branches"
+                ],
+                "properties": {
+                    "branches": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LatestVersion"
+                        }
+                    }
                 }
-            }
-        },
-        "VersionCount": {
-            "description": "The version count object represents a release version and its count of downloads.",
-            "required": [
-                "version",
-                "count"
-            ],
-            "properties": {
-                "version": {
-                    "type": "string",
-                    "description": "The version number for the item being counted"
-                },
-                "count": {
-                    "type": "integer",
-                    "description": "The download count for the item"
+            },
+            "LatestVersion": {
+                "description": "The latest version object represents a release branch and its latest version.",
+                "required": [
+                        "branch",
+                        "version"
+                ],
+                "properties": {
+                    "branch": {
+                        "type": "string",
+                        "description": "The version branch"
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "The latest version number for the branch"
+                    }
                 }
-            }
-        },
-        "Release": {
-            "description": "The release object represents a release and includes version number and release branch and date.",
-            "required": [
-                "branch",
-                "version"
-            ],
-            "properties": {
-                "version": {
-                    "type": "string",
-                    "description": "The version number for the release"
-                },
-                "branch": {
-                    "type": "string",
-                    "description": "The version branch"
-                },
-                "date": {
-                    "type": "string",
-                    "format": "dateTime",
-                    "description": "The date of the release"
-                },
-                "relationships": {
-                    "$ref": "#/definitions/ReleaseRelationships"
+            },
+            "VersionCount": {
+                "description": "The version count object represents a release version and its count of downloads.",
+                "required": [
+                        "version",
+                        "count"
+                ],
+                "properties": {
+                    "version": {
+                        "type": "string",
+                        "description": "The version number for the item being counted"
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "The download count for the item"
+                    }
                 }
-            }
-        },
-        "ReleaseRelationships": {
-            "description": "Links to the relationships that a release has",
-            "required": [
-                "signatures"
-            ],
-            "properties": {
-                "signatures": {
-                    "type": "string",
-                    "description": "URL of the files signatures for this release, see #/definitions/FilesSignature"
+            },
+            "Release": {
+                "description": "The release object represents a release and includes version number and release branch and date.",
+                "required": [
+                        "branch",
+                        "version"
+                ],
+                "properties": {
+                    "version": {
+                        "type": "string",
+                        "description": "The version number for the release"
+                    },
+                    "branch": {
+                        "type": "string",
+                        "description": "The version branch"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "dateTime",
+                        "description": "The date of the release"
+                    },
+                    "relationships": {
+                        "$ref": "#/components/schemas/ReleaseRelationships"
+                    }
                 }
-            }
-        },
-        "ErrorResponse": {
-            "description": "The Error response contains an ErrorObject describing the error condition which has been reached.",
-            "required": [
-                "error"
-            ],
-            "properties": {
-                "error": {
-                    "$ref": "#/definitions/ErrorObject"
+            },
+            "ReleaseRelationships": {
+                "description": "Links to the relationships that a release has",
+                "required": [
+                        "signatures"
+                ],
+                "properties": {
+                    "signatures": {
+                        "type": "string",
+                        "description": "URL of the files signatures for this release, see #/definitions/FilesSignature"
+                    }
                 }
-            }
-        },
-        "ErrorObject": {
-            "description": "The error object contains details about an error condition.",
-            "required": [
-                "code",
-                "message"
-            ],
-            "properties": {
-                "code": {
-                    "type": "integer"
-                },
-                "message": {
-                    "type": "string",
-                    "description": "A message describing the error condition"
+            },
+            "ErrorResponse": {
+                "description": "The Error response contains an ErrorObject describing the error condition which has been reached.",
+                "required": [
+                        "error"
+                ],
+                "properties": {
+                    "error": {
+                        "$ref": "#/components/schemas/ErrorObject"
+                    }
+                }
+            },
+            "ErrorObject": {
+                "description": "The error object contains details about an error condition.",
+                "required": [
+                        "code",
+                        "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "integer"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message describing the error condition"
+                    }
                 }
             }
         }
