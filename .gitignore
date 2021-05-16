@@ -10,6 +10,7 @@
 !/administrator/components
 /administrator/components/*
 !/administrator/components/com_ars
+/administrator/components/com_ars/vendor/akeeba/s3/TODO.md
 !/administrator/language
 /administrator/language/*
 !/administrator/language/en-GB

@@ -1,15 +1,47 @@
 [
     {
         "name": "akeeba/s3",
-        "version": "master",
-        "version_normalized": "9999999-dev",
+        "version": "dev-main",
+        "version_normalized": "dev-main",
         "source": {
             "type": "git",
-            "url": "https://github.com/akeeba/s3",
-            "reference": "master"
+            "url": "https://github.com/akeeba/s3.git",
+            "reference": "96208915514b19e7789ea053c6a109b212864001"
         },
-        "time": "2017-05-18T14:11:00+00:00",
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/akeeba/s3/zipball/96208915514b19e7789ea053c6a109b212864001",
+            "reference": "96208915514b19e7789ea053c6a109b212864001",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.4"
+        },
+        "time": "2020-01-02T07:13:47+00:00",
         "type": "library",
-        "installation-source": "source"
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Akeeba\\Engine\\Postproc\\Connector\\S3v4\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "Nicholas K. Dionysopoulos",
+                "email": "nicholas_NO_SPAM_PLEASE@akeebabackup.com",
+                "homepage": "http://www.dionysopoulos.me",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "Akeeba Engine connector for Amazon S3",
+        "homepage": "https://github.com/akeeba/s3",
+        "keywords": [
+            "s3"
+        ]
     }
 ]
