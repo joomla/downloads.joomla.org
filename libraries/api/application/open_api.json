@@ -174,9 +174,88 @@
                     }
                 }
             }
+        },
+        "/v1/languagepacks/{cms_version}": {
+            "get": {
+                "summary": "Gets the language packs for a given CMS Version",
+                "tags": [
+                    "languages"
+                ],
+                "description": "Gets a list of available languages for each CMS Major Version",
+                "operationId": "LanguagesByversion",
+                "parameters": [
+                    {
+                        "name": "cms_version",
+                        "in": "path",
+                        "description": "The CMS version to fetch the languages for",
+                        "required": true,
+                        "type": "integer",
+                        "enum": [
+                            10,
+                            15,
+                            25,
+                            30,
+                            40
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/LanguagePackResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "LanguagePackResponse": {
+            "description": "The Response contains the total number of .",
+            "required": [
+                "total",
+                "languages"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LanguageDefinition"
+                    }
+                }
+            }
+        },
+        "LanguageDefinition": {
+            "description": "The Response contains the total number of .",
+            "required": [
+                "name",
+                "languageCode"
+            ],
+            "properties": {
+                "name": {
+                    "type": "integer"
+                },
+                "languageCode": {
+                    "type": "integer"
+                }
+            }
+        },
         "DownloadBranchResponse": {
             "description": "The Response contains the total number of downloads of all releases in this branch and then a breakdown for each version.",
             "required": [
