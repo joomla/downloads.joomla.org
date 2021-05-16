@@ -25,108 +25,37 @@
     <link href="https://downloadscdn.joomla.org/templates/joomla/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
     <link href="https://downloadscdn.joomla.org/templates/joomla/images/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
     <link href="https://downloadscdn.joomla.org/templates/joomla/images/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="./swagger-ui.css" rel="stylesheet" />
     <link href="https://downloadscdn.joomla.org/templates/joomla/css/template.min.css?2.2.1-dev&1493126506" rel="stylesheet" />
     <link href="https://downloadscdn.joomla.org/templates/joomla/css/custom.css?173662b00a11d09cb8eeb4326ac80785&1500830466" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
     <style>
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Open Sans', sans-serif;
-        }
+      html
+      {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+      }
 
-        .http_method {
-            text-transform: uppercase;
-        }
+      *,
+      *:before,
+      *:after
+      {
+        box-sizing: inherit;
+      }
 
-        .description-tab div {
-            margin-left: 1em;
-        }
-
-        .description-tab .propName {
-            font-weight: bold;
-        }
+      body
+      {
+        margin:0;
+        background: #fafafa;
+      }
     </style>
-
-    <script src='lib/object-assign-pollyfill.js' type='text/javascript'></script>
     <script src="https://downloadscdn.joomla.org/media/jui/js/jquery.min.js?173662b00a11d09cb8eeb4326ac80785&1499159052"></script>
     <script src="https://downloadscdn.joomla.org/media/jui/js/jquery-migrate.min.js?173662b00a11d09cb8eeb4326ac80785&1499159052"></script>
     <script src="https://downloadscdn.joomla.org/media/jui/js/bootstrap.min.js?173662b00a11d09cb8eeb4326ac80785&1499159052"></script>
     <script src="https://downloadscdn.joomla.org/templates/joomla/js/template.js?173662b00a11d09cb8eeb4326ac80785&1493126506"></script>
     <script src="https://downloadscdn.joomla.org/templates/joomla/js/blockadblock.js?173662b00a11d09cb8eeb4326ac80785&1493126506"></script>
     <script src="https://downloadscdn.joomla.org/templates/joomla/js/js.cookie.js?173662b00a11d09cb8eeb4326ac80785&1493126506"></script>
-    <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
-    <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
-    <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
-    <script src='lib/handlebars-4.0.5.js' type='text/javascript'></script>
-    <script src='lib/lodash.min.js' type='text/javascript'></script>
-    <script src='lib/backbone-min.js' type='text/javascript'></script>
-    <script src='swagger-ui.js' type='text/javascript'></script>
-    <script src='lib/highlight.9.1.0.pack.js' type='text/javascript'></script>
-    <script src='lib/highlight.9.1.0.pack_extended.js' type='text/javascript'></script>
-    <script src='lib/jsoneditor.min.js' type='text/javascript'></script>
-    <script src='lib/marked.js' type='text/javascript'></script>
-    <script src='lib/swagger-oauth.js' type='text/javascript'></script>
-
-    <!-- Some basic translations -->
-    <!-- <script src='lang/translator.js' type='text/javascript'></script> -->
-    <!-- <script src='lang/ru.js' type='text/javascript'></script> -->
-    <!-- <script src='lang/en.js' type='text/javascript'></script> -->
-
-    <script type="text/javascript">
-        jQuery(function () {
-            var pathArray = location.href.split('/'),
-                protocol = pathArray[0],
-                host = pathArray[2],
-                baseUrl = protocol + '//' + host;
-
-            var url = baseUrl + "/libraries/api/application/open_api.json";
-
-            hljs.configure({
-                highlightSizeThreshold: 5000
-            });
-
-            // Pre load translate...
-            if (window.SwaggerTranslator) {
-                window.SwaggerTranslator.translate();
-            }
-
-            window.swaggerUi = new SwaggerUi({
-                url: url,
-                dom_id: "swagger-ui-container",
-                supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
-                onComplete: function (swaggerApi, swaggerUi) {
-                    if (typeof initOAuth == "function") {
-                        initOAuth({
-                            clientId: "your-client-id",
-                            clientSecret: "your-client-secret-if-required",
-                            realm: "your-realms",
-                            appName: "your-app-name",
-                            scopeSeparator: " ",
-                            additionalQueryStringParams: {}
-                        });
-                    }
-
-                    if (window.SwaggerTranslator) {
-                        window.SwaggerTranslator.translate();
-                    }
-                },
-                onFailure: function (data) {
-                    log("Unable to Load SwaggerUI");
-                },
-                docExpansion: "none",
-                jsonEditor: false,
-                defaultModelRendering: 'schema',
-                showRequestHeaders: false
-            });
-
-            window.swaggerUi.load();
-
-            function log() {
-                if ('console' in window) {
-                    console.log.apply(console, arguments);
-                }
-            }
-        });
-    </script>
 </head>
 
 <body class="site swagger-section">
@@ -281,8 +210,7 @@
             </noscript>
             <div class="row-fluid">
                 <main class="span12">
-                    <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
-                    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+                    <div id="swagger-ui-container"></div>
                 </main>
             </div>
         </div>
@@ -333,5 +261,45 @@
             </div>
         </div>
     </footer>
+
+    <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
+    <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+    <script>
+      var pathArray = location.href.split('/'),
+              protocol = pathArray[0],
+              host = pathArray[2],
+              baseUrl = protocol + '//' + host;
+
+    window.onload = function() {
+      // Begin Swagger UI call region
+      const ui = SwaggerUIBundle({
+        url: baseUrl + "/libraries/api/application/open_api.json",
+        dom_id: '#swagger-ui-container',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "BaseLayout"
+      });
+
+      ui.initOAuth({
+        clientId: "your-client-id",
+        clientSecret: "your-client-secret-if-required",
+        realm: "your-realms",
+        appName: "your-app-name",
+        scopeSeparator: " ",
+        scopes: "openid profile",
+        additionalQueryStringParams: {test: "hello"},
+        usePkceWithAuthorizationCodeGrant: true
+      })
+      // End Swagger UI call region
+
+      window.ui = ui;
+    };
+  </script>
 </body>
 </html>
