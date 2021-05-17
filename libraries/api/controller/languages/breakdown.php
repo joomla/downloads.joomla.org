@@ -95,6 +95,7 @@ class ApiControllerLanguagesBreakdown extends JControllerBase
 
 					$downloadUrl = \JRoute::_('index.php?option=com_ars&view=Item&task=download&format=raw&id=' . $item->id . '&Itemid=' . 677);
 
+					// We use the same structure for response as in the CMS signatures endpoint. Yay for API Consistency!
 					$version['downloads'][] = [
 						'filename' => $rootURL . $downloadUrl,
 						'md5' => $item->md5,
