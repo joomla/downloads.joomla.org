@@ -27,12 +27,29 @@ class ApiControllerLanguagesBreakdown extends JControllerBase
 	 */
 	public function execute()
 	{
+		// Maps the API Path (which we keep consistent with existing breakdown etc endpoints) to the language pack
+		// component application ID and the corresponding ARS Menu ID for that language for nice SEF URLs.
 		$mapping = [
-			10 => 1,
-			15 => 2,
-			25 => 3,
-			30 => 4,
-			40 => 5,
+			10 => [
+				'application_id' => 1,
+				'menu_id' => 678,
+			],
+			15 => [
+				'application_id' => 2,
+				'menu_id' => 677,
+			],
+			25 => [
+				'application_id' => 3,
+				'menu_id' => 676,
+			],
+			30 => [
+				'application_id' => 4,
+				'menu_id' => 674,
+			],
+			40 => [
+				'application_id' => 5,
+				'menu_id' => 675,
+			],
 		];
 
 		$majorVersion = $this->getInput()->getInt('cms_version');
@@ -51,7 +68,7 @@ class ApiControllerLanguagesBreakdown extends JControllerBase
 			->select($db->quoteName('a.ars_category'))
 			->from($db->quoteName('#__languagepack_languages', 'a'))
 			->rightJoin($db->quoteName('#__languagepack_applications', 'b') . ' ON ' . $db->quoteName('b.id') . ' = ' . $db->quoteName('a.application_id'))
-			->where($db->quoteName('a.application_id') . ' = ' . (int) $mapping[$majorVersion])
+			->where($db->quoteName('a.application_id') . ' = ' . (int) $mapping[$majorVersion]['application_id'])
 			->where($db->quoteName('a.lang_code') . ' = ' . $db->quote($languageCode))
 			->where('a.state = ' . 1)
 			->where('b.state = ' . 1);
@@ -93,7 +110,7 @@ class ApiControllerLanguagesBreakdown extends JControllerBase
 						continue;
 					}
 
-					$downloadUrl = \JRoute::_('index.php?option=com_ars&view=Item&task=download&format=raw&id=' . $item->id . '&Itemid=' . 677);
+					$downloadUrl = \JRoute::_('index.php?option=com_ars&view=Item&task=download&format=raw&id=' . $item->id . '&Itemid=' . $mapping[$majorVersion]['menu_id']);
 
 					// We use the same structure for response as in the CMS signatures endpoint. Yay for API Consistency!
 					$version['downloads'][] = [
