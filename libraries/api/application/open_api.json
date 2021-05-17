@@ -220,6 +220,59 @@
                     }
                 }
             }
+        },
+        "/v1/languagepacks/{cms_version}/{language_code}": {
+            "get": {
+                "summary": "Gets the language packs available for a given language in a CMS Version",
+                "tags": [
+                    "languages"
+                ],
+                "description": "Gets the language packs available for a given language in a CMS Version",
+                "operationId": "LanguagesBreakdown",
+                "parameters": [
+                    {
+                        "name": "cms_version",
+                        "in": "path",
+                        "description": "The CMS version to fetch the languages for",
+                        "required": true,
+                        "type": "integer",
+                        "enum": [
+                            10,
+                            15,
+                            25,
+                            30,
+                            40
+                        ]
+                    },
+                    {
+                        "name": "language_code",
+                        "in": "path",
+                        "description": "The language code to show the versions available of",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/LanguagePackBreakdownResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
