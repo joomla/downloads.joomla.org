@@ -175,7 +175,7 @@
                 }
             }
         },
-        "/v1/languagepacks/{cms_version}": {
+        "/v1/languagepacks/cms/{cms_version}": {
             "get": {
                 "summary": "Gets the language packs for a given CMS Version",
                 "tags": [
@@ -221,7 +221,7 @@
                 }
             }
         },
-        "/v1/languagepacks/{cms_version}/{language_code}": {
+        "/v1/languagepacks/cms/{cms_version}/{language_code}": {
             "get": {
                 "summary": "Gets the language packs available for a given language in a CMS Version",
                 "tags": [
@@ -256,7 +256,7 @@
                     "200": {
                         "description": "Success",
                         "schema": {
-                            "$ref": "#/definitions/LanguagePackBreakdownResponse"
+                            "$ref": "#/definitions/languagePackBreakdownResponse"
                         }
                     },
                     "400": {
@@ -277,7 +277,7 @@
     },
     "definitions": {
         "LanguagePackResponse": {
-            "description": "The Response contains the total number of .",
+            "description": "The Response contains the total number of languages for a CMS Major.",
             "required": [
                 "total",
                 "languages"
@@ -290,6 +290,50 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/LanguageDefinition"
+                    }
+                }
+            }
+        },
+        "languagePackBreakdownResponse": {
+            "description": "The Response contains the total number of releases for a language pack for the CMS.",
+            "required": [
+                "total",
+                "versions"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/languageVersionDefinition"
+                    }
+                }
+            }
+        },
+        "languageVersionDefinition": {
+            "description": "The information for a release of a language pack.",
+            "required": [
+                "name",
+                "description",
+                "version",
+                "downloads"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "downloads": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FilesSignature"
                     }
                 }
             }
