@@ -35,7 +35,9 @@
 /language/*-*/*
 !/language/*-*/*.com_ars.ini
 !/language/*-*/*.page_faqs.ini
+!/language/*-*/*.page_home.ini
 !/language/*-*/*.page_technical_requirements.ini
+!/language/*-*/*.site_menuitems.ini
 /layouts
 /libraries/*
 !/libraries/api
