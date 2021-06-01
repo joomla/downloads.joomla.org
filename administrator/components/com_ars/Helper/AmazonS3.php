@@ -188,10 +188,11 @@ class AmazonS3 extends \JObject
 	 * @param   string $fileOrContent The absolute filesystem path or, if $rawContent is true, the raw content to save
 	 * @param   string $path          The path in Amazon S3 where the data will be stored
 	 * @param   bool   $rawContent    Does the $fileOrContent parameter contain raw data to upload?
+	 * @param   array  $requestHeaders Array of request headers
 	 *
 	 * @return  bool  True on success
 	 */
-	public function putObject($fileOrContent, $path, $rawContent = false)
+	public function putObject($fileOrContent, $path, $rawContent = false, $requestHeaders = array())
 	{
 		if ($rawContent)
 		{
@@ -213,7 +214,7 @@ class AmazonS3 extends \JObject
 
 		try
 		{
-			$this->s3Client->putObject($input, self::$bucket, $path, self::$acl);
+			$this->s3Client->putObject($input, self::$bucket, $path, self::$acl, $requestHeaders);
 		}
 		catch (\Exception $e)
 		{
