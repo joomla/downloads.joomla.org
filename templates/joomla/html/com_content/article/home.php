@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  com_content
  *
- * @copyright   (C) 2006 Open Source Matters, Inc. <https://www.joomla.org>
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -79,12 +79,12 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
             </div>
 			<div class="span4"><img src="/images/homepage/joomla-25-upgrade.png" alt="<?php echo JText::_('HP_CONTENT_MIGRATE25_TITLE'); ?>">
 				<h3><?php echo JText::_('HP_CONTENT_MIGRATE25_TITLE'); ?></h3>
-				<p><?php echo JText::_('HP_CONTENT_MIGRATE25_TEXT1'); ?><br><a title="<?php echo JText::_('HP_CONTENT_MIGRATE25_LINK'); ?>" href="https://docs.joomla.org/S:MyLanguage/Joomla_2.5_to_3.10_Step_by_Step_Migration" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE25_TEXT2'); ?></a></p>
+				<p><?php echo JText::_('HP_CONTENT_MIGRATE25_TEXT1'); ?><br><a title="<?php echo JText::_('HP_CONTENT_MIGRATE25_LINK'); ?>" href="https://docs.joomla.org/S:MyLanguage/Planning_for_Mini-Migration_-_Joomla_2.5_to_4.x" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE25_TEXT2'); ?></a></p>
 				<a class="btn" title="<?php echo JText::_('HP_CONTENT_MIGRATE25_BUTTON'); ?>" href="/cms/joomla25/2-5-28"><?php echo JText::_('HP_CONTENT_MIGRATE25_BUTTON'); ?></a>
             </div>
 			<div class="span4"><img src="/images/homepage/joomla-15-upgrade.png" alt="<?php echo JText::_('HP_CONTENT_MIGRATE15_TITLE'); ?>">
 				<h3><?php echo JText::_('HP_CONTENT_MIGRATE15_TITLE'); ?></h3>
-				<p><?php echo JText::_('HP_CONTENT_MIGRATE15_TEXT1'); ?><br><a title="<?php echo JText::_('HP_CONTENT_MIGRATE15_LINK'); ?>" href="https://docs.joomla.org/S:MyLanguage/Joomla_1.5_to_4.x_Step_by_Step_Migration" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE15_TEXT2'); ?></a></p>
+				<p><?php echo JText::_('HP_CONTENT_MIGRATE15_TEXT1'); ?><br><a title="<?php echo JText::_('HP_CONTENT_MIGRATE15_LINK'); ?>" href="https://docs.joomla.org/S:MyLanguage/Planning_Migration_-_Joomla_1.5_to_4" target="_blank" rel="noopener noreferrer"><?php echo JText::_('HP_CONTENT_MIGRATE15_TEXT2'); ?></a></p>
 				<a class="btn" title="<?php echo JText::_('HP_CONTENT_MIGRATE15_BUTTON'); ?>" href="/cms/joomla15/1-5-26"><?php echo JText::_('HP_CONTENT_MIGRATE15_BUTTON'); ?></a></div>
 			</div>
 		</div>
