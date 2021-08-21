@@ -36,7 +36,7 @@ class ApiControllerReleasesCms extends JControllerBase
 			->orderBy('order', 'DESC')
 			->published(1)
 			->access_user($container->platform->getUser()->id)
-			->category_id(0)
+			->visualgroup_id(1)
 			->maturity('stable');
 
 		$releases = $releasesModel->get(true);
