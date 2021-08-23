@@ -232,7 +232,7 @@ class JoomlaRelease extends JApplicationCli
 			],
 		];
 
-		if ($releaseParts[2] !== '0')
+		if ($releaseParts[2] !== '0' || $releaseParts[2] !== '1')
 		{
 			$items[] = [
 				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.zip)",
@@ -258,7 +258,10 @@ class JoomlaRelease extends JApplicationCli
 				'filename'     => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
 				'ordering'     => 4,
 			];
+		}
 
+		if ($releaseParts[2] !== '0')
+		{
 			$previousPatchNumber = $releaseParts[2] - 1;
 
 			$items[] = [
