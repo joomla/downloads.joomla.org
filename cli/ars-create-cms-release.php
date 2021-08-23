@@ -210,7 +210,7 @@ class JoomlaRelease extends JApplicationCli
 			[
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.zip)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.zip",
-				'description'  => "<p>This package is for performing updates from Joomla! 2.5, 3.x and previous 4.x releases to $releaseNumber.</p>",
+				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.zip",
 				'ordering'     => 9
@@ -218,7 +218,7 @@ class JoomlaRelease extends JApplicationCli
 			[
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.gz)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.gz",
-				'description'  => "<p>This package is for performing updates from Joomla! 2.5, 3.x and previous 4.x releases to $releaseNumber.</p>",
+				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.gz",
 				'ordering'     => 8
@@ -226,7 +226,7 @@ class JoomlaRelease extends JApplicationCli
 			[
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.bz2)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.bz2",
-				'description'  => "<p>This package is for performing updates from Joomla! 2.5, 3.x and previous 4.x releases to $releaseNumber.</p>",
+				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.bz2",
 				'ordering'     => 7
