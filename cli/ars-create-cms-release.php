@@ -232,7 +232,7 @@ class JoomlaRelease extends JApplicationCli
 			],
 		];
 
-		if ($releaseParts[2] !== '0' || $releaseParts[2] !== '1')
+		if ($releaseParts[2] !== '0' && $releaseParts[2] !== '1')
 		{
 			$items[] = [
 				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.zip)",
