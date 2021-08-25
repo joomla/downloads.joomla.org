@@ -239,7 +239,7 @@ class JoomlaRelease extends JApplicationCli
 				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.zip",
 				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
 				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseAliasNumber-Stable-Patch_Package.zip",
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.zip",
 				'ordering'     => 6,
 			];
 			$items[] = [
@@ -247,7 +247,7 @@ class JoomlaRelease extends JApplicationCli
 				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.gz",
 				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
 				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseAliasNumber-Stable-Patch_Package.tar.gz",
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.tar.gz",
 				'ordering'     => 5,
 			];
 			$items[] = [
@@ -255,7 +255,7 @@ class JoomlaRelease extends JApplicationCli
 				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
 				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
 				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.tar.bz2",
 				'ordering'     => 4,
 			];
 		}
