@@ -174,9 +174,185 @@
                     }
                 }
             }
+        },
+        "/v1/languagepacks/cms/{cms_version}": {
+            "get": {
+                "summary": "Gets the language packs for a given CMS Version",
+                "tags": [
+                    "languages"
+                ],
+                "description": "Gets a list of available languages for each CMS Major Version",
+                "operationId": "LanguagesByversion",
+                "parameters": [
+                    {
+                        "name": "cms_version",
+                        "in": "path",
+                        "description": "The CMS version to fetch the languages for",
+                        "required": true,
+                        "type": "integer",
+                        "enum": [
+                            10,
+                            15,
+                            25,
+                            30,
+                            40
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/LanguagePackResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/languagepacks/cms/{cms_version}/{language_code}": {
+            "get": {
+                "summary": "Gets the language packs available for a given language in a CMS Version",
+                "tags": [
+                    "languages"
+                ],
+                "description": "Gets the language packs available for a given language in a CMS Version",
+                "operationId": "LanguagesBreakdown",
+                "parameters": [
+                    {
+                        "name": "cms_version",
+                        "in": "path",
+                        "description": "The CMS version to fetch the languages for",
+                        "required": true,
+                        "type": "integer",
+                        "enum": [
+                            10,
+                            15,
+                            25,
+                            30,
+                            40
+                        ]
+                    },
+                    {
+                        "name": "language_code",
+                        "in": "path",
+                        "description": "The language code to show the versions available of",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/languagePackBreakdownResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Service Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "LanguagePackResponse": {
+            "description": "The Response contains the total number of languages for a CMS Major.",
+            "required": [
+                "total",
+                "languages"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LanguageDefinition"
+                    }
+                }
+            }
+        },
+        "languagePackBreakdownResponse": {
+            "description": "The Response contains the total number of releases for a language pack for the CMS.",
+            "required": [
+                "total",
+                "versions"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/languageVersionDefinition"
+                    }
+                }
+            }
+        },
+        "languageVersionDefinition": {
+            "description": "The information for a release of a language pack.",
+            "required": [
+                "name",
+                "description",
+                "version",
+                "downloads"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "downloads": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FilesSignature"
+                    }
+                }
+            }
+        },
+        "LanguageDefinition": {
+            "description": "The Response contains the total number of .",
+            "required": [
+                "name",
+                "languageCode"
+            ],
+            "properties": {
+                "name": {
+                    "type": "integer"
+                },
+                "languageCode": {
+                    "type": "integer"
+                }
+            }
+        },
         "DownloadBranchResponse": {
             "description": "The Response contains the total number of downloads of all releases in this branch and then a breakdown for each version.",
             "required": [
