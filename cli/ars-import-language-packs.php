@@ -250,14 +250,23 @@ class ImportLanguagePacks extends JApplicationCli
 								'version'     => $completeVersion,
 								'alias'       => str_replace('.', '-', $completeVersion),
 								'maturity'    => 'stable',
-								'description' => '<p>This is the ' . $langFriendlyName . ' Language Pack for Joomla! ' . $versionInformation[0] . '</p>',
+								'description' => '<p>This is the ' . $langFriendlyName . ' Language Pack for Joomla! ' . $versionInformation[0],
 								'created'     => $createdDate->toSql(),
 								'access'      => '1',
 							];
 
+							if ($versionInformation[1] === '1')
+							{
+								$arsReleaseData['description'] .= '</p>';
+							}
+							else
+							{
+								$arsReleaseData['description'] .= ' (v' . $versionInformation[1] . ')</p>';
+							}
+
 							// Build Item Data (omitting the release ID which will be added after creation)
 							$arsItemData = [
-								'title'        => 'Joomla! ' . $versionInformation[0] . ' ' . $langFriendlyName . ' ' . $langTag . ' Language Pack',
+								'title'        => 'Joomla! ' . $versionInformation[0] . ' ' . $langFriendlyName . ' ' . $langTag . ' Language Pack (v' . $versionInformation[1] . ')',
 								'description'  => '<p>This is the full ' . $langFriendlyName . ' Language Pack for Joomla! ' . $versionInformation[0] . '</p>',
 								'type'         => 'file',
 								'filename'     => $zipName,
@@ -275,7 +284,9 @@ class ImportLanguagePacks extends JApplicationCli
 								continue;
 							}
 
-							// Fail saving the item if it already exists in ARS
+							// Fail saving the item if it already exists in ARS. Whilst it would be good to dual load this with the Release
+							// ID to reduce the risk of duplicate titles, we choose to do it here so we don't ever have to roll back the
+							// item in case the release is created and item is a duplicate.
 							if ($itemsModel->load(['title' => $arsItemData['title']]))
 							{
 								$this->out(sprintf('<error>ARS Item already exists for "%s". Continuing to next file</error>', $arsItemData['title']));
