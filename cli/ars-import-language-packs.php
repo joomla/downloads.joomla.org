@@ -167,6 +167,7 @@ class ImportLanguagePacks extends JApplicationCli
 			$explodedName     = explode('_', $packageName);
 			$langTag          = array_pop($explodedName);
 			$langFriendlyName = implode(' ', $explodedName);
+			$this->out(sprintf('<info>Processing language "%s"</info>', $langTag));
 
 			$arsDirectory = 's3://joomladownloads/translations/' . $s3Dir . '/' . $langTag;
 
