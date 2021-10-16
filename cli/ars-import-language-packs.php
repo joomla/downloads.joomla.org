@@ -8,7 +8,7 @@
 
 // MISSING DATA in S3/ARS AS FOLLOWS:
 // Joomla 2.5:
-// gu-IN, is-IS, fr-CA, en-CA
+// gu-IN, is-IS, ug-CN, fr-CA, en-CA
 
 // Joomla 3.x:
 // gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, ug-CN, gu-IN, srp-ME, en-CA, fr-CA, de-CH, de-AT, de-LI, de-LU, en-NZ, kk-KZ
@@ -114,11 +114,11 @@ class ImportLanguagePacks extends JApplicationCli
 	 */
 	public function doExecute()
 	{
-		$this->out('<info>Processing 2.5 releases from JoomlaCode</info>');
-		$this->processGForgeReleases('jtranslation1_6', JFactory::getConfig()->get('tmp_path') . '/joomla25', 'joomla25', 2);
+// 		$this->out('<info>Processing 2.5 releases from JoomlaCode</info>');
+// 		$this->processGForgeReleases('jtranslation1_6', JFactory::getConfig()->get('tmp_path') . '/joomla25', 'joomla25', 2);
 
-//		$this->out('<info>Processing 3.x releases from JoomlaCode</info>');
-//		$this->processGForgeReleases('jtranslation3_x', JFactory::getConfig()->get('tmp_path') . '/joomla3x', 'joomla3', 1);
+		$this->out('<info>Processing 3.x releases from JoomlaCode</info>');
+		$this->processGForgeReleases('jtranslation3_x', JFactory::getConfig()->get('tmp_path') . '/joomla3x', 'joomla3', 1);
 	}
 
 	/**
