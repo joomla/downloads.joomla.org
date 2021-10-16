@@ -12,7 +12,6 @@
 
 // Joomla 3.x:
 // gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, ug-CN, gu-IN, srp-ME, en-CA, fr-CA, de-CH, de-AT, de-LI, de-LU, en-NZ, kk-KZ
-// zzobsoletepacks
 
 // Set flag that this is a parent file.
 const _JEXEC = 1;
@@ -154,6 +153,12 @@ class ImportLanguagePacks extends JApplicationCli
 
 			// Package in Joomla 2.5 that is empty. Doesn't follow naming conventions. Skip it.
 			if ($packageName === 'Language_resources' && $projectId === 'jtranslation1_6')
+			{
+				continue;
+			}
+
+			// Package in Joomla 3.x that has some obsolete packs. Doesn't follow naming conventions. Skip it.
+			if ($packageName === 'zzobsoletepacks' && $projectId === 'jtranslation3_x')
 			{
 				continue;
 			}
