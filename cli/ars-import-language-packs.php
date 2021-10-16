@@ -8,10 +8,10 @@
 
 // MISSING DATA in S3/ARS AS FOLLOWS:
 // Joomla 2.5:
-// gu-IN, is-IS, ug-CN, fr-CA, en-CA
+// gu-IN, is-IS, fr-CA, en-CA
 
 // Joomla 3.x:
-// gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, ug-CN, gu-IN, srp-ME, en-CA, fr-CA, de-CH, de-AT, de-LI, de-LU, en-NZ, kk-KZ
+// gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, gu-IN, kk-KZ
 
 // Set flag that this is a parent file.
 const _JEXEC = 1;
