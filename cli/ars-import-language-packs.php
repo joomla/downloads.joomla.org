@@ -362,9 +362,14 @@ class ImportLanguagePacks extends JApplicationCli
 			return false;
 		}
 
-		$s3UploadPath = substr($categoriesModel->directory, strlen($prefix));
 		$s3           = \Akeeba\ReleaseSystem\Admin\Helper\AmazonS3::getInstance();
-		$success      = $s3->putObject($fileLocation, $s3UploadPath . '/' . $zipName);
+		$s3UploadPath = substr($categoriesModel->directory, strlen($prefix));
+		$requestHeaders = [
+			'Content-Disposition' => 'attachment; filename="' . $zipName . '"',
+		];
+
+		// Default parameters for the putObject method in ARS. Aside from overriding the request headers.
+		$success = $s3->putObject($fileUpload['tmp_name'], $s3UploadPath . '/' . $zipName, false, $requestHeaders);
 
 		if (!$success)
 		{
