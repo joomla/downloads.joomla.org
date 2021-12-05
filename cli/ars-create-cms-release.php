@@ -115,7 +115,7 @@ class JoomlaRelease extends JApplicationCli
 
 		if (!$userId)
 		{
-			$this->out(sprintf('<error>Username must be based into the application</error>'));
+			$this->out(sprintf('<error>Username must be supplied to this script</error>'));
 
 			return;
 		}
