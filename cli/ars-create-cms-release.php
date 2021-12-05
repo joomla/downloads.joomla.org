@@ -94,9 +94,10 @@ class JoomlaRelease extends JApplicationCli
 	 */
 	public function doExecute()
 	{
-		$releaseNumber = $this->input->getCmd('releaseVersion');
-		$releaseUrl    = $this->input->getString('releaseUrl');
-		$userId        = $this->input->getCmd('userId');
+		$releaseNumber        = $this->input->getCmd('releaseVersion');
+		$releaseUrl           = $this->input->getString('releaseUrl');
+		$disablePatchPackages = $this->input->getBool('disable-patch-packages', false);
+		$userId               = $this->input->getCmd('userId');
 
 		if (!$releaseNumber)
 		{
@@ -182,7 +183,7 @@ class JoomlaRelease extends JApplicationCli
 
 		// ARS renders in reverse order to uploads. So the file at the bottom of the page should be the first to be
 		// uploaded
-		if ($releaseParts[2] !== '0' && $releaseParts[2] !== '1')
+		if (($releaseParts[2] !== '0' && $releaseParts[2] !== '1') && !$disablePatchPackages)
 		{
 			$previousPatchNumber = $releaseParts[2] - 1;
 
@@ -209,7 +210,7 @@ class JoomlaRelease extends JApplicationCli
 			];
 		}
 
-		if ($releaseParts[2] !== '0')
+		if ($releaseParts[2] !== '0' && !$disablePatchPackages)
 		{
 			$items[] = [
 				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.tar.bz2)",
