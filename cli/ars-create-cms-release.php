@@ -180,97 +180,18 @@ class JoomlaRelease extends JApplicationCli
 			return;
 		}
 
-		// TODO: Fix the ordering in a better way!
-		$items = [
-			[
-				'title'        => "Joomla! $releaseNumber Full Package (.zip)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.zip",
-				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.zip",
-				'ordering'     => 12,
-			],
-			[
-				'title'        => "Joomla! $releaseNumber Full Package (.tar.gz)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.gz",
-				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.gz",
-				'ordering'     => 11,
-			],
-			[
-				'title'        => "Joomla! $releaseNumber Full Package (.tar.bz2)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.bz2",
-				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.bz2",
-				'ordering'     => 10,
-			],
-			[
-				'title'        => "Joomla! $releaseNumber Upgrade Package (.zip)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.zip",
-				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.zip",
-				'ordering'     => 9,
-			],
-			[
-				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.gz)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.gz",
-				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.gz",
-				'ordering'     => 8,
-			],
-			[
-				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.bz2)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.bz2",
-				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.bz2",
-				'ordering'     => 7,
-			],
-		];
-
-		if ($releaseParts[2] !== '0')
-		{
-			$items[] = [
-				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.zip)",
-				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.zip",
-				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.zip",
-				'ordering'     => 6,
-			];
-			$items[] = [
-				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.tar.gz)",
-				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.gz",
-				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.tar.gz",
-				'ordering'     => 5,
-			];
-			$items[] = [
-				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.tar.bz2)",
-				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
-				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
-				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.tar.bz2",
-				'ordering'     => 4,
-			];
-		}
-
+		// ARS renders in reverse order to uploads. So the file at the bottom of the page should be the first to be
+		// uploaded
 		if ($releaseParts[2] !== '0' && $releaseParts[2] !== '1')
 		{
 			$previousPatchNumber = $releaseParts[2] - 1;
 
 			$items[] = [
-				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber Patch Package (.zip)",
-				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-${previousPatchNumber}_to_$releaseAliasNumber-Stable-Patch_Package.zip",
+				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber Patch Package (.tar.bz2)",
+				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-${previousPatchNumber}_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
 				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber.</p>",
 				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].${previousPatchNumber}_to_$releaseNumber-Stable-Patch_Package.zip",
-				'ordering'     => 3
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].${previousPatchNumber}_to_$releaseNumber-Stable-Patch_Package.tar.bz2",
 			];
 			$items[] = [
 				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber Patch Package (.tar.gz)",
@@ -278,17 +199,85 @@ class JoomlaRelease extends JApplicationCli
 				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber.</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].${previousPatchNumber}_to_$releaseNumber-Stable-Patch_Package.tar.gz",
-				'ordering'     => 2
 			];
 			$items[] = [
-				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber Patch Package (.tar.bz2)",
-				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-${previousPatchNumber}_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
+				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber Patch Package (.zip)",
+				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-${previousPatchNumber}_to_$releaseAliasNumber-Stable-Patch_Package.zip",
 				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].$previousPatchNumber to $releaseNumber.</p>",
 				'type'         => 'file',
-				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].${previousPatchNumber}_to_$releaseNumber-Stable-Patch_Package.tar.bz2",
-				'ordering'     => 1
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].${previousPatchNumber}_to_$releaseNumber-Stable-Patch_Package.zip",
 			];
 		}
+
+		if ($releaseParts[2] !== '0')
+		{
+			$items[] = [
+				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.tar.bz2)",
+				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.bz2",
+				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.tar.bz2",
+			];
+			$items[] = [
+				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.tar.gz)",
+				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.tar.gz",
+				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.tar.gz",
+			];
+			$items[] = [
+				'title'        => "Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber Patch Package (.zip)",
+				'alias'        => "Joomla_$releaseParts[0]-$releaseParts[1]-x_to_$releaseAliasNumber-Stable-Patch_Package.zip",
+				'description'  => "<p>This package is for performing updates from Joomla! $releaseParts[0].$releaseParts[1].x to $releaseNumber</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseParts[0].$releaseParts[1].x_to_$releaseNumber-Stable-Patch_Package.zip",
+			];
+		}
+
+		$items = [
+			[
+				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.bz2)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.bz2",
+				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.bz2",
+			],
+			[
+				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.gz)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.gz",
+				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.gz",
+			],
+			[
+				'title'        => "Joomla! $releaseNumber Upgrade Package (.zip)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.zip",
+				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.zip",
+			],
+			[
+				'title'        => "Joomla! $releaseNumber Full Package (.tar.bz2)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.bz2",
+				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.bz2",
+			],
+			[
+				'title'        => "Joomla! $releaseNumber Full Package (.tar.gz)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.gz",
+				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.gz",
+			],
+			[
+				'title'        => "Joomla! $releaseNumber Full Package (.zip)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.zip",
+				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
+				'type'         => 'file',
+				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.zip",
+			],
+		];
 
 		foreach ($items as $item)
 		{
