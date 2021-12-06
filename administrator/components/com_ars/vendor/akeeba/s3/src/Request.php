@@ -1,11 +1,10 @@
 <?php
 /**
  * Akeeba Engine
- * The modular PHP5 site backup engine
  *
- * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
- * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
+ * @copyright Copyright (c)2006-2020 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
  */
 
 namespace Akeeba\Engine\Postproc\Connector\S3v4;
@@ -116,7 +115,7 @@ class Request
 	 * @param   string         $uri            Object URI
 	 * @param   Configuration  $configuration  The Amazon S3 configuration object to use
 	 *
-	 * @return  Request
+	 * @return  void
 	 */
 	function __construct($verb, $bucket = '', $uri = '', Configuration $configuration)
 	{
@@ -130,23 +129,28 @@ class Request
 			$this->uri = '/' . str_replace('%2F', '/', rawurlencode($uri));
 		}
 
-		$defaultHost = $configuration->getEndpoint();
-
 		$this->headers['Host'] = $this->getHostName($configuration, $this->bucket);
 		$this->resource        = $this->uri;
 
-		if ($this->bucket !== '')
+		if (($this->bucket !== '') && $configuration->getUseLegacyPathStyle())
 		{
 			$this->resource = '/' . $this->bucket . $this->uri;
 
-			if ($this->headers['Host'] != $this->bucket . '.' . $defaultHost)
-			{
-				$this->uri = $this->resource;
-			}
+			$this->uri = $this->resource;
 		}
 
-		$this->headers['Date'] = gmdate('D, d M Y H:i:s T');
+		// The date must always be added as a header
+		$this->headers['Date'] = gmdate('D, d M Y H:i:s O');
 
+		// If there is a security token we need to set up the X-Amz-Security-Token header
+		$token = $this->configuration->getToken();
+
+		if (!empty($token))
+		{
+			$this->setAmzHeader('x-amz-security-token', $token);
+		}
+
+		// Initialize the response object
 		$this->response = new Response();
 	}
 
@@ -405,16 +409,12 @@ class Request
 				}
 			}
 
-			// Verify the host name in the certificate and the certificate itself. However, if your bucket contains dots
-			// we have to turn off host verification. Sorry, that's a limitation of Amazon S3. Since they recommend
-			// always using virtual hosting style hostnames while their SSL certificate is set up to only allow
-			// subdomains (bucket names) without dots the direct implication is that if you want to use SSL you MUST NOT
-			// use dots in your bucket name. Of course this contradicts another part of their documentation which
-			// suggests using bucket names with dots (same as your domain name) but YOU CAN'T MAKE SENSE OF THEIR BLOODY
-			// DOCS, CAN YOU? For what is worth their own SDK uses path-style access which they tell everyone else to
-			// not use.
-			//
-			// TL;DR: Amazon is a bunch of jerks.
+			/**
+			 * Verify the host name in the certificate and the certificate itself.
+			 *
+			 * Caveat: if your bucket contains dots in the name we have to turn off host verification due to the way the
+			 * S3 SSL certificates are set up.
+			 */
 			$isAmazonS3 = (substr($this->headers['Host'], -14) == '.amazonaws.com') ||
 				substr($this->headers['Host'], -16) == 'amazonaws.com.cn';
 			$tooManyDots = substr_count($this->headers['Host'], '.') > 3;
@@ -592,22 +592,22 @@ class Request
 
 		list($header, $value) = explode(': ', trim($data), 2);
 
-		switch ($header)
+		switch (strtolower($header))
 		{
-			case 'Last-Modified':
+			case 'last-modified':
 				$this->response->setHeader('time', strtotime($value));
 				break;
 
-			case 'Content-Length':
+			case 'content-length':
 				$this->response->setHeader('size', (int)$value);
 				break;
 
-			case 'Content-Type':
+			case 'content-type':
 				$this->response->setHeader('type', $value);
 				break;
 
-			case 'ETag':
-				$this->response->setHeader('hash', $value{0} == '"' ? substr($value, 1, -1) : $value);
+			case 'etag':
+				$this->response->setHeader('hash', $value[0] == '"' ? substr($value, 1, -1) : $value);
 				break;
 
 			default:
@@ -617,7 +617,6 @@ class Request
 				}
 				break;
 		}
-
 		return $strlen;
 	}
 
@@ -682,10 +681,15 @@ class Request
 	 */
 	private function getHostName(Configuration $configuration, $bucket)
 	{
-		//
 		// http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region
 		$endpoint = $configuration->getEndpoint();
-		$hostname = $bucket . '.' . $endpoint;
+		$region   = $configuration->getRegion();
+
+		// If it's a bucket in China we need to use a different endpoint
+		if (($endpoint == 's3.amazonaws.com') && (substr($region, 0, 3) == 'cn-'))
+		{
+			$endpoint = 'amazonaws.com.cn';
+		}
 
 		/**
 		 * If there is no bucket we use the default endpoint, whatever it is. For Amazon S3 this format is only used
@@ -698,64 +702,54 @@ class Request
 		}
 
 		/**
-		 * If a custom endpoint has been specified we have to use the v2 signature API and its old-style hostnames, i.e.
-		 * "virtual hosting". For example with an endpoint s3.example.com and bucket foobar the hostname would be
-		 * foobar.s3.example.com
-		 */
-		if (!in_array($endpoint, array('s3.amazonaws.com', 'amazonaws.com.cn')))
-		{
-			return $hostname;
-		}
-
-		/**
-		 * If we are using Amazon S3 with v2 signatures we have to use virual hosting (old-style) hostnames. So, a
-		 * bucket called foobar needs to be accessed through the hostname foobar.s3.amazonaws.com
+		 * Are we using v2 signatures? In this case we use the endpoint defined by the user without translating it.
 		 */
 		if ($configuration->getSignatureMethod() != 'v4')
 		{
-			return $hostname;
-		}
+			// Legacy path style: the hostname is the endpoint
+			if ($configuration->getUseLegacyPathStyle())
+			{
+				return $endpoint;
+			}
 
-		/**
-		 * If we are not asked to use legacy path style access return the virtual hosting style hostname
-		 */
-		if (!$configuration->getUseLegacyPathStyle())
-		{
-			/**
-			 * Apparently this used to be required by Amazon when I first wrote that code. Then Amazon decided it's
-			 * pretty lame not using the different hostnames per region (see below) and reverted this behaviour. To make
-			 * things interesting, Amazon decided to let the old buckets be accessible from a generic hostname in a full
-			 * b/c fashion BUT newly created buckets would not be allowed to be accessed with the generic hostname.
-			 * Therefore we have to remove that workaround for the old Amazon S3 inconsistency.
-			 *
-			 * Oh, in case you are wondering, no, Amazon did NOT update their v4 authentication documentation. If you
-			 * are reading this while trying to find why the v4 authentication does not work if you implement it exactly
-			 * per Amazon's documentation I feel for you. Shut down your computer and head to the nearest bar. Get
-			 * hammered. Come back to writing code tomorrow. There you go, dude... *pat on the back*
-			 */
-			// return $hostname;
+			// Virtual hosting style: the hostname is the bucket, dot and endpoint.
+			return $bucket . '.' . $endpoint;
 		}
 
 		/**
 		 * When using the Amazon S3 with the v4 signature API we have to use a different hostname per region. The
-		 * mapping can be found in http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region and boils down to
-		 * the replacing s3.amazonaws.com with s3-REGION.amazonaws.com  The only exception is the old, very first S3
-		 * region us-east-1 whose regional hostname is s3-external-1.amazonaws.com just to make our life harder...
+		 * mapping can be found in http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region
 		 *
-		 * Also China (cn-north-1) where it is s3.cn-north-1.amazonaws.com.cn
+		 * This means changing the endpoint to s3-REGION.amazonaws.com with the following exceptions:
+		 * For us-east-1: s3-external-1.amazonaws.com
+		 * For China: s3.REGION.amazonaws.com.cn
+		 *
+		 * v4 signing does NOT support non-Amazon endpoints.
 		 */
 
-		$region = $configuration->getRegion();
+		// Most endpoints: s3-REGION.amazonaws.com
+		$endpoint = 's3-' . $region . '.amazonaws.com';
 
+		// Exception: US East 1 endpoint is s3-external-1.amazonaws.com, NOT s3-us-east-1.amazonaws.com
 		if ($region == 'us-east-1')
 		{
-			$region = 'external-1';
-		}
-		elseif ($region == 'cn-north-1')
-		{
-			return 's3.' . $region . '.' . $endpoint;
+			$endpoint = 's3-external-1.amazonaws.com';
 		}
 
-		return str_replace('s3', 's3-' . $region, $endpoint);
+		// Exception: China
+		if (substr($region, 0, 3) == 'cn-')
+		{
+			// Chinese endpoint, e.g.: s3.cn-north-1.amazonaws.com.cn
+			$endpoint = 's3.' . $region . '.amazonaws.com.cn';
+		}
+
+		// Legacy path style access: return just the endpoint
+		if ($configuration->getUseLegacyPathStyle())
+		{
+			return $endpoint;
+		}
+
+		// Recommended virtual hosting access: bucket, dot, endpoint.
+		return $bucket . '.' . $endpoint;
 	}
 }
