@@ -1,7 +1,7 @@
 # Project Public Identifier: joomla-official-websites
 project_id: 100
 api_token_env: CROWDIN_PERSONAL_TOKEN
-base_path: language
+base_path: www/language
 base_url: "https://joomla.crowdin.com"
 
 preserve_hierarchy: true
