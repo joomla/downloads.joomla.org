@@ -132,11 +132,13 @@ class JoomlaRelease extends JApplicationCli
 			case '4':
 				$arsCategoryId = '268';
 				$arsEnvironment = '12';
+				$previousMajorUpgradeMessage = "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>";
 				break;
 
 			case '3':
 				$arsCategoryId = '4';
 				$arsEnvironment = '9';
+				$previousMajorUpgradeMessage = "<p>This package is for performing updates from Joomla! 2.5 and previous 3.x releases to $releaseNumber.</p>";
 				break;
 
 			default:
@@ -239,21 +241,21 @@ class JoomlaRelease extends JApplicationCli
 			[
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.bz2)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.bz2",
-				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
+				'description'  => $previousMajorUpgradeMessage,
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.bz2",
 			],
 			[
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.gz)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.gz",
-				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
+				'description'  => $previousMajorUpgradeMessage,
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.gz",
 			],
 			[
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.zip)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.zip",
-				'description'  => "<p>This package is for performing updates from Joomla! 3.10 and previous 4.x releases to $releaseNumber.</p>",
+				'description'  => $previousMajorUpgradeMessage,
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.zip",
 			],
