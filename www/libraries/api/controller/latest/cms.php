@@ -56,6 +56,13 @@ class ApiControllerLatestCms extends JControllerBase
 			return Filter::filterItem($item, true);
 		});
 
+		$validCategories = [];
+
+		foreach ($categories as $category)
+		{
+			$validCategories[] = $category->id;
+		}
+
 		$releases = $releasesModel->get(true);
 
 		$latest = [];
@@ -75,8 +82,13 @@ class ApiControllerLatestCms extends JControllerBase
 		// Build the response object now
 		$branches = [];
 
-		foreach ($latest as $release)
+		foreach ($latest as $catId => $release)
 		{
+			if (!in_array($catId, $validCategories))
+			{
+				continue;
+			}
+
 			$branches[] = ['branch' => $release->category->title, 'version' => $release->version];
 		}
 
