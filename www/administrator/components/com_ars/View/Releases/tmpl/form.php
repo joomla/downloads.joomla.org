@@ -85,7 +85,7 @@ $item = $this->getItem();
                 <div class="akeeba-form-group">
                     <label for="created"><?php echo JText::_('COM_ARS_RELEASES_FIELD_RELEASED'); ?></label>
 
-					<?php echo JHtml::calendar($item->created, 'created', 'created')?>
+					<?php echo JHtml::calendar($item->created, 'created', 'created', JText::_('DATE_FORMAT_CALENDAR_DATETIME'))?>
                 </div>
 
                 <div class="akeeba-form-group">
