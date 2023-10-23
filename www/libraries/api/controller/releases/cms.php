@@ -30,45 +30,49 @@ class ApiControllerReleasesCms extends JControllerBase
 		// This will autoload the ARS files
 		$container = Container::getInstance('com_ars');
 
-		/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
-		$releasesModel = $container->factory->model('Releases');
-		$releasesModel->reset(true)
-			->orderBy('order', 'DESC')
-			->published(1)
-			->access_user($container->platform->getUser()->id)
-			->visualgroup_id(1)
-			->maturity('stable');
-
-		$releases = $releasesModel->get(true);
-
 		$releaseList = [];
-
 		// Prepare signature link
 		$signatureLink = Uri::base() . "v1/signatures/cms/%s";
 
-		// Process release list
-		if ($releases->count())
-		{
-			/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $release */
-			foreach ($releases as $release)
-			{
-				// Create new DateTime object to convert release date to swagger-compatible format
-				$releaseDate = new DateTime($release->created, new DateTimeZone('UTC'));
+		foreach([1,2,3,4,268,353] as $catid) {
+			/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
+			$releasesModel = $container->factory->model('Releases');
 
-				$releaseList[] = [
-					'version' => $release->version,
-					'branch' => $release->category->title,
-					'date' => $releaseDate->format(DateTime::RFC3339),
-					'relationships' => [
-						'signatures' => sprintf($signatureLink, $release->alias)
-					]
-				];
+			$releasesModel->reset(true)
+				->orderBy('order', 'DESC')
+				->published(1)
+				->access_user($container->platform->getUser()->id)
+				->category_id($catid)
+				->maturity('stable');
+
+			$releases = $releasesModel->get(true);
+
+
+
+			// Process release list
+			if ($releases->count())
+			{
+				/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $release */
+				foreach ($releases as $release)
+				{
+					// Create new DateTime object to convert release date to swagger-compatible format
+					$releaseDate = new DateTime($release->created, new DateTimeZone('UTC'));
+
+					$releaseList[] = [
+						'version' => $release->version,
+						'branch' => $release->category->title,
+						'date' => $releaseDate->format(DateTime::RFC3339),
+						'relationships' => [
+							'signatures' => sprintf($signatureLink, $release->alias)
+						]
+					];
+				}
 			}
 		}
 
 		// Now build the response
 		$item = [
-			'total' => $releases->count(),
+			'total' => count($releaseList),
 			'releases' => $releaseList
 		];
 

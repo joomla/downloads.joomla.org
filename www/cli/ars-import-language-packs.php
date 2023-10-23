@@ -8,10 +8,10 @@
 
 // MISSING DATA in S3/ARS AS FOLLOWS:
 // Joomla 2.5:
-// gu-IN, is-IS, fr-CA, en-CA
+// gu-IN, is-IS, ug-CN, fr-CA, en-CA
 
 // Joomla 3.x:
-// gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, gu-IN, kk-KZ
+// gd-GB, bn-BD, az-AZ, eo-XX, ckb-IQ, lo-LA, lt-LT, ml-IN, ur-PK, gu-IN, de-CH, de-AT, de-LI, de-LU, en-NZ, kk-KZ
 
 // Set flag that this is a parent file.
 const _JEXEC = 1;
@@ -172,6 +172,7 @@ class ImportLanguagePacks extends JApplicationCli
 			$explodedName     = explode('_', $packageName);
 			$langTag          = array_pop($explodedName);
 			$langFriendlyName = implode(' ', $explodedName);
+
 			$this->out(sprintf('<info>Processing language "%s"</info>', $langTag));
 
 			$arsDirectory = 's3://joomladownloads/translations/' . $s3Dir . '/' . $langTag;
@@ -362,14 +363,9 @@ class ImportLanguagePacks extends JApplicationCli
 			return false;
 		}
 
-		$s3           = \Akeeba\ReleaseSystem\Admin\Helper\AmazonS3::getInstance();
 		$s3UploadPath = substr($categoriesModel->directory, strlen($prefix));
-		$requestHeaders = [
-			'Content-Disposition' => 'attachment; filename="' . $zipName . '"',
-		];
-
-		// Default parameters for the putObject method in ARS. Aside from overriding the request headers.
-		$success = $s3->putObject($fileUpload['tmp_name'], $s3UploadPath . '/' . $zipName, false, $requestHeaders);
+		$s3           = \Akeeba\ReleaseSystem\Admin\Helper\AmazonS3::getInstance();
+		$success      = $s3->putObject($fileLocation, $s3UploadPath . '/' . $zipName);
 
 		if (!$success)
 		{

@@ -129,6 +129,12 @@ class JoomlaRelease extends JApplicationCli
 
 		switch ($releaseParts[0])
 		{
+                       case '5':
+                                $arsCategoryId = '353';
+                                $arsEnvironment = '14';
+                                $previousMajorUpgradeMessage = "<p>This package is for performing updates from Joomla! 4.4 and previous 5.x releases to $releaseNumber.</p>";
+                                break;
+
 			case '4':
 				$arsCategoryId = '268';
 				$arsEnvironment = '12';
@@ -237,50 +243,71 @@ class JoomlaRelease extends JApplicationCli
 			];
 		}
 
-		$items = [
-			[
-				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.bz2)",
-				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.bz2",
+		$items = []; // Reset because we don't have patches in 4.x
+
+		if ($releaseParts[0] === '5') {
+		$items[] = [
+				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.zst)",
+				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.zst",
 				'description'  => $previousMajorUpgradeMessage,
 				'type'         => 'file',
-				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.bz2",
-			],
-			[
+				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.zst",
+			];
+		} else {
+                $items[] = [
+                                'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.bz2)",
+                                'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.bz2",
+                                'description'  => $previousMajorUpgradeMessage,
+                                'type'         => 'file',
+                                'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.bz2",
+                        ];
+		}
+
+		$items[] = [
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.tar.gz)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.tar.gz",
 				'description'  => $previousMajorUpgradeMessage,
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.tar.gz",
-			],
-			[
+			];
+		$items[] = [
 				'title'        => "Joomla! $releaseNumber Upgrade Package (.zip)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Update_Package.zip",
 				'description'  => $previousMajorUpgradeMessage,
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Update_Package.zip",
-			],
-			[
+			];
+                if ($releaseParts[0] === '5') {
+                $items[] = [
+                                'title'        => "Joomla! $releaseNumber Full Package (.tar.zst)",
+                                'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.zst",
+                                'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
+                                'type'         => 'file',
+                                'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.zst",
+                        ];
+		} else {
+		$items[] = [
 				'title'        => "Joomla! $releaseNumber Full Package (.tar.bz2)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.bz2",
 				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.bz2",
-			],
-			[
+			];
+		}
+		$items[] = [
 				'title'        => "Joomla! $releaseNumber Full Package (.tar.gz)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.tar.gz",
 				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.tar.gz",
-			],
-			[
+			];
+		$items[] = [
 				'title'        => "Joomla! $releaseNumber Full Package (.zip)",
 				'alias'        => "Joomla_$releaseAliasNumber-Stable-Full_Package.zip",
 				'description'  => "<p>This is the full download package for Joomla! $releaseNumber</p>",
 				'type'         => 'file',
 				'filename'     => "Joomla_$releaseNumber-Stable-Full_Package.zip",
-			],
-		];
+			];
 
 		foreach ($items as $item)
 		{

@@ -1,8 +1,7 @@
 <?php
 /**
- * @package     Joomla.Site
+ * @package	    Joomla.Site
  * @subpackage  com_code
- *
  * @copyright   Copyright (C) 2009 - 2010 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -12,7 +11,9 @@ defined('_JEXEC') or die;
 /**
  * Connector class to a GForge Advanced Server SOAP API.
  *
- * @since  1.0
+ * @package  Joomla.Code
+ * @see      http://joomlacode.org/gf/xmlcompatibility/soap5/
+ * @since    1.0
  */
 class GForge
 {

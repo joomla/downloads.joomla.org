@@ -56,12 +56,13 @@ class ApiControllerLatestCms extends JControllerBase
 			return Filter::filterItem($item, true);
 		});
 
-		$validCategories = [];
+        $validCategories = [];
 
-		foreach ($categories as $category)
-		{
+        foreach ($categories as $category)
+        {
 			$validCategories[] = $category->id;
-		}
+        }
+$validCategories[] = 353;
 
 		$releases = $releasesModel->get(true);
 
@@ -99,6 +100,9 @@ class ApiControllerLatestCms extends JControllerBase
 
 		// Load the item into the document's buffer
 		$this->getApplication()->getDocument()->setBuffer($item);
+
+		// Allow the response to be cached
+		$this->getApplication()->allowCache(true);
 
 		return true;
 	}

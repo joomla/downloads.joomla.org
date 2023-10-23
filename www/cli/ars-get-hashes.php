@@ -12,6 +12,9 @@ const _JEXEC = 1;
 error_reporting(E_ALL | E_NOTICE);
 ini_set('display_errors', 1);
 
+// Max memory
+ini_set('memory_limit', '-1');
+
 // Load system defines
 if (file_exists(dirname(__DIR__) . '/defines.php'))
 {
@@ -81,7 +84,7 @@ class HashGenerator extends JApplicationCli
 		$this->platform = $this->container->platform;
 
 		// Get a user object for my account
-		$this->loadIdentity($this->platform->getUser('michael.babker'));
+		$this->loadIdentity($this->platform->getUser('harald.leithner'));
 
 		// Load the base language files
 		JFactory::getLanguage()->load('lib_joomla', JPATH_ADMINISTRATOR);
