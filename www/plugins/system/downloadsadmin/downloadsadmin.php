@@ -136,7 +136,7 @@ class PlgSystemDownloadsAdmin extends JPlugin
 		// We need the languagefilter plugin's parameters to make some decisions
 		$langFilterParams = new Registry(JPluginHelper::getPlugin('system', 'languagefilter')->params);
 
-		if ($this->app->isSite() && $langFilterParams->get('alternate_meta') && $this->app->getDocument()->getType() == 'html')
+		if ($this->app->isClient('site') && $langFilterParams->get('alternate_meta') && $this->app->getDocument()->getType() == 'html')
 		{
 			$menu   = $this->app->getMenu();
 			$active = $menu->getActive();
@@ -321,7 +321,7 @@ class PlgSystemDownloadsAdmin extends JPlugin
 	{
 		if (
 			$this->app->input->getCmd('option') !== 'com_ars' ||
-			!$this->app->isSite()
+			!$this->app->isClient('site')
 		) 
 		{
 			return;
