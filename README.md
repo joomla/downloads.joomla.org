@@ -36,3 +36,36 @@ Press "Create a new release"
 You can help translate the needed parts for this website on Crowdin - https://joomla.crowdin.com/joomla-official-websites  
 Crowdin sync status: ![Crowdin Action](https://github.com/joomla/downloads.joomla.org/workflows/Crowdin%20Action/badge.svg)  
 Crowdin localication status: [![Crowdin](https://badges.crowdin.net/e/9d2c7ef410adb090cd5be80fb3644064/localized.svg)](https://joomla.crowdin.com/joomla-official-websites)
+
+
+
+
+<!-----------------  readme on Crowdin Project ----------------------------- -->
+
+# Welcome to the Joomla Crowdin Translation Project!
+🌍 This project helps translate Joomla into multiple languages to make it accessible to users worldwide.
+
+# What is Crowdin ?
+Crowdin is a localization management platform that allows contributors to translate Joomla’s interface, documentation, and extensions into different languages.
+
+# Get Started
+-  Join the Joomla Crowdin Project
+- Go to Joomla’s Crowdin Page.
+- Sign up for a free Crowdin account or log in ifyou already have one.
+- Click Join Project to become a translator.
+
+# Crowdin Interface
+Dashboard – Shows project progress and available languages.
+Editor – The main tool where you can translate Joomlas text.
+Discussions – A place to communicate with other translators.
+
+# Additional Resources
+📖 Joomla Translation Guidelines: https://www.joomla.org/contribute-to-joomla.html
+📘 Crowdin Documentation: https://support.crowdin.com/
+  
+
+
+
+
+
+
