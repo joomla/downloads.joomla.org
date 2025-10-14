@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @copyright Copyright (c)2010-2019 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -11,9 +11,12 @@ defined('_JEXEC') or die();
 
 use Akeeba\ReleaseSystem\Site\Helper\Router;
 use Akeeba\ReleaseSystem\Site\Helper\Filter;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Factory;
 
-$rootURL    = rtrim(JURI::base(), '/');
-$subpathURL = JURI::base(true);
+$rootURL       = rtrim(JURI::base(), '/');
+$subpathURL    = JURI::base(true);
+$showChecksums = isset($this->showChecksums) ? $this->showChecksums : false;
 
 if (!empty($subpathURL) && ($subpathURL != '/'))
 {
@@ -59,8 +62,8 @@ else
 JFactory::getApplication()->setHeader('X-Akeeba-Expire-After', 300);
 
 require_once JPATH_SITE . '/components/com_ars/router.php';
-ComArsRouter::$routeRaw  = false;
-ComArsRouter::$routeHtml = false;
+//ComArsRouter::$routeRaw  = false;
+//ComArsRouter::$routeHtml = false;
 
 $jVersion = new JVersion;
 
@@ -75,44 +78,6 @@ foreach ($this->items as $item):
 			$downloadURL =
 				$rootURL . Router::_('index.php?option=com_ars&view=Item&task=download&format=raw&id=' . $item->item_id . $dlid);
 			$basename    = basename($item->filename);
-
-			if (substr(strtolower($basename), -4) == '.zip')
-			{
-				$format = 'zip';
-			}
-			elseif (substr(strtolower($basename), -4) == '.tgz')
-			{
-				$format = 'tgz';
-			}
-			elseif (substr(strtolower($basename), -7) == '.tar.gz')
-			{
-				$format = 'tgz';
-			}
-			elseif (substr(strtolower($basename), -4) == '.tar')
-			{
-				$format = 'tar';
-			}
-			elseif (substr(strtolower($basename), -8) == '.tar.bz2')
-			{
-				$format = 'tbz2';
-			}
-			elseif (substr(strtolower($basename), -4) == '.tbz')
-			{
-				$format = 'tbz2';
-			}
-			elseif (substr(strtolower($basename), -5) == '.tbz2')
-			{
-				$format = 'tbz2';
-			}
-			else
-			{
-				$format = 'UNSUPPORTED';
-			}
-
-			if ($format != 'UNSUPPORTED')
-			{
-				$downloadURL .= '&amp;dummy=my.' . $format;
-			}
 			break;
 
 		case 'link':
@@ -120,6 +85,59 @@ foreach ($this->items as $item):
 			$downloadURL = $item->url;
 			$basename    = basename($item->url);
 			break;
+	}
+
+	if (substr(strtolower($basename), -4) == '.zip')
+	{
+		$format = 'zip';
+	}
+    elseif (substr(strtolower($basename), -4) == '.tgz')
+	{
+		$format = 'tgz';
+	}
+    elseif (substr(strtolower($basename), -7) == '.tar.gz')
+	{
+		$format = 'tgz';
+	}
+    elseif (substr(strtolower($basename), -4) == '.tar')
+	{
+		$format = 'tar';
+	}
+    elseif (substr(strtolower($basename), -8) == '.tar.bz2')
+	{
+		$format = 'tbz2';
+	}
+    elseif (substr(strtolower($basename), -4) == '.tbz')
+	{
+		$format = 'tbz2';
+	}
+    elseif (substr(strtolower($basename), -5) == '.tbz2')
+	{
+		$format = 'tbz2';
+	}
+	else
+	{
+		$fileNameParts = explode('.', $basename);
+		$format        = array_pop($fileNameParts);
+	}
+
+	if ($item->itemtype == 'file')
+	{
+		$dlUri = Uri::getInstance($downloadURL);
+
+		if (Factory::getConfig()->get('sef_suffix', 0) == 1)
+		{
+			$pathParts = explode('.', $dlUri->getPath());
+
+			if ((count($pathParts) > 1) && (array_pop($pathParts) == 'raw'))
+			{
+				$dlUri->setPath(implode('.', $pathParts));
+			}
+		}
+
+		$dlUri->setVar('format', 'raw');
+		$dlUri->setVar('dummy', 'my.' . $format);
+		$downloadURL = $dlUri->toString();
 	}
 
 	if (!empty($item->environments) && is_array($item->environments))
@@ -193,10 +211,14 @@ foreach ($this->items as $item):
 		<type><?php echo $streamTypeMap[ $item->type ]; ?></type>
 		<version><?php echo $item->version ?></version>
 		<infourl
-            title="<?php echo $item->cat_title . ' ' . $item->version ?>"><?php echo $rootURL . Router::_('index.php?option=com_ars&view=Items&release_id=' . $item->release_id) ?></infourl>
+				title="<?php echo $item->cat_title . ' ' . $item->version ?>">
+			<![CDATA[<?php echo $rootURL . Router::_('index.php?option=com_ars&view=Items&release_id=' . $item->release_id) ?>
+			]]>
+		</infourl>
 		<downloads>
 			<downloadurl type="full"
-						 format="<?php echo $format ?>"><?php echo $downloadURL ?></downloadurl>
+						 format="<?php echo $format ?>"><![CDATA[<?php echo $downloadURL ?>]]>
+			</downloadurl>
 		</downloads>
 		<tags>
 			<tag><?php echo $item->maturity ?></tag>
@@ -205,21 +227,24 @@ foreach ($this->items as $item):
 		<maintainerurl><?php echo JURI::base(); ?></maintainerurl>
 		<section>Updates</section>
 		<targetplatform name="<?php echo $platformName ?>" version="<?php echo $platformVersion ?>"/>
-		<?php if (!empty($item->md5)): ?>
-		<md5><?php echo $this->escape($item->md5) ?></md5>
-		<?php endif; ?>
-		<?php if (!empty($item->sha1)): ?>
-		<sha1><?php echo $this->escape($item->sha1) ?></sha1>
-		<?php endif; ?>
-		<?php if (!empty($item->sha256)): ?>
-		<sha256><?php echo $this->escape($item->sha256) ?></sha256>
-		<?php endif; ?>
-		<?php if (!empty($item->sha384)): ?>
-		<sha384><?php echo $this->escape($item->sha384) ?></sha384>
-		<?php endif; ?>
-		<?php if (!empty($item->sha512)): ?>
-		<sha512><?php echo $this->escape($item->sha512) ?></sha512>
-		<?php endif; ?>
+		<?php if ($showChecksums): ?>
+			<?php if (!empty($item->md5)): ?>
+				<md5><?php echo $this->escape($item->md5) ?></md5>
+			<?php endif; ?>
+			<?php if (!empty($item->sha1)): ?>
+				<sha1><?php echo $this->escape($item->sha1) ?></sha1>
+			<?php endif; ?>
+			<?php if (!empty($item->sha256)): ?>
+				<sha256><?php echo $this->escape($item->sha256) ?></sha256>
+			<?php endif; ?>
+			<?php if (!empty($item->sha384)): ?>
+				<sha384><?php echo $this->escape($item->sha384) ?></sha384>
+			<?php endif; ?>
+			<?php if (!empty($item->sha512)): ?>
+				<sha512><?php echo $this->escape($item->sha512) ?></sha512>
+			<?php endif; ?>
+		<?php endif; // $showChecksums
+		?>
 		<?php if (($platformName == 'joomla') && (version_compare($platformVersion, '2.5', 'lt'))): ?>
 			<client_id><?php echo (int)$item->client_id ?></client_id>
 		<?php else: ?>

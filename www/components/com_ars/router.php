@@ -1,9 +1,8 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @copyright Copyright (c)2010-2019 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
- * @version   $Id$
  */
 
 // Protect from unauthorized access
@@ -1576,6 +1575,7 @@ function arsParseRouteRaw(&$segments)
 						  $db->qn('c') . '.' . $db->qn('id') . '=' . $db->qn('r') . '.' . $db->qn('category_id') . ')')
 					  // Joomla Hack - Allow to be routed by an item's alias or filename
 					  ->where('(' . $db->qn('i.alias') . ' = ' . $db->q($itemalias) . 'OR ' . $db->qn('i.filename') . ' = ' . $db->q($itemalias) . ')')
+
 					  ->where($db->qn('r') . '.' . $db->qn('alias') . ' = ' . $db->q($relalias))
 					  ->where($db->qn('c') . '.' . $db->qn('alias') . ' = ' . $db->q($catalias));
 
@@ -1649,6 +1649,7 @@ function arsParseRouteRaw(&$segments)
 						  $db->qn('c') . '.' . $db->qn('id') . '=' . $db->qn('r') . '.' . $db->qn('category_id') . ')')
 					  // Joomla Hack - Allow to be routed by an item's alias or filename
 					  ->where('(' . $db->qn('i.alias') . ' = ' . $db->q($itemalias) . 'OR ' . $db->qn('i.filename') . ' = ' . $db->q($itemalias) . ')');
+
 
 		if (!empty($relalias))
 		{

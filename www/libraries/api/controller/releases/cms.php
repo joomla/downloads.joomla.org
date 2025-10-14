@@ -34,7 +34,7 @@ class ApiControllerReleasesCms extends JControllerBase
 		// Prepare signature link
 		$signatureLink = Uri::base() . "v1/signatures/cms/%s";
 
-		foreach([1,2,3,4,268,353] as $catid) {
+		foreach([1,2,3,4,268,353,360] as $catid) {
 			/** @var \Akeeba\ReleaseSystem\Site\Model\Releases $releasesModel */
 			$releasesModel = $container->factory->model('Releases');
 

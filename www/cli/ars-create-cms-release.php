@@ -129,6 +129,11 @@ class JoomlaRelease extends JApplicationCli
 
 		switch ($releaseParts[0])
 		{
+                       case '6':
+                                $arsCategoryId = '360';
+                                $arsEnvironment = '16';
+                                $previousMajorUpgradeMessage = "<p>This package is for performing updates from Joomla! 5.4 and previous 6.x releases to $releaseNumber.</p>";
+                                break;
                        case '5':
                                 $arsCategoryId = '353';
                                 $arsEnvironment = '14';

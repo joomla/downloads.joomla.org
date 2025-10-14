@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ @package   AkeebaReleaseSystem
+  ~ @copyright Copyright (c)2010-2019 Nicholas K. Dionysopoulos / Akeeba Ltd
+  ~ @license   GNU General Public License version 3, or later
+  -->
+
 <extension version="2.5.0" type="plugin" group="ars" method="upgrade">
     <name>Akeeba Release System - Bleeding Edge automatic file diff</name>
     <author>Nicholas K. Dionysopoulos</author>
@@ -6,8 +12,8 @@
     <authorUrl>http://www.akeebabackup.com</authorUrl>
     <copyright>Copyright (c)2010-2017 Nicholas K. Dionysopoulos</copyright>
     <license>GNU General Public License version 3, or later</license>
-    <creationDate>2011-07-31</creationDate>
-    <version>1.0</version>
+    <creationDate>2019-07-22</creationDate>
+    <version>4.2.2</version>
     <description>
         Automatically generates a colorised unified diff (like what GitHub does)
         for items automatically created in a Bleeding Edge repository.
@@ -15,6 +21,8 @@
     <files>
         <filename plugin="bleedingedgediff">bleedingedgediff.php</filename>
         <filename>bleedingedgediff.diff.php</filename>
+        <filename>.htaccess</filename>
+        <filename>web.config</filename>
     </files>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.plg_ars_bleedingedgediff.ini</language>
