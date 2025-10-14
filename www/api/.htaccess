@@ -52,9 +52,9 @@ RewriteRule .* index.php [F]
 
 # ======== Redirect HTTP to HTTPS =========
 
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^downloads.joomla.org
-RewriteRule ^(.*)$ https://downloads.joomla.org/api/$1 [R=301,L,QSA]
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP_HOST} ^downloads.joomla.org
+#RewriteRule ^(.*)$ https://downloads.joomla.org/api/$1 [R=301,L,QSA]
 
 ## End - Custom redirects
 
@@ -68,7 +68,7 @@ RewriteRule .* - [E=cache-control:max-age=120]
 # Update Your Joomla! Directory (just / for root).
 ##
 
-# RewriteBase /
+#RewriteBase /api/
 
 ## Begin - Joomla! core SEF Section.
 #

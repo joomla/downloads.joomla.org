@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   AkeebaReleaseSystem
- * @copyright Copyright (c)2010-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @copyright Copyright (c)2010-2019 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -18,6 +18,12 @@ class Xml extends Raw
 	public $items = array();
 
 	public $published = false;
+
+	public $updates_name = '';
+	public $updates_desc = '';
+	public $category = 0;
+	public $envs = [];
+	public $showChecksums = false;
 
 	public function display($tpl = null)
 	{
@@ -62,11 +68,12 @@ class Xml extends Raw
 		{
 			foreach ($rawenvs as $env)
 			{
-				$envs[ $env->id ] = $env;
+				$envs[$env->id] = $env;
 			}
 		}
 
-		$this->envs  = $envs;
+		$this->envs          = $envs;
+		$this->showChecksums = $this->container->params->get('show_checksums', 0) == 1;
 		$this->setLayout('stream');
 	}
 
