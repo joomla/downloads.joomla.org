@@ -46,7 +46,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 			<h2 class="center hp"><?php echo JText::_('HP_CONTENT_HEADER_TRY'); ?></h2>
 		<div class="row-fluid center marge try">
 			<div class="span6">
-				<a class="btn btn-blue" title="<?php echo JText::_('HP_CONTENT_DISCOVER_BTITLE'); ?>" href="https://www.joomla.org/4/en/" target="_blank" rel="noopener noreferrer">
+				<a class="btn btn-blue" title="<?php echo JText::_('HP_CONTENT_DISCOVER_BTITLE'); ?>" href="https://6.joomla.org/" target="_blank" rel="noopener noreferrer">
 				<span class="title"><?php echo JText::_('HP_CONTENT_DISCOVER_BTITLE'); ?></span><br><?php echo JText::_('HP_CONTENT_DISCOVER_BTEXT'); ?></a>
 			</div>
 			<div class="span6"><a class="btn btn-blue" title="<?php echo JText::_('HP_CONTENT_LAUNCH_BTITLE'); ?>" href="https://launch.joomla.org" target="_blank" rel="noopener noreferrer">
