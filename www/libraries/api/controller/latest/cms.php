@@ -62,7 +62,6 @@ class ApiControllerLatestCms extends JControllerBase
         {
 			$validCategories[] = $category->id;
         }
-$validCategories[] = 353;
 
 		$releases = $releasesModel->get(true);
 
