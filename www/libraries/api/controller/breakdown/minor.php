@@ -37,6 +37,8 @@ class ApiControllerBreakdownMinor extends JControllerBase
 			25 => 3,
 			30 => 4,
 			40 => 268,
+			50 => 353,
+			60 => 360,
 		];
 
 		$majorVersion = $this->getInput()->getInt('version');
