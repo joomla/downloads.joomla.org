@@ -38,6 +38,9 @@ class ApiControllerBreakdownMajor extends JControllerBase
 				(object) ['version' => '1.5', 'count' => DownloadCounter::getCountForCategory(2)],
 				(object) ['version' => '2.5', 'count' => DownloadCounter::getCountForCategory(3)],
 				(object) ['version' => '3.0', 'count' => DownloadCounter::getCountForCategory(4)],
+				(object) ['version' => '4.0', 'count' => DownloadCounter::getCountForCategory(268)],
+				(object) ['version' => '5.0', 'count' => DownloadCounter::getCountForCategory(353)],
+				(object) ['version' => '6.0', 'count' => DownloadCounter::getCountForCategory(360)],
 			],
 		];
 
