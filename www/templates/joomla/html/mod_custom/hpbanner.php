@@ -16,7 +16,7 @@ JFactory::getLanguage()->load('page_home', JPATH_SITE);
 <div class="custom <?php echo $moduleclass_sfx; ?>" <?php if ($params->get('backgroundimage')) : ?> style="background-image:url(<?php echo $params->get('backgroundimage'); ?>)"<?php endif; ?> >
 	<h2><?php echo JText::_('HP_BANNER_HEADER'); ?></h2>
 <div class="row-fluid top">
-<div class="span6">
+<div class="span4">
 	<a id="latest" class="btn btn-success" title="<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?>" href="<?php echo JHtml::_('content.prepare', '{arslatest item_link \'Joomla*Stable-Full_Package.zip\' Joomla! 6}'); ?>">
 		<span class="title">
 			<i class="icon-download">  </i>
@@ -36,7 +36,11 @@ JFactory::getLanguage()->load('page_home', JPATH_SITE);
 	<?php echo JText::_('HP_BANNER_DESCPART5'); ?></a> 
 	<?php echo JText::_('HP_BANNER_DESCPART6'); ?></p>
 </div>
-<div class="span6"><a class="btn btn-success" title="<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?> <?php echo JText::_('HP_BANNER_UPGRADEPACK'); ?>" href="<?php echo JHtml::_('content.prepare', '{arslatest release_link Joomla! 6}'); ?>">
+<div class="span4">
+    <a class="btn btn-warning btn-lg mb-3" href="https://speedup.joomla.org/" rel="noopener" target="_blank"><span class="title"><?php echo JText::_('HP_BANNER_SPEEDUP_TITLE1'); ?></span><br><?php echo JText::_('HP_BANNER_SPEEDUP_TITLE2'); ?></a>
+    <p><?php echo JText::_('HP_BANNER_SPEEDUP_DESC'); ?></p>
+</div>
+<div class="span4"><a class="btn btn-success" title="<?php echo JText::_('HP_BANNER_DOWNLOAD'); ?> <?php echo JText::_('HP_BANNER_UPGRADEPACK'); ?>" href="<?php echo JHtml::_('content.prepare', '{arslatest release_link Joomla! 6}'); ?>">
 <span class="title"><i class="icon-download"> </i><?php echo JText::_('HP_BANNER_UPGRADEPACK'); ?></span><br /><?php echo JText::_('HP_BANNER_UPGRADEPACKVERSION'); ?></a>
 <p><?php echo JText::_('HP_BANNER_UPDATEINSTRUCTIONS'); ?></p>
 </div>
